@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_graph">
+    android:id="@+id/main_graph"
+    app:startDestination="@id/testing">
 
+    <fragment
+        android:id="@+id/testing"
+        android:name="com.itis.devinterview.ui.fragment.TestingFragment"
+        android:label="Testing" >
+        <action
+            android:id="@+id/action_testing_to_selectionLanguage"
+            app:destination="@id/selectionLanguage" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectionLanguage"
+        android:name="com.itis.devinterview.ui.fragment.SelectionLanguageFragment"
+        android:label="SelectionLanguage" >
+        <action
+            android:id="@+id/action_selectionLanguage_to_ticketsFragment"
+            app:destination="@id/ticketsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
+        android:label="TicketsFragment" />
 </navigation>
