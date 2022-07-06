@@ -1,76 +1,356 @@
 package com.itis.devinterview.repository.impl
 
-import android.content.SharedPreferences
 import com.itis.devinterview.model.Question
 import com.itis.devinterview.preferences.AccessToRepository
-import com.itis.devinterview.preferences.AccessToRepository.getSP
 import com.itis.devinterview.repository.QuestionRepository
-import kotlin.random.Random
 
-object QuestionRepositoryImpl : QuestionRepository {
+class QuestionRepositoryImpl : QuestionRepository {
     val questions = arrayListOf<Question>(
-        Question(0, "Java", "a"),
-        Question(1, "Java", "a"),
-        Question(2, "Java", "a"),
-        Question(3, "Java", "a"),
-        Question(4, "Java", "a"),
-        Question(5, "Java", "a"),
-        Question(6, "Java", "a"),
-        Question(7, "Java", "a"),
-        Question(8, "Java", "a"),
-        Question(9, "Java", "a"),
-        Question(10, "Java", "a"),
-        Question(11, "Java", "a"),
-        Question(12, "Java", "a"),
-        Question(13, "Java", "a"),
-        Question(14, "Java", "a"),
-        Question(15, "Java", "a"),
-        Question(16, "Java", "a"),
-        Question(17, "Java", "a"),
-        Question(18, "Java", "a"),
-        Question(19, "Java", "a"),
-        Question(20, "Java", "a"),
-        Question(21, "Java", "a"),
-        Question(22, "Java", "a"),
-        Question(23, "Java", "a"),
-        Question(24, "Java", "a"),
-        Question(25, "Java", "a"),
-        Question(26, "Java", "a"),
-        Question(27, "Java", "a"),
-        Question(28, "Java", "a"),
-        Question(29, "Java", "a"),
-        Question(30, "Java", "a"),
-        Question(31, "Java", "a"),
-        Question(32, "Java", "a"),
-        Question(33, "Java", "a"),
-        Question(34, "Java", "a"),
-        Question(35, "Java", "a"),
-        Question(36, "Java", "a"),
-        Question(37, "Java", "a"),
-        Question(38, "Java", "a"),
-        Question(39, "Java", "a"),
+        Question(
+            0,
+            "Java",
+            "Что будет результатом выполнения такого фрагмента кода?\n" +
+                    "int counter = 5;\n" +
+                    "System.out.println(“Counter value is %s”, counter)\n",
+            "Сounter value is 5",
+            "Counter value is",
+            "Код не скомпилируется, нужно использовать printf",
+            "Код не скомпилируется, так как оператор % является остатком от деления",
+            "Код не скомпилируется, нужно использовать printf"
+        ),
+        Question(
+            1,
+            "Java",
+            "Какого рода коллекция больше всего подходит для решения задачи хранения наименований параметров и их значений?",
+            "TreeMap<String, Parameter>",
+            "SortedMap<Object, String>",
+            "HashMap<String, Object>",
+            "List<Object>",
+            "HashMap<String, Object>"
+        ),
+        Question(
+            2,
+            "Java",
+            "Где правильно создан массив?",
+            "int[] a = int[] {1, 2, 3, 4, 5};",
+            "int[] a = new int[] {1, 2, 3, 4, 5};",
+            "int a = new int[] {1, 2, 3, 4, 5};",
+            "int[] a = new int {1, 2, 3, 4, 5};",
+            "int a = new int[] {1, 2, 3, 4, 5};"
+        ),
+        Question(
+            3,
+            "Java",
+            "Сколько параметров может принимать функция?",
+            "Неограниченное количество",
+            "Не более 3",
+            "Не более 20 ",
+            "Только один параметр",
+            "Неограниченное количество"
+        ),
+        Question(
+            4,
+            "Java",
+            "Для чего используется оператор NEW?",
+            "Для создания новой переменной.",
+            "Для объявления нового класса.",
+            "Для создания экземпляра класса. ",
+            "Это антагонист оператора OLD.",
+            "Для создания экземпляра класса. "
+        ),
+        Question(
+            5,
+            "Java",
+            "Где правильно присвоено новое значение к многомерному массиву?",
+            "a[0, 0] = 1;",
+            "a[0 0] = 1;",
+            "a(0)(0) = 1;",
+            "a[0][0] = 1;",
+            "a[0][0] = 1;"
+        ),
+        Question(
+            6,
+            "Java",
+            "Что означает перегрузка метода в Java (overload)?",
+            "Изменение поведения метода класса относительно родительского.",
+            "Изменение поведения метода класса относительно дочернего.",
+            "Несколько методов с одинаковым названием, но разным набором  параметров. ",
+            "Несколько разных классов с одинаковым методом.",
+            "Несколько методов с одинаковым названием, но разным набором  параметров. "
+        ),
+        Question(
+            7,
+            "Java",
+            "Какой метод позволяет запустить программу на Java ?",
+            "Любой, его можно задавать в настройках проекта",
+            "Запуск программы происходит через компиляцию проекта, основного метода нет",
+            "С класса, что был написан первым и с методов что есть внутри него",
+            "С метода main в любом из классов",
+            "С метода main в любом из классов"
+        ),
+        Question(
+            8,
+            "Java",
+            "Где правильно создана простая переменная? ",
+            "bool isDone = true;",
+            "float x = 23.3f;",
+            "byte x = 100000;",
+            "char str = ‘ab’;",
+            "float x = 23.3f;"
+        ),
+        Question(
+            9,
+            "Java",
+            "Что общего у всех элементов массива?",
+            "Их названия ",
+            "Их тип данных",
+            "Их адрес в памяти",
+            "Их размер",
+            "Их тип данных"
+        ),
+        Question(
+            10,
+            "Java",
+            "Какой класс отвечает за получение информации от пользователя?",
+            "System",
+            "Get",
+            "Scaner",
+            "Scanner",
+            "Scanner"
+        ),
+        Question(
+            11,
+            "Java",
+            "Каждый файл должен называться ….",
+            "По имени основного метода в нем",
+            "По имени первой библиотеки в нём",
+            "По имени названия пакета",
+            "По имени класса в нём",
+            "По имени класса в нём"
+        ),
+        Question(
+            12,
+            "Java",
+            "Что означает переопределение метода в Java (override) ?",
+            "Изменение поведения метода класса относительно родительского",
+            "Изменение поведения метода класса относительно дочернего",
+            "Несколько методов с одинаковым названием, но разным набором параметров",
+            "Несколько разных классов с одинаковым методом",
+            "Изменение поведения метода класса относительно родительского"
+        ),
+        Question(13, "Java", "Какие математические операции есть в Java?", "+, -, *, /", "+, -, *, /, --, ++", "+, -, *, /, %", "Все перечисленные", "Все перечисленные"),
+        Question(14, "Java", "Где правильно осуществлен вывод?", "System.print(\"Hello World!\");", "System.out(\"Hello World!\");", "System.out.print = \"Hello World!\";", "System.out.print(\"Hello World!\");", "System.out.print(\"Hello World!\");"),
+        Question(
+            15, "Java", "Что вернет метод, объявленный следующим образом:\n" +
+                    "public static int getAmount() ?", "Не ясно, надо смотреть код метода.", "Не ясно, надо смотреть код метода.", "Вернет ссылку на объект класса this.", "Вернет целочисленное значение. ", "Вернет целочисленное значение. "
+        ),
+        Question(16, "Java", "Какой тип данных не является примитивным? ", "boolean", "string", "float", "int", "string"),
+        Question(
+            17,
+            "Java",
+            "Выберите вариант, который содержит в основные принципы JAVA-ООП?",
+            "Абстракция, наследование, полиморфизм и инкапсуляция ",
+            "Только наследование",
+            "Абстракция, наследование, полиморфизм и инкапсуляция ",
+            "Объективность и ориентированность",
+            "Абстракция, наследование, полиморфизм и инкапсуляция "
+        ),
+        Question(18, "Java", "Какого модификатора класса не существует ?", "private", "structfp", "foreign", "foreign", "foreign"),
+        Question(19, "Java", "Какого оператора не существует в Java?", "==", "??", "!=", "*", "??"),
+        Question(20, "Java", "Какую функцию выполняет оператор %?", "Остаток от деления ", "Процент от числа", "В Java нет такого оператора", "Процентное деление ", "Остаток от деления "),
+        Question(
+            21,
+            "Java",
+            "Какой метод сканирует строку ввода перед первым пробелом?",
+            "nextLine()",
+            "next()",
+            "readLine()",
+            "functionSpace()",
+            "next()"
+        ),
+        Question(
+            22,
+            "Java",
+            "Каково значение переменной double d = 2.0 - 1.1;?",
+            "1",
+            "0.9",
+            "0,9",
+            "0.8999999999999999",
+            "0.8999999999999999"
+        ),
+        Question(23, "Java", "Что из себя представляет библиотека JUnit?", "Библиотека для создания UML диаграмм на языке Java", "Протокол передачи данных в бинарном виде, а также сериализации данных ", "Junit это фреймворк для юнит-тестирования на языке JAVA ", "Junit это фреймворк для юнит-тестирования на языке JAVA ", "Junit это фреймворк для юнит-тестирования на языке JAVA "),
+        Question(
+            24,
+            "Java",
+            "Зачем нужен метод public static void main(String[] args) в Java?",
+            "Напугать начинающего разработчика",
+            "По соглашению разработчики называют первый метод программы именно так, часть конвенции кодирования JAVA",
+            "Данный метод является точкой входа в программу, именно в нее передается управление при старте JAVA программы ",
+            "Данный метод выполняет роль конструктора программы, его можно не писать, если программа состоит из одного класса",
+            "Данный метод является точкой входа в программу, именно в нее передается управление при старте JAVA программы "
+        ),
+        Question(
+            25,
+            "Java",
+            "Какой модификатор объявляет, что метод может быть использован только в своем классе?",
+            "private",
+            "public",
+            "static",
+            "final",
+            "private"
+        ),
+        Question(26, "Java", "Для чего нужен блок finally?", "Для выполнения действий по освобождению ресурсов объекта", "Для определения набора методов, которые будут выполнены при завершении программы", "Для обязательного выполнения определенных действий после try и catch блоков ", "Завершить работу программы", "Для обязательного выполнения определенных действий после try и catch блоков "),
+        Question(
+            27,
+            "Java",
+            "Какое ключевое слово используется для наследования класса?",
+            "extends",
+            "super",
+            "override",
+            "implements",
+            "extends"
+        ),
+        Question(
+            28,
+            "Java",
+            "Какое ключевое слово используется для реализации интерфейса?",
+            "goto",
+            "implements",
+            "annotation",
+            "interface",
+            "implements"
+        ),
+        Question(
+            29,
+            "Java",
+            "Какой вариант объявления обязательного метода main() верный?",
+            "public void main(String[] args)",
+            "public static void main(String[] args) ",
+            "private static void main(String[] args)",
+            "public static void main(int[] args)",
+            "public static void main(String[] args) "
+        ),
+        Question(
+            30,
+            "Java",
+            "Пусть надо принять список чисел (INTEGER/DOUBLE и тд) Какой тип аргумента нужно прописать у этого метода ?",
+            "function(List<? super Number> list)",
+            "function(List<? extends Object> list)",
+            "function (<? extends Number> list) ",
+            "function(List<Number> list)",
+            "function (<? extends Number> list) "
+        ),
+        Question(
+            31,
+            "Java",
+            "Пусть вам нужно написать метод, который будет сортировать список. Вам хотелось бы, чтобы элементы этого списка можно было сравнить между собой. Какой тип аргумента нужно прописать у этого метода?",
+            "sort(List<? implements Comparable> list)",
+            "sort(List<? implements Comparator> list)",
+            "sort(List<? extends Comparable> list) ",
+            "sort(List<? super Comparable> list)",
+            "sort(List<? extends Comparable> list) "
+        ),
+        Question(32, "Java", "Что такое инкапсуляция? ", "Возможность подтипам вести себя как супертипы", "Механизм сокрытия внутреннего устройства объектов для контроля за доступом ", "Частный случай множественного наследования, в котором участвуют родительские классы ", "Обертка над классом", "Механизм сокрытия внутреннего устройства объектов для контроля за доступом "),
+        Question(33, "Java", "Что означает модификатор Static у поля класса?", "Данное поле будет сохранено в памяти после удаления объекта", "Данное поле будет доступно только для чтения", "Данное поле принадлежит классу, а не его экземпляру ", "Модификатор доступа, который позволяет делать экземляры только статическими", "Данное поле принадлежит классу, а не его экземпляру "),
+        Question(
+            34,
+            "Java",
+            "Что необходимо использовать чтобы прервать цикл (for, while или do-while)?",
+            "Stop",
+            "Break",
+            "End",
+            "Continue",
+            "Break"
+        ),
+        Question(
+            35,
+            "Java",
+            "Какой оператор можно использовать, чтобы инвертировать булевое значение?",
+            "not",
+            "!",
+            "&",
+            "-",
+            "!"
+        ),
+        Question(
+            36,
+            "Java",
+            "Какое ключевое слово используется для доступа к текущему объекту?",
+            "That",
+            "This",
+            "Super",
+            "Object",
+            "This"
+        ),
+        Question(
+            37,
+            "Java",
+            "За счет чего Java является кроссплатформенным языком программирования?",
+            "За счет наличия сборщика мусора",
+            "Наличие сборок jre для множества платформ ",
+            "За счет использования виртуальной машины и байт-кода ",
+            "Java не является действительно кроссплатформенным языком",
+            "За счет использования виртуальной машины и байт-кода "
+        ),
+        Question(
+            38,
+            "Java",
+            "Вложенный класс имеет доступ ко всем методам и свойствам класса в котором он объявлен?",
+            "Да",
+            "Да, только если они не объявлены приватными",
+            "Нет",
+            "Вложенных классов в JAVA не существует",
+            "Да"
+        ),
+        Question(
+            39,
+            "Java",
+            "Что будет, если в Map положить два значения с одинаковым ключом?",
+            "Последнее значение перезапишет предыдущее",
+            "Первое значение перезапишет последнее",
+            "Код не будет скомпилирован в таком случае",
+            "В Map нельзя положить значение",
+            "Последнее значение перезапишет предыдущее"
+        ),
     )
 
 
     override fun getQuestionById(id: Int): Question? {
-         var list = AccessToRepository.getListFromSP()
-            return list?.get(id)
+        val list = AccessToRepository.getListFromSP()
+        return list?.get(id)
     }
 
-    override fun getRandomQuestion(): Question? {
-        var list = AccessToRepository.getListFromSP()
-        var size = list?.size
-        var rand = (0..size!!).random()
-        return list?.get(rand)
+    override fun getRandomQuestion(): Question {
+        val list = AccessToRepository.getListFromSP()
+        val size = list?.size
+        val rand = (0 until size!!).random()
+        return list[rand]
     }
 
     override fun getAllQuestions(): List<Question>? {
         return AccessToRepository.getListFromSP()?.toList()
     }
 
-    override fun addList(list: List<Question>){
-        for (question in list){
-            AccessToRepository.addQuestion(question)
+    override fun addList(list: List<Question>) {
+//        for (question in list) {
+//            AccessToRepository.addQuestion(question)
+//        }
+        AccessToRepository.saveListToSP(list)
+    }
+
+    override fun getQuestionListByLanguage(language: String): List<Question>? {
+        val list = AccessToRepository.getListFromSP()
+        var ans = arrayListOf<Question>()
+        if (list != null) {
+            for (question: Question in list){
+                if (question.language.equals(language))
+                    ans.add(question)
+            }
         }
+        return ans
+    }
+
+    override fun addQuestionList(){
+        addList(questions)
     }
 }

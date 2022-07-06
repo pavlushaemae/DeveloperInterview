@@ -7,7 +7,7 @@ import com.itis.devinterview.service.QuestionService
 
 class QuestionServiceImpl: QuestionService {
 
-    private val repository: QuestionRepository = QuestionRepositoryImpl
+    private val repository: QuestionRepository = QuestionRepositoryImpl()
 
     override fun getQuestionById(id: Int): Question? {
         return repository.getQuestionById(id)
@@ -23,5 +23,13 @@ class QuestionServiceImpl: QuestionService {
 
     override fun addList(list: List<Question>) {
         repository.addList(list)
+    }
+
+    override fun getQuestionListByLanguage(language: String): List<Question>? {
+        return repository.getQuestionListByLanguage(language)
+    }
+
+    override fun addQuestionList() {
+        repository.addQuestionList()
     }
 }

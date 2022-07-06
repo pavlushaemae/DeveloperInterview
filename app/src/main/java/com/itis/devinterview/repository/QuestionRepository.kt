@@ -7,4 +7,6 @@ interface QuestionRepository {
     fun getRandomQuestion(): Question?
     fun getAllQuestions(): List<Question>?
     fun addList(list: List<Question>)
+    fun getQuestionListByLanguage(language: String): List<Question>?
+    fun addQuestionList()
 }

@@ -7,6 +7,16 @@ data class Question(
     var id: Int,
     @SerializedName("language")
     val language: String = "",
-    @SerializedName("text")
-    val text: String = ""
+    @SerializedName("question")
+    val question: String = "",
+    @SerializedName("first")
+    val first: String = "",
+    @SerializedName("second")
+    val second: String = "",
+    @SerializedName("third")
+    val third: String = "",
+    @SerializedName("fourth")
+    val fourth: String = "",
+    @SerializedName("correct")
+    val correct: String = "",
 )

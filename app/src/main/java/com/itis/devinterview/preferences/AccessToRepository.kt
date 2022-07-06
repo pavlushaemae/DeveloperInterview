@@ -9,13 +9,17 @@ import com.itis.devinterview.model.Question
 object AccessToRepository {
     var newQuestionId: Int = 0
     private var sharedPreferences: SharedPreferences? = null
-    private const val SHARED_PREFERENCES_KEY = "key"
+    private const val QUESTIONS_LIST = "questions_list"
+    private var ADDED_OR_NOT = false
     fun getSP(sharedPreferences: SharedPreferences) {
         AccessToRepository.sharedPreferences = sharedPreferences
         var list = getListFromSP()
         list?.map { it.id = newQuestionId++ }
-        saveListToSP(list)
+        if (list != null) {
+            saveListToSP(list)
+        }
     }
+
     fun addQuestion(question: Question): Boolean {
         val list = getListFromSP() ?: mutableListOf()
         return if (list.contains(question)) {
@@ -26,11 +30,11 @@ object AccessToRepository {
             true
         }
     }
-    fun deleteQuestion(question: Question) {
-        val list = getListFromSP()
-        list?.remove(question)
-        saveListToSP(list)
-    }
+//    fun deleteQuestion(question: Question) {
+//        val list = getListFromSP()
+//        list?.remove(question)
+//        saveListToSP(list)
+//    }
 
 //    fun moveMedia(question: Question?, target: MediaStatusEnum) {
 //        val list = getListFromSP()
@@ -43,16 +47,19 @@ object AccessToRepository {
 
     fun getListFromSP(): MutableList<Question>? {
         val gson = Gson()
-        val json = sharedPreferences?.getString(SHARED_PREFERENCES_KEY, null)
+        val json = sharedPreferences?.getString(QUESTIONS_LIST, null)
         val type = object : TypeToken<MutableList<Question>>() {}.type
         return gson.fromJson(json, type)
     }
 
     @SuppressLint("CommitPrefEdits")
-    private fun saveListToSP(list: MutableList<Question>?) {
-        sharedPreferences?.edit()?.apply {
-            putString(SHARED_PREFERENCES_KEY, Gson().toJson(list))
-            apply()
+    fun saveListToSP(list: List<Question>) {
+        if (!ADDED_OR_NOT) {
+            sharedPreferences?.edit()?.apply {
+                putString(QUESTIONS_LIST, Gson().toJson(list))
+                apply()
+                ADDED_OR_NOT = true
+            }
         }
     }
 }
