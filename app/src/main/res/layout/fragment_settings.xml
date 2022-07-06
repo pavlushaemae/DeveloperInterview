@@ -129,9 +129,6 @@
         android:layout_height="wrap_content"
         android:text="Настроить"
         android:textColor="#FFFFFF"
-        android:onClick="onClick"
-        android:background="@drawable/tv_button"
-        android:clickable="true"
         app:layout_constraintBottom_toTopOf="@id/tv_other"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -144,13 +141,13 @@
         android:layout_height="wrap_content"
         android:text="Прочее"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@id/btn_feedback"
+        app:layout_constraintBottom_toTopOf="@id/tv_feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_configure_notifications" />
 
-    <Button
-        android:id="@+id/btn_feedback"
+    <TextView
+        android:id="@+id/tv_feedback"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Обратная связь"
@@ -168,7 +165,7 @@
         app:layout_constraintBottom_toTopOf="@id/tv_app_version"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_feedback" />
+        app:layout_constraintTop_toBottomOf="@id/tv_feedback" />
 
     <TextView
         android:id="@+id/tv_app_version"

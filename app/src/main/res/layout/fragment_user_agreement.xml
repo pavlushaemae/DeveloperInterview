@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#53A1C8"
     android:paddingStart="10dp"
-    android:paddingEnd="10dp" >
+    android:paddingEnd="10dp"
+    android:paddingBottom="500dp" >
 
     <TextView
         android:id="@+id/tv_app_name"
@@ -14,7 +15,7 @@
         android:text="Developer Interview"
         android:paddingStart="125dp"
         android:paddingEnd="0dp"
-        android:paddingBottom="20dp"
+        android:paddingBottom="0dp"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@id/scroll"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,8 +26,6 @@
         android:id="@+id/scroll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        android:paddingBottom="680dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

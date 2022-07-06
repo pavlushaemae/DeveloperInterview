@@ -37,7 +37,7 @@ class SettingsFragment: Fragment(R.layout.fragment_settings) {
                     R.id.action_settings_fragment_to_configure_notifications_fragment
                 )
             }
-            btnFeedback.setOnClickListener {
+            tvFeedback.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_settings_fragment_to_feedback_fragment
                 )
