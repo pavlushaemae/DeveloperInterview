@@ -6,9 +6,9 @@
     android:background="#53A1C8"
     android:paddingStart="10dp"
     android:paddingEnd="10dp"
-    android:paddingBottom="500dp"
-    android:paddingTop="0dp">
-
+    android:paddingTop="0dp"
+    android:paddingBottom="450dp">
+    <!--    android:paddingBottom="500dp"-->
     <TextView
         android:id="@+id/tv_app_name"
         android:layout_width="0dp"

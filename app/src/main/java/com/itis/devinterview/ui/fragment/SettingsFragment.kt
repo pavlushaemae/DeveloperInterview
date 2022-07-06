@@ -17,21 +17,21 @@ class SettingsFragment: Fragment(R.layout.fragment_settings) {
         _binding = FragmentSettingsBinding.bind(view)
 
         with(binding) {
-//            radioRussian.setOnClickListener {
-//
-//            }
-//            radioEnglish.setOnClickListener {
-//
-//            }
-//            radioLight.setOnClickListener {
-//
-//            }
-//            radioDark.setOnClickListener {
-//
-//            }
-//            tvResetStatistics.setOnClickListener {
-//
-//            }
+            radioRussian.setOnClickListener {
+
+            }
+            radioEnglish.setOnClickListener {
+
+            }
+            radioLight.setOnClickListener {
+
+            }
+            radioDark.setOnClickListener {
+
+            }
+            tvResetStatistics.setOnClickListener {
+
+            }
             tvConfigureNotifications.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_settings_fragment_to_configure_notifications_fragment

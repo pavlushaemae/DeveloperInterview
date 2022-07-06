@@ -215,7 +215,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="350dp"
-
+            android:buttonTint="#FFFFFF"
             android:layout_weight="1" />
 
     </RadioGroup>
@@ -248,7 +248,5 @@
             android:layout_weight="1" />
 
     </RadioGroup>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,6 +41,7 @@
             app:destination="@id/feedback_fragment"/>
         <action android:id="@+id/action_settings_fragment_to_user_agreement_fragment"
             app:destination="@id/user_agreement_fragment"/>
+
     </fragment>
     <fragment
         android:id="@+id/configure_notifications_fragment"
