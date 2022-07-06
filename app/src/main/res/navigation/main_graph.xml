@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/testing">
+    app:startDestination="@id/settings_fragment">
 
     <fragment
         android:id="@+id/testing"
@@ -24,4 +25,51 @@
         android:id="@+id/ticketsFragment"
         android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
         android:label="TicketsFragment" />
+
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.itis.devinterview.ui.fragment.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <action android:id="@+id/action_settings_fragment_to_configure_notifications_fragment"
+            app:destination="@id/configure_notifications_fragment"/>
+        <action android:id="@+id/action_settings_fragment_to_feedback_fragment"
+            app:destination="@id/feedback_fragment"/>
+        <action android:id="@+id/action_settings_fragment_to_user_agreement_fragment"
+            app:destination="@id/user_agreement_fragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/configure_notifications_fragment"
+        android:name="com.itis.devinterview.ui.fragment.ConfigureNotificationsFragment"
+        android:label="ConfigureNotificationsFragment"
+        tools:layout="@layout/fragment_configure_notifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </fragment>
+    <fragment
+        android:id="@+id/feedback_fragment"
+        android:name="com.itis.devinterview.ui.fragment.FeedbackFragment"
+        android:label="FeedbackFragment"
+        tools:layout="@layout/fragment_feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </fragment>
+    <fragment
+        android:id="@+id/user_agreement_fragment"
+        android:name="com.itis.devinterview.ui.fragment.UserAgreementFragment"
+        android:label="UserAgreementFragment"
+        tools:layout="@layout/fragment_user_agreement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </fragment>
 </navigation>
