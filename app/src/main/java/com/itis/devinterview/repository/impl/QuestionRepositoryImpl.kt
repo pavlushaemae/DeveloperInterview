@@ -3,6 +3,7 @@ package com.itis.devinterview.repository.impl
 import android.content.SharedPreferences
 import com.itis.devinterview.model.Question
 import com.itis.devinterview.preferences.AccessToRepository
+import com.itis.devinterview.preferences.AccessToRepository.getSP
 import com.itis.devinterview.repository.QuestionRepository
 import kotlin.random.Random
 

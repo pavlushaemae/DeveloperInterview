@@ -1,16 +1,15 @@
 package com.itis.devinterview.ui.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentTestingBinding
-import com.itis.devinterview.repository.QuestionRepository
+import com.itis.devinterview.preferences.AccessToRepository.getSP
 import com.itis.devinterview.repository.impl.QuestionRepositoryImpl
 import com.itis.devinterview.repository.impl.QuestionRepositoryImpl.addList
-import com.itis.devinterview.service.QuestionService
-import com.itis.devinterview.service.impl.QuestionServiceImpl
 
 class TestingFragment : Fragment(R.layout.fragment_testing) {
     private var _binding: FragmentTestingBinding? = null
@@ -25,6 +24,10 @@ class TestingFragment : Fragment(R.layout.fragment_testing) {
             btnExam.setOnClickListener {
 //                findNavController().navigate(R.id.)
             }
+        }
+        val pref = activity?.getSharedPreferences("TEST", Context.MODE_PRIVATE)
+        if (pref != null) {
+            getSP(pref)
         }
         addList(QuestionRepositoryImpl.questions)
     }
