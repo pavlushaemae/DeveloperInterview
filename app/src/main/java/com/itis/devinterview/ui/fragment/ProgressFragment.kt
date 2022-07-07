@@ -6,8 +6,4 @@ import com.itis.devinterview.databinding.FragmentProgressBinding
 
 class ProgressFragment : Fragment(R.layout.fragment_progress) {
 
-    private var _binding: FragmentProgressBinding? = null
-    private val binding get() = _binding!!
-
-
 }

@@ -107,4 +107,6 @@
     <string name="daily_reminders">Ежеденевные напоминания</string>
     <string name="notification_time">Время уведомлений</string>
     <string name="for_all_questions">По всем вопросам</string>
+    <string name="progress">Прогресс</string>
+    <string name="settings">Настройки</string>
 </resources>
