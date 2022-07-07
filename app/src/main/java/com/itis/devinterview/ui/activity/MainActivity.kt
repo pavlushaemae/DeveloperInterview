@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itis.devinterview.R
 
 class MainActivity() : AppCompatActivity() {
@@ -12,6 +14,8 @@ class MainActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
-    }
 
+        val bottomView = findViewById<BottomNavigationView>(R.id.bottom_view)
+        bottomView.setupWithNavController(controller)
+    }
 }

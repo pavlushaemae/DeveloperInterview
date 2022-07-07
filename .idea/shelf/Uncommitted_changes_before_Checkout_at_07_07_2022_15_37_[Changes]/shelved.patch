@@ -1,0 +1,17 @@
+Index: app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.itis.devinterview.ui.activity\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport androidx.navigation.NavController\r\nimport androidx.navigation.fragment.NavHostFragment\r\nimport com.itis.devinterview.R\r\n\r\nclass MainActivity() : AppCompatActivity() {\r\n    private lateinit var controller: NavController\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n        controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt b/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt
+--- a/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt	(revision 6527b4015e519e8dc9898168cc9545162ad1aac9)
++++ b/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt	(date 1657197440188)
+@@ -13,4 +13,5 @@
+         setContentView(R.layout.activity_main)
+         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
+     }
++
+ }
+\ No newline at end of file

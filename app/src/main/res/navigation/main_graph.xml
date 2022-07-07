@@ -3,10 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
+    app:startDestination="@id/profile_fragment">
+
     <fragment
         android:id="@+id/testing"
         android:name="com.itis.devinterview.ui.fragment.TestingFragment"
-        android:label="Testing">
+        android:label="Testing"
+        tools:layout="@layout/fragment_testing">
         <action
             android:id="@+id/action_testing_to_selectionLanguage"
             app:destination="@id/selectionLanguage" />
@@ -14,7 +17,8 @@
     <fragment
         android:id="@+id/selectionLanguage"
         android:name="com.itis.devinterview.ui.fragment.SelectionLanguageFragment"
-        android:label="SelectionLanguage">
+        android:label="SelectionLanguage"
+        tools:layout="@layout/fragment_selection_language">
         <action
             android:id="@+id/action_selectionLanguage_to_ticketsFragment"
             app:destination="@id/ticketsFragment" />
@@ -22,11 +26,13 @@
     <fragment
         android:id="@+id/ticketsFragment"
         android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
-        android:label="TicketsFragment" />
+        android:label="TicketsFragment"
+        tools:layout="@layout/fragment_tickets"/>
     <fragment
         android:id="@+id/educationFragment"
         android:name="com.itis.devinterview.ui.fragment.EducationFragment"
-        android:label="EducationFragment" />
+        android:label="EducationFragment"
+        tools:layout="@layout/fragment_education"/>
     <fragment
         android:id="@+id/settings_fragment"
         android:name="com.itis.devinterview.ui.fragment.SettingsFragment"
@@ -78,4 +84,13 @@
         android:name="com.itis.devinterview.ui.fragment.SecondaryExamFragment"
         android:label="fragment_secondary_exam"
         tools:layout="@layout/fragment_secondary_exam" />
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.itis.devinterview.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_fragment_to_settings_fragment"
+            app:destination="@id/settings_fragment" />
+    </fragment>
 </navigation>
