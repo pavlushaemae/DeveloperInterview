@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_testing">
         <action
             android:id="@+id/action_testing_to_selectionLanguage"
-            app:destination="@id/selectionLanguage" />
+            app:destination="@id/selectionLanguage"
+            app:popUpTo="@id/testing"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/selectionLanguage"
@@ -21,7 +23,9 @@
         tools:layout="@layout/fragment_selection_language">
         <action
             android:id="@+id/action_selectionLanguage_to_ticketsFragment"
-            app:destination="@id/ticketsFragment" />
+            app:destination="@id/ticketsFragment"
+            app:popUpTo="@id/selectionLanguage"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/ticketsFragment"
@@ -44,7 +48,9 @@
         tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settings_fragment_to_configure_notifications_fragment"
-            app:destination="@id/configure_notifications_fragment" />
+            app:destination="@id/configure_notifications_fragment"
+            app:popUpTo="@id/settings_fragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_settings_fragment_to_feedback_fragment"
             app:destination="@id/feedback_fragment" />
