@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/fragment_exam.xml" value="0.152" />
+        <entry key="..\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_education.xml" value="0.236" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_exam.xml" value="0.236" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_profile.xml" value="0.174" />
@@ -23,7 +25,7 @@
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml" value="0.1" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml" value="0.1" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement.xml" value="0.176" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement_unvailable.xml" value="0.11197916666666667" />        
+        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement_unvailable.xml" value="0.11197916666666667" />
       </map>
     </option>
   </component>

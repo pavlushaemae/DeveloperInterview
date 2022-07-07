@@ -8,13 +8,53 @@
 
     <TextView
         android:id="@+id/tv_question"
-        android:layout_width="wrap_content"
+        android:layout_width="340dp"
+        android:layout_height="220dp"
+        android:text="@string/question"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_first_ans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_first_ans"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:textSize="196sp"
+        android:text="@string/first_answer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_second_ans"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="@string/second_question"
+        app:layout_constraintBottom_toTopOf="@+id/btn_third_ans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_first_ans" />
+
+    <Button
+        android:id="@+id/btn_third_ans"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="@string/third_answer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_first_ans" />
+
+    <Button
+        android:id="@+id/btn_fourth_ans"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="@string/fourth_answer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_third_ans" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
