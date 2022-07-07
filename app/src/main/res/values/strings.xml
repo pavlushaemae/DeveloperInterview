@@ -92,4 +92,19 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="developer_interview">Developer Interview</string>
+    <string name="theme_app">Тема приложения</string>
+    <string name="theme_change">Смена темы</string>
+    <string name="statistics_app">Статистика приложения</string>
+    <string name="reset_progress">Сбросить прогресс</string>
+    <string name="notifications">Уведомления</string>
+    <string name="to_configure">Настроить</string>
+    <string name="other">Прочее</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="user_agreement">Пользовательское соглашение</string>
+    <string name="version_app">Версия приложения:</string>
+    <string name="_0_0_1">0.0.1</string>
+    <string name="daily_reminders">Ежеденевные напоминания</string>
+    <string name="notification_time">Время уведомлений</string>
+    <string name="for_all_questions">По всем вопросам</string>
 </resources>

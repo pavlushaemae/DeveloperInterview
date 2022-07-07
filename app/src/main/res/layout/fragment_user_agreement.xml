@@ -1,36 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.UserAgreementFragment" >
-
-<!--    <TextView-->
-<!--        android:id="@+id/tv_app_name"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Developer Interview"-->
-<!--        android:paddingStart="125dp"-->
-<!--        android:paddingEnd="0dp"-->
-<!--        android:paddingBottom="0dp"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/tv_scroll"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tv_scroll"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />-->
+    tools:context=".ui.fragment.UserAgreementFragment">
 
     <TextView
         android:id="@+id/tv_scroll"
@@ -42,4 +16,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    </androidx.core.widget.NestedScrollView>
+
+</androidx.core.widget.NestedScrollView>

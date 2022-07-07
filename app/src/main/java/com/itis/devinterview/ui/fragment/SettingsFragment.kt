@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.databinding.FragmentSettingsBinding
 
-class SettingsFragment: Fragment(com.itis.devinterview.R.layout.fragment_settings) {
+class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settings) {
 
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
@@ -17,19 +17,6 @@ class SettingsFragment: Fragment(com.itis.devinterview.R.layout.fragment_setting
         _binding = FragmentSettingsBinding.bind(view)
 
         with(binding) {
-//            radioRussian.setOnClickListener {
-//
-//            }
-//            radioEnglish.setOnClickListener {
-//
-//            }
-//            radioLight.setOnClickListener {
-//
-//            }
-//            radioDark.setOnClickListener {
-//
-//            }
-
             switchThemes.setOnCheckedChangeListener { _, checkedId ->
                 when (checkedId) {
                     true -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
