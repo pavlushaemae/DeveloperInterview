@@ -6,7 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.itis.devinterview.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivity() : AppCompatActivity() {
     private lateinit var controller: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,4 +15,5 @@ class MainActivity : AppCompatActivity() {
             (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment)
                 .navController
     }
+
 }

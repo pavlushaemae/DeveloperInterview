@@ -32,4 +32,6 @@
     <color name="on_background_color_dark">#FFFFFF</color>
     <color name="on_surface_color_dark">#FFFFFF</color>
     <color name="on_error_color_dark">#000000</color>
+    <color name="blue">#96CEFF</color>
+    <color name="dark_blue">#4C7FAC</color>
 </resources>
