@@ -1,4 +1,4 @@
-package com.itis.devinterview.ui.activity
+package com.itis.devinterview.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentSecondaryExamBinding
+import com.itis.devinterview.ui.activity.ExamAdapter
 
 class SecondaryExamFragment : Fragment(R.layout.fragment_secondary_exam) {
 
