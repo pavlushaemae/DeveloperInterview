@@ -13,5 +13,4 @@ class MainActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
     }
-
 }
