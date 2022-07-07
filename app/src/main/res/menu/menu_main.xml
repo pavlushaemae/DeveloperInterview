@@ -6,13 +6,13 @@
         android:icon="@drawable/ic_exam"
         android:title="@string/menu_testing"/>
     <item
-        android:id="@+id/progressFragment"
+        android:id="@+id/educationFragment"
         android:enabled="true"
         android:icon="@drawable/ic_education"
         android:title="@string/menu_education"/>
 
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/profile_fragment"
         android:enabled="true"
         android:icon="@drawable/ic_profile"
         android:title="@string/menu_profile"/>
