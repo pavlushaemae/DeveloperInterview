@@ -3,8 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/settings_fragment">
-
     <fragment
         android:id="@+id/testing"
         android:name="com.itis.devinterview.ui.fragment.TestingFragment"
@@ -25,6 +23,10 @@
         android:id="@+id/ticketsFragment"
         android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
         android:label="TicketsFragment" />
+    <fragment
+        android:id="@+id/educationFragment"
+        android:name="com.itis.devinterview.ui.fragment.EducationFragment"
+        android:label="EducationFragment" />
     <fragment
         android:id="@+id/settings_fragment"
         android:name="com.itis.devinterview.ui.fragment.SettingsFragment"
