@@ -107,4 +107,13 @@
     <string name="daily_reminders">Ежеденевные напоминания</string>
     <string name="notification_time">Время уведомлений</string>
     <string name="for_all_questions">По всем вопросам</string>
+    <string name="profile">Profile</string>
+    <string name="education">Education</string>
+    <string name="exams">Exams</string>
+    <string name="testing">Testing</string>
+    <string name="_1">1</string>
+
+    <string name = "menu_testing">Тестирование</string>
+    <string name = "menu_education">Обучение</string>
+    <string name = "menu_profile">Профиль</string>
 </resources>
