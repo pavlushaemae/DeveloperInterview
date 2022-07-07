@@ -29,8 +29,6 @@ open class ExamFragment : Fragment(R.layout.fragment_exam) {
         if (pref != null) {
             AccessToRepository.getSP(pref)
         }
-        val serviceImpl: QuestionServiceImpl = QuestionServiceImpl()
-        serviceImpl.addQuestionList()
 
         val serviceImplForExam: QuestionServiceImpl = QuestionServiceImpl()
         val listOfQuestion = mutableListOf<String>()
@@ -46,7 +44,6 @@ open class ExamFragment : Fragment(R.layout.fragment_exam) {
             btnThirdAns.text = textQuestion?.third
             btnFourthAns.text = textQuestion?.fourth
         }
-
     }
 
     override fun onDestroyView() {
