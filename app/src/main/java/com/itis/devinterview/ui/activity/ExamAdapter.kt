@@ -3,6 +3,9 @@ package com.itis.devinterview.ui.activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.itis.devinterview.ui.fragment.ARG_OBJECT
+import com.itis.devinterview.ui.fragment.ExamFragment
+import com.itis.devinterview.ui.fragment.SecondaryExamFragment
 
 class ExamAdapter(fragment: SecondaryExamFragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 10
