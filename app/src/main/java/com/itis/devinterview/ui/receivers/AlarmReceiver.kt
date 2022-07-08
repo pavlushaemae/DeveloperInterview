@@ -16,7 +16,6 @@ class AlarmReceiver : BroadcastReceiver() {
         val i = Intent(context, MainActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val pendingIntent = createPendingIntentGetActivity(context, 0, i, 0)
-
         val builder = NotificationCompat.Builder(context!!, "channelId")
             .setSmallIcon(R.mipmap.ic_launcher_round)
             .setContentTitle("Developer interview")
