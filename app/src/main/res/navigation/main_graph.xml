@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
+    app:startDestination="@id/secondaryExamFragment">
+
     <fragment
         android:id="@+id/testing"
         android:name="com.itis.devinterview.ui.fragment.TestingFragment"
