@@ -62,11 +62,17 @@ class ConfigureNotificationsFragment :
         val intent = Intent(activity, AlarmReceiver::class.java)
         pendingIntent = createPendingIntentGetBroadcast(activity, 0, intent, 0)
 //            PendingIntent.getBroadcast(activity, 0, intent, 0)
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP, calendar!!.timeInMillis,
-            AlarmManager.INTERVAL_DAY, pendingIntent
-        )
-        Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
+        if (calendar != null) {
+            alarmManager.setRepeating(
+                AlarmManager.RTC_WAKEUP,
+                calendar!!.timeInMillis,
+                AlarmManager.INTERVAL_DAY,
+                pendingIntent
+            )
+            Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Выберите время", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun showTimePicker() {
