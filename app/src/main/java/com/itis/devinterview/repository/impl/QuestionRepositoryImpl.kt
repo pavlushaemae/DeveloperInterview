@@ -848,7 +848,7 @@ class QuestionRepositoryImpl : QuestionRepository {
 
     override fun getTenQuestions(id: Int, language: String): List<Question> {
         val list = getQuestionListByLanguage(language)
-        var count = 0;
+        var count = 0
         val ans = arrayListOf<Question>()
         val it = ("${id - 1}" + "$count").toInt()
         for (i in it until list.size) {
@@ -856,14 +856,14 @@ class QuestionRepositoryImpl : QuestionRepository {
                 break
             }
             ans.add(list[i])
-            count++;
+            count++
         }
         return ans
     }
 
     override fun getTenRandomQuestions(language: String): List<Question> {
         val list = getQuestionListByLanguage(language).toMutableList()
-        var ans = arrayListOf<Question>()
+        val ans = arrayListOf<Question>()
         for (i in 0..9) {
             val size = list.size
             val rand = (0 until size).random()

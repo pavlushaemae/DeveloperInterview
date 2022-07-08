@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">DevInterview</string>
-    <string name="testing_choose">Please, choose type of testing</string>
-    <string name="tickets">Tickets</string>
-    <string name="exam">Exam</string>
+    <string name="testing_choose">Тип тестирования</string>
+    <string name="tickets">Билеты</string>
+    <string name="exam">Экзамен</string>
     <string name="large_text">
         "                               Developer Interview\n\n"
 
@@ -116,4 +116,7 @@
     <string name = "menu_testing">Тестирование</string>
     <string name = "menu_education">Обучение</string>
     <string name = "menu_profile">Профиль</string>
+    <string name="choose_language">Выберите язык</string>
+    <string name="java">Java</string>
+    <string name="python">Python</string>
 </resources>
