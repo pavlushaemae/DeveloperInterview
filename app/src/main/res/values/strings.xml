@@ -107,4 +107,9 @@
     <string name="daily_reminders">Ежеденевные напоминания</string>
     <string name="notification_time">Время уведомлений</string>
     <string name="for_all_questions">По всем вопросам</string>
+    <string name="question">Question</string>
+    <string name="first_answer">First answer</string>
+    <string name="second_question">Second question</string>
+    <string name="third_answer">Third answer</string>
+    <string name="fourth_answer">Fourth answer</string>
 </resources>
