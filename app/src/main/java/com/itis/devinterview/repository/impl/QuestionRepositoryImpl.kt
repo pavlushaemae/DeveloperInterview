@@ -199,7 +199,16 @@ class QuestionRepositoryImpl : QuestionRepository {
             "foreign",
             "foreign"
         ),
-        Question(19, "Java", "Какого оператора не существует в Java?", "==", "??", "!=", "*", "??"),
+        Question(
+            19,
+            "Java",
+            "Какого оператора не существует в Java?",
+            "==",
+            "??",
+            "!=",
+            "*",
+            "??"
+        ),
         Question(
             20,
             "Java",
@@ -800,7 +809,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Таких аргументов нет",
             "Сам экземпляр объекта"
         ),
-        )
+    )
 
 
     override fun getQuestionById(id: Int): Question? {
@@ -835,5 +844,32 @@ class QuestionRepositoryImpl : QuestionRepository {
 
     override fun addQuestionList() {
         addList(questions)
+    }
+
+    override fun getTenQuestions(id: Int, language: String): List<Question> {
+        val list = getQuestionListByLanguage(language)
+        var count = 0
+        val ans = arrayListOf<Question>()
+        val it = ("${id - 1}" + "$count").toInt()
+        for (i in it until list.size) {
+            if (count == 10) {
+                break
+            }
+            ans.add(list[i])
+            count++
+        }
+        return ans
+    }
+
+    override fun getTenRandomQuestions(language: String): List<Question> {
+        val list = getQuestionListByLanguage(language).toMutableList()
+        val ans = arrayListOf<Question>()
+        for (i in 0..9) {
+            val size = list.size
+            val rand = (0 until size).random()
+            ans.add(list[rand])
+            list.removeAt(rand)
+        }
+        return ans
     }
 }

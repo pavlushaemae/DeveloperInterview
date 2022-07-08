@@ -18,20 +18,22 @@ class TestingFragment : Fragment(R.layout.fragment_testing) {
         _binding = FragmentTestingBinding.bind(view)
         with(binding) {
             btnTicket.setOnClickListener {
-                findNavController().navigate(R.id.action_testing_to_selectionLanguage)
+                val action = TestingFragmentDirections.actionTestingToSelectionLanguage("Ticket")
+                findNavController().navigate(action)
             }
             btnExam.setOnClickListener {
-//                findNavController().navigate(R.id.)
+                val action = TestingFragmentDirections.actionTestingToSelectionLanguage("Exam")
+                findNavController().navigate(action)
             }
         }
         val pref = activity?.getSharedPreferences("TEST", Context.MODE_PRIVATE)
         if (pref != null) {
             getSP(pref)
         }
-        val serviceImpl: QuestionServiceImpl = QuestionServiceImpl()
+        val serviceImpl = QuestionServiceImpl()
         serviceImpl.addQuestionList()
-
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
