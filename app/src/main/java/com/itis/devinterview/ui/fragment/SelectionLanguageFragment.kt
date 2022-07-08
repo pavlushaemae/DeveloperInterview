@@ -8,7 +8,6 @@ import androidx.navigation.fragment.navArgs
 import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentSelectionLanguageBinding
 
-
 class SelectionLanguageFragment : Fragment(R.layout.fragment_selection_language) {
     private var _binding: FragmentSelectionLanguageBinding? = null
     private val binding get() = _binding!!
