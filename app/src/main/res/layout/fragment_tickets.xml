@@ -6,72 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/blue">
 
-    <TextView
-        android:id="@+id/tv_ticket_first"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_planet"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="text"
-
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_ticket_second"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:background="@color/white"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_ticket_third"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_ticket_third"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_ticket_fourth"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_ticket_fourth"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_ticket_fifth"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_ticket_fifth"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="text"
-        android:textSize="24sp"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_ticket" />
 </androidx.constraintlayout.widget.ConstraintLayout>

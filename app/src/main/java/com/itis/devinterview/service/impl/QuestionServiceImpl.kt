@@ -32,4 +32,12 @@ class QuestionServiceImpl: QuestionService {
     override fun addQuestionList() {
         repository.addQuestionList()
     }
+
+    override fun getTenQuestions(id: Int, language: String): List<Question> {
+        return repository.getTenQuestions(id,language)
+    }
+
+    override fun getTenRandomQuestions(language: String): List<Question> {
+        return repository.getTenRandomQuestions(language)
+    }
 }

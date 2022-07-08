@@ -13,7 +13,7 @@ object AccessToRepository {
     private var ADDED_OR_NOT = false
     fun getSP(sharedPreferences: SharedPreferences) {
         AccessToRepository.sharedPreferences = sharedPreferences
-        var list = getListFromSP()
+        val list = getListFromSP()
         list?.map { it.id = newQuestionId++ }
         if (list != null) {
             saveListToSP(list)
@@ -35,7 +35,6 @@ object AccessToRepository {
 //        list?.remove(question)
 //        saveListToSP(list)
 //    }
-
 //    fun moveMedia(question: Question?, target: MediaStatusEnum) {
 //        val list = getListFromSP()
 //        list?.map { if (it == question) it.status = target }
