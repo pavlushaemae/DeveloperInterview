@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.itis.devinterview.databinding.FragmentConfigureNotificationsBinding
+import com.itis.devinterview.ui.receivers.AlarmReceiver
 import java.util.*
 
 
@@ -31,21 +32,17 @@ class ConfigureNotificationsFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentConfigureNotificationsBinding.bind(view)
-
         createNotificationChannel()
 
         with(binding) {
             btnSelectTime.setOnClickListener {
                 showTimePicker()
-
             }
             btnSetNotificationTime.setOnClickListener {
                 setAlarm()
-
             }
             btnOffNotifications.setOnClickListener {
                 cancelAlarm()
-
             }
         }
     }
@@ -54,21 +51,22 @@ class ConfigureNotificationsFragment :
         alarmManager =
             requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager //require
         val intent = Intent(activity, AlarmReceiver::class.java)
-        pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, 0);
+        pendingIntent = createPendingIntentGetBroadcast(activity, 0, intent, 0)
+//            PendingIntent.getBroadcast(activity, 0, intent, 0);
         alarmManager.cancel(pendingIntent)
-        Toast.makeText(context, "Alarm Cancelled", Toast.LENGTH_LONG).show()
-
+        Toast.makeText(context, "Уведомления отключены", Toast.LENGTH_LONG).show()
     }
 
     private fun setAlarm() {
         alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(activity, AlarmReceiver::class.java)
-        pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, 0)
+        pendingIntent = createPendingIntentGetBroadcast(activity, 0, intent, 0)
+//            PendingIntent.getBroadcast(activity, 0, intent, 0)
         alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP, calendar!!.timeInMillis,
             AlarmManager.INTERVAL_DAY, pendingIntent
         )
-        Toast.makeText(context, "Alarm set Successfuly", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
     }
 
     private fun showTimePicker() {
@@ -79,19 +77,20 @@ class ConfigureNotificationsFragment :
             .setTitleText("Select Alarm Time")
             .build()
 
-        getFragmentManager()?.let { picker.show(it, "foxandroid") }
+        requireActivity().supportFragmentManager.let { picker.show(it, "channelId") }
         picker.addOnPositiveButtonClickListener {
             if (picker.hour > 12) {
                 binding.tvSelectedTime.text =
                     String.format("%02d", picker.hour - 12) + " : " + String.format(
                         "%02d",
                         picker.minute
-                    ) + "PM"
+                    ) + " PM"
             } else {
-                String.format("%02d", picker.hour - 12) + " : " + String.format(
-                    "%02d",
-                    picker.minute
-                ) + "AM"
+                binding.tvSelectedTime.text =
+                    String.format("%02d", picker.hour - 12) + " : " + String.format(
+                        "%02d",
+                        picker.minute
+                    ) + " AM"
             }
             calendar = Calendar.getInstance()
             calendar!![Calendar.HOUR_OF_DAY] = picker.hour
@@ -104,15 +103,28 @@ class ConfigureNotificationsFragment :
     private fun createNotificationChannel() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name: CharSequence = "foxandroidReminderChannel"
+            val name: CharSequence = "channelIdReminderChannel"
             val description = "Channel for Alarm Manager"
             val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel("foxandroid", name, importance)
+            val channel = NotificationChannel("channelId", name, importance)
             channel.description = description
             val notificationManager = requireActivity().getSystemService(
                 NotificationManager::class.java
             )
             notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+    private fun createPendingIntentGetBroadcast(
+        context: Context?,
+        id: Int,
+        intent: Intent?,
+        flag: Int
+    ): PendingIntent {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            PendingIntent.getBroadcast(context, id, intent!!, PendingIntent.FLAG_IMMUTABLE or flag)
+        } else {
+            PendingIntent.getBroadcast(context, id, intent!!, flag)
         }
     }
 

@@ -23,7 +23,6 @@ class TicketsFragment : Fragment(R.layout.fragment_tickets) {
             tvTicketFourth.text = q?.third
             tvTicketFifth.text = q?.fourth
         }
-
     }
 
     override fun onDestroyView() {

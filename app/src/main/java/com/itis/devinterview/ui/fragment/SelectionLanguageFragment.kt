@@ -1,13 +1,11 @@
-package com.itis.devinterview.ui.fragment;
+package com.itis.devinterview.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentSelectionLanguageBinding
-
 
 class SelectionLanguageFragment : Fragment(R.layout.fragment_selection_language) {
     private var _binding: FragmentSelectionLanguageBinding? = null
