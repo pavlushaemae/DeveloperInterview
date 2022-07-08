@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="0dp"
-            android:layout_height="160dp"
+            android:layout_height="140dp"
             android:background="@color/white"
             android:fontFamily="@font/ubuntu_bold"
             android:gravity="center"

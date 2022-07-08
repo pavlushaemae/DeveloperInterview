@@ -7,7 +7,7 @@ import com.google.gson.reflect.TypeToken
 import com.itis.devinterview.model.Question
 
 object AccessToRepository {
-    var newQuestionId: Int = 0
+    private var newQuestionId: Int = 0
     private var sharedPreferences: SharedPreferences? = null
     private const val QUESTIONS_LIST = "questions_list"
     private var ADDED_OR_NOT = false

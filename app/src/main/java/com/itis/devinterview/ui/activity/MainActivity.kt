@@ -8,7 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itis.devinterview.R
 
-class MainActivity() : AppCompatActivity() {
+class MainActivity: AppCompatActivity() {
     private lateinit var controller: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
