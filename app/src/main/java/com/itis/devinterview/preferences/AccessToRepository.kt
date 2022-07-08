@@ -7,13 +7,13 @@ import com.google.gson.reflect.TypeToken
 import com.itis.devinterview.model.Question
 
 object AccessToRepository {
-    var newQuestionId: Int = 0
+    private var newQuestionId: Int = 0
     private var sharedPreferences: SharedPreferences? = null
     private const val QUESTIONS_LIST = "questions_list"
     private var ADDED_OR_NOT = false
     fun getSP(sharedPreferences: SharedPreferences) {
         AccessToRepository.sharedPreferences = sharedPreferences
-        var list = getListFromSP()
+        val list = getListFromSP()
         list?.map { it.id = newQuestionId++ }
         if (list != null) {
             saveListToSP(list)
@@ -35,7 +35,6 @@ object AccessToRepository {
 //        list?.remove(question)
 //        saveListToSP(list)
 //    }
-
 //    fun moveMedia(question: Question?, target: MediaStatusEnum) {
 //        val list = getListFromSP()
 //        list?.map { if (it == question) it.status = target }
