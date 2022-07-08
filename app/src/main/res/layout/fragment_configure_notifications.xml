@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="10dp"
+    android:paddingTop="0dp"
     android:paddingEnd="10dp"
-    android:paddingBottom="500dp">
+    android:paddingBottom="350dp">
 
     <TextView
         android:id="@+id/tv_app_name"
@@ -14,50 +15,67 @@
         android:paddingStart="125dp"
         android:paddingEnd="0dp"
         android:text="@string/developer_interview"
-        app:layout_constraintBottom_toTopOf="@id/tv_notifications"
+        app:layout_constraintBottom_toTopOf="@id/tv_selected_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_notifications"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/notifications"
-        app:layout_constraintBottom_toTopOf="@id/tv_app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_daily_reminders" />
 
     <TextView
-        android:id="@+id/tv_daily_reminders"
-        android:layout_width="0dp"
+        android:id="@+id/tv_selected_time"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:text="@string/daily_reminders"
-        app:layout_constraintBottom_toTopOf="@id/tv_notification_time"
+        android:text="08:45 PM"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/btn_select_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_notifications" />
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name"/>
 
-    <TextView
-        android:id="@+id/tv_notification_time"
+    <Button
+        android:id="@+id/btn_select_time"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/notification_time"
+        android:text="Выберите время"
+        android:backgroundTint="@color/background_color_light"
+        app:layout_constraintBottom_toTopOf="@id/btn_set_notification_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_time" />
+
+    <Button
+        android:id="@+id/btn_set_notification_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Назначить уведомления"
+        android:backgroundTint="@color/background_color_light"
+        app:layout_constraintBottom_toTopOf="@id/btn_off_notifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_select_time" />
+
+    <Button
+        android:id="@+id/btn_off_notifications"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Выключить уведомления"
+        android:backgroundTint="@color/background_color_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_daily_reminders" />
+        app:layout_constraintTop_toBottomOf="@id/btn_set_notification_time"/>
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_daily_reminders"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        app:layout_constraintBottom_toTopOf="@id/tv_notification_time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_notifications" />
+
+<!--    <androidx.appcompat.widget.SwitchCompat-->
+<!--        android:id="@+id/switch_daily_reminders"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:checked="true"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/btn_set_notification_time"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/btn_off_notifications" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
