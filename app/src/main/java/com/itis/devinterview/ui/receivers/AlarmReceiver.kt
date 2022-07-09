@@ -9,7 +9,6 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.itis.devinterview.R
 import com.itis.devinterview.ui.activity.MainActivity
-import com.itis.devinterview.ui.fragment.SettingsFragment
 
 class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
