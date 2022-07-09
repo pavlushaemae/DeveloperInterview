@@ -27,11 +27,11 @@
             app:argType="string"
             app:nullable="false" />
         <action
-            android:id="@+id/action_selectionLanguage_to_secondaryExamFragment"
-            app:destination="@id/secondaryExamFragment" />
-        <action
             android:id="@+id/action_selectionLanguage_to_inDevelopingFragment"
             app:destination="@id/inDevelopingFragment" />
+        <action
+            android:id="@+id/action_selectionLanguage_to_onExamFragment"
+            app:destination="@id/onExamFragment" />
     </fragment>
     <fragment
         android:id="@+id/ticketsFragment"
@@ -43,8 +43,8 @@
             app:argType="string"
             app:nullable="false" />
         <action
-            android:id="@+id/action_ticketsFragment_to_secondaryOnTicketFragment"
-            app:destination="@id/secondaryOnTicketFragment" />
+            android:id="@+id/action_ticketsFragment_to_onTicketFragment"
+            app:destination="@id/onTicketFragment" />
     </fragment>
     <fragment
         android:id="@+id/educationFragment"
@@ -98,16 +98,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_user_agreement" />
     <fragment
-        android:id="@+id/secondaryExamFragment"
-        android:name="com.itis.devinterview.ui.fragment.SecondaryExamFragment"
-        android:label="fragment_secondary_exam"
-        tools:layout="@layout/fragment_secondary_exam">
-        <argument
-            android:name="languageArg"
-            app:argType="string"
-            app:nullable="false" />
-    </fragment>
-    <fragment
         android:id="@+id/profile_fragment"
         android:name="com.itis.devinterview.ui.fragment.ProfileFragment"
         android:label="ProfileFragment"
@@ -117,22 +107,52 @@
             app:destination="@id/settings_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/secondaryOnTicketFragment"
-        android:name="com.itis.devinterview.ui.fragment.SecondaryOnTicketFragment"
-        android:label="SecondaryOnTicketFragment"
-        tools:layout="@layout/fragment_secondary_on_ticket">
-        <argument
-            android:name="idArg"
-            app:argType="integer"
-            app:nullable="false" />
+        android:id="@+id/inDevelopingFragment"
+        android:name="com.itis.devinterview.ui.fragment.InDevelopingFragment"
+        android:label="InDevelopingFragment"
+        tools:layout="@layout/fragment_in_developing"/>
+    <fragment
+        android:id="@+id/onExamFragment"
+        android:name="com.itis.devinterview.ui.fragment.OnExamFragment"
+        android:label="OnExamFragment"
+        tools:layout="@layout/fragment_on_exam">
+        <action
+            android:id="@+id/action_onExamFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
         <argument
             android:name="languageArg"
             app:argType="string"
             app:nullable="false" />
     </fragment>
     <fragment
-        android:id="@+id/inDevelopingFragment"
-        android:name="com.itis.devinterview.ui.fragment.InDevelopingFragment"
-        android:label="InDevelopingFragment"
-        tools:layout="@layout/fragment_in_developing"/>
+        android:id="@+id/resultFragment"
+        android:name="com.itis.devinterview.ui.fragment.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <argument android:name="answersArg"
+            app:argType="integer"
+            app:nullable="false"/>
+        <argument android:name="incorrectAnswersArg"
+            app:argType="integer"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_resultFragment_to_testing"
+            app:destination="@id/testing" />
+    </fragment>
+    <fragment
+        android:id="@+id/onTicketFragment"
+        android:name="com.itis.devinterview.ui.fragment.OnTicketFragment"
+        android:label="OnTicketFragment" >
+        <action
+            android:id="@+id/action_onTicketFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <argument
+            android:name="idArg"
+            app:argType="integer"
+            app:nullable="false"/>
+        <argument
+            android:name="languageArg"
+            app:argType="string"
+            app:nullable="false"/>
+    </fragment>
 </navigation>

@@ -27,7 +27,7 @@ class TicketsFragment : Fragment(R.layout.fragment_tickets) {
         adapter = TicketsAdapter(
             TicketsRepository.tickets,
         ) {
-            val action = TicketsFragmentDirections.actionTicketsFragmentToSecondaryOnTicketFragment(
+            val action = TicketsFragmentDirections.actionTicketsFragmentToOnTicketFragment(
                 it.id,
                 language
             )
