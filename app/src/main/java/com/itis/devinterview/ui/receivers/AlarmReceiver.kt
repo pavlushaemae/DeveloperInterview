@@ -11,6 +11,7 @@ import com.itis.devinterview.R
 import com.itis.devinterview.ui.activity.MainActivity
 
 class AlarmReceiver : BroadcastReceiver() {
+
     override fun onReceive(context: Context?, intent: Intent?) {
         val i = Intent(context, MainActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
