@@ -16,6 +16,15 @@
         <item name="alertDialogTheme">@style/YDialog</item>
     </style>
 
+    <style name="UbuntuTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="UbuntuButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">ubuntu_bold</item>
+    </style>
+
     <style name="YDialog" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
         <!-- Base colors -->
         <item name="android:textColorPrimary">@color/dialog_text</item>
