@@ -25,7 +25,6 @@ class ConfigureNotificationsFragment :
     private val binding get() = _binding!!
     private lateinit var picker: MaterialTimePicker
     private var calendar: Calendar? = null
-
     private lateinit var alarmManager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
 
@@ -52,7 +51,6 @@ class ConfigureNotificationsFragment :
             requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager //require
         val intent = Intent(activity, AlarmReceiver::class.java)
         pendingIntent = createPendingIntentGetBroadcast(activity, 0, intent, 0)
-//            PendingIntent.getBroadcast(activity, 0, intent, 0);
         alarmManager.cancel(pendingIntent)
         Toast.makeText(context, "Уведомления отключены", Toast.LENGTH_LONG).show()
     }
@@ -61,7 +59,6 @@ class ConfigureNotificationsFragment :
         alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(activity, AlarmReceiver::class.java)
         pendingIntent = createPendingIntentGetBroadcast(activity, 0, intent, 0)
-//            PendingIntent.getBroadcast(activity, 0, intent, 0)
         if (calendar != null) {
             alarmManager.setRepeating(
                 AlarmManager.RTC_WAKEUP,
@@ -107,7 +104,6 @@ class ConfigureNotificationsFragment :
     }
 
     private fun createNotificationChannel() {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name: CharSequence = "channelIdReminderChannel"
             val description = "Channel for Alarm Manager"
