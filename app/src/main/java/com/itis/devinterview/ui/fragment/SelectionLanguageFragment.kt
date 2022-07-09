@@ -29,6 +29,15 @@ class SelectionLanguageFragment : Fragment(R.layout.fragment_selection_language)
                         .actionSelectionLanguageToTicketsFragment("Python")
                     findNavController().navigate(action)
                 }
+                btnCPlusPlus.setOnClickListener {
+                    findNavController().navigate(R.id.action_selectionLanguage_to_inDevelopingFragment)
+                }
+                btnKotlin.setOnClickListener {
+                    findNavController().navigate(R.id.action_selectionLanguage_to_inDevelopingFragment)
+                }
+                btnPhp.setOnClickListener {
+                    findNavController().navigate(R.id.action_selectionLanguage_to_inDevelopingFragment)
+                }
             }else if (typeOfTesting == "Exam"){
                 btnJava.setOnClickListener {
                     val action = SelectionLanguageFragmentDirections
@@ -39,6 +48,15 @@ class SelectionLanguageFragment : Fragment(R.layout.fragment_selection_language)
                     val action = SelectionLanguageFragmentDirections
                         .actionSelectionLanguageToSecondaryExamFragment("Python")
                     findNavController().navigate(action)
+                }
+                btnCPlusPlus.setOnClickListener {
+                    findNavController().navigate(R.id.action_selectionLanguage_to_inDevelopingFragment)
+                }
+                btnKotlin.setOnClickListener {
+                    findNavController().navigate(R.id.action_selectionLanguage_to_inDevelopingFragment)
+                }
+                btnPhp.setOnClickListener {
+                    findNavController().navigate(R.id.action_selectionLanguage_to_inDevelopingFragment)
                 }
             }
         }
