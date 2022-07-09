@@ -20,6 +20,7 @@
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_education.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_exam.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_feedback.xml" value="0.264" />
+        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_in_developing.xml" value="0.11197916666666667" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_on_ticket.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_profile.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_progress.xml" value="0.2078804347826087" />
@@ -35,9 +36,7 @@
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/item_bottom_of_education.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/item_ticket.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/toast_with_custom.xml" value="0.1" />
-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_profile.xml" value="0.2045" />
-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_choicing_language.xml" value="0.25" />  
-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/menu/menu_main.xml" value="0.25" />
+        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

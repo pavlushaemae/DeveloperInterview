@@ -41,6 +41,10 @@
     <string name="pavel_link"><a href="https://vk.com/pidixeev">Пидиксеев Павел</a></string>
     <string name="alina_link"><a href="https://vk.com/ilukida">Васькина Алина</a></string>
     <string name="settings">Настройки</string>
+    <string name="in_developing">В разработке…</string>
+    <string name="c_plus_plus">C++</string>
+    <string name="kotlin">Kotlin</string>
+    <string name="php">PHP</string>
     <string name="user_agreement_text">
         "          ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ\n\n"
 "1. ОПРЕДЕЛЕНИЕ ПОНЯТИЙ\n"
