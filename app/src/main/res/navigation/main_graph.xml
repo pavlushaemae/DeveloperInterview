@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_selectionLanguage_to_secondaryExamFragment"
             app:destination="@id/secondaryExamFragment" />
+        <action
+            android:id="@+id/action_selectionLanguage_to_inDevelopingFragment"
+            app:destination="@id/inDevelopingFragment" />
     </fragment>
     <fragment
         android:id="@+id/ticketsFragment"
@@ -127,4 +130,9 @@
             app:argType="string"
             app:nullable="false" />
     </fragment>
+    <fragment
+        android:id="@+id/inDevelopingFragment"
+        android:name="com.itis.devinterview.ui.fragment.InDevelopingFragment"
+        android:label="InDevelopingFragment"
+        tools:layout="@layout/fragment_in_developing"/>
 </navigation>
