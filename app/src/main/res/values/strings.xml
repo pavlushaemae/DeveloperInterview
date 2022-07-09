@@ -123,4 +123,11 @@
     <string name="choose_language">Выберите язык</string>
     <string name="java">Java</string>
     <string name="python">Python</string>
+    <string name="notificate">Уведомления</string>
+    <string name="dinara_link"><a href="https://vk.com/dinozavrog">Зарипова Динара</a></string>
+    <string name="andrew_link"><a href="https://vk.com/w1nway">Бартновский Андрей</a></string>
+    <string name="danila_link"><a href="https://vk.com/danilagorlov">Горлов Данила</a></string>
+    <string name="pavel_link"><a href="https://vk.com/pidixeev">Пидиксеев Павел</a></string>
+    <string name="alina_link"><a href="https://vk.com/ilukida">Васькина Алина</a></string>
+    <string name="settings">Настройки</string>
 </resources>

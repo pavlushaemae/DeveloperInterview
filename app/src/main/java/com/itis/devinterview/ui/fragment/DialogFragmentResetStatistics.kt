@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.itis.devinterview.R
+import java.io.File
 
 class DialogFragmentResetStatistics : DialogFragment() {
 
@@ -16,6 +17,7 @@ class DialogFragmentResetStatistics : DialogFragment() {
                 .setMessage("Прогресс обучения будет сброшен\nВы уверены?")
                 .setCancelable(true)
                 .setPositiveButton("Да") { dialog, id ->
+                    File(requireContext().cacheDir.path).deleteRecursively()
                     Toast.makeText(
                         activity, "Прогресс сброшен",
                         Toast.LENGTH_LONG

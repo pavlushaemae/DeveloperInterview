@@ -7,12 +7,12 @@
     android:paddingEnd="10dp">
 
     <TextView
-        android:id="@+id/tv_app_name"
-        android:layout_width="0dp"
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="125dp"
-        android:paddingEnd="10dp"
-        android:text="@string/developer_interview"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/tv_themes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,10 +23,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/theme_app"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_theme_change"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+        app:layout_constraintTop_toBottomOf="@+id/settings" />
 
     <TextView
         android:id="@+id/tv_theme_change"
@@ -44,6 +45,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/statistics_app"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_reset_statistics"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +66,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/notifications"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_configure_notifications"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +88,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/other"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

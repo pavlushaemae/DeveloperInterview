@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/blue">
+    android:layout_height="match_parent" >
 
     <ImageView
         android:id="@+id/imageView"
@@ -21,7 +20,6 @@
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:fontFamily="@font/source_sans_pro_bold"
         android:text="Прогресс"
         android:textColor="#303030"
         android:textSize="16sp"
@@ -38,7 +36,6 @@
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:fontFamily="@font/source_sans_pro_bold"
         android:text="Настройки"
         android:textColor="#303030"
         android:textSize="16sp"
@@ -55,7 +52,6 @@
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:fontFamily="@font/source_sans_pro_bold"
         android:text="что-то"
         android:textColor="#303030"
         android:textSize="16sp"
