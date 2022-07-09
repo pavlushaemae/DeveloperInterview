@@ -60,5 +60,6 @@ open class ExamFragment : Fragment(R.layout.fragment_exam) {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+
     }
 }
