@@ -10,12 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.itis.devinterview.R
+import com.itis.devinterview.R.*
 import com.itis.devinterview.databinding.FragmentOnExamBinding
 import com.itis.devinterview.model.Question
 import com.itis.devinterview.service.impl.QuestionServiceImpl
 
-class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
+
+class OnExamFragment: Fragment(layout.fragment_on_exam) {
     private var _binding: FragmentOnExamBinding? = null
     private val binding get() = _binding!!
     private val questionServiceImpl = QuestionServiceImpl()
@@ -28,10 +29,9 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentOnExamBinding.bind(view)
-        val args by navArgs<OnTicketFragmentArgs>()
-        val idOfTicket: Int = args.idArg
+        val args by navArgs<OnExamFragmentArgs>()
         val language = args.languageArg
-        listOfQuestions = questionServiceImpl.getTenQuestions(idOfTicket, language)
+        listOfQuestions = questionServiceImpl.getTenRandomQuestions(language)
         startTimer(600)
         with(binding) {
             tvQuestions.text = "${currentQuestionPosition+1}/${listOfQuestions.size}"
@@ -46,7 +46,7 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionFirst.setBackgroundResource(R.drawable.round_back_red_10)
+                    acbOptionFirst.setBackgroundResource(drawable.round_back_red_10)
                     acbOptionFirst.setTextColor(Color.WHITE)
                     revealAnswer()
                 }
@@ -57,7 +57,7 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionSecond.setBackgroundResource(R.drawable.round_back_red_10)
+                    acbOptionSecond.setBackgroundResource(drawable.round_back_red_10)
                     acbOptionSecond.setTextColor(Color.WHITE)
                     revealAnswer()
                 }
@@ -68,7 +68,7 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionThird.setBackgroundResource(R.drawable.round_back_red_10)
+                    acbOptionThird.setBackgroundResource(drawable.round_back_red_10)
                     acbOptionThird.setTextColor(Color.WHITE)
                     revealAnswer()
                 }
@@ -79,7 +79,7 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionFourth.setBackgroundResource(R.drawable.round_back_red_10)
+                    acbOptionFourth.setBackgroundResource(drawable.round_back_red_10)
                     acbOptionFourth.setTextColor(Color.WHITE)
                     revealAnswer()
                 }
@@ -106,7 +106,7 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                 questionTimer.stop()
 
                 Toast.makeText(context, "Время вышло", Toast.LENGTH_SHORT)
-                val action = OnTicketFragmentDirections.actionOnTicketFragmentToResultFragment(correctAnswers, 10 - correctAnswers)
+                val action = OnExamFragmentDirections.actionOnExamFragmentToResultFragment(correctAnswers, 10 - correctAnswers)
                 findNavController().navigate(action)
             }
         }
@@ -115,16 +115,16 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
     private fun revealAnswer() {
         val getAnswer = listOfQuestions[currentQuestionPosition].correct
         if(binding.acbOptionFirst.text.toString() == getAnswer) {
-            binding.acbOptionFirst.setBackgroundResource(R.drawable.round_back_green_10)
+            binding.acbOptionFirst.setBackgroundResource(drawable.round_back_green_10)
             binding.acbOptionFirst.setTextColor(Color.WHITE)
         }else if (binding.acbOptionSecond.text.toString() == getAnswer) {
-            binding.acbOptionSecond.setBackgroundResource(R.drawable.round_back_green_10)
+            binding.acbOptionSecond.setBackgroundResource(drawable.round_back_green_10)
             binding.acbOptionSecond.setTextColor(Color.WHITE)
         }else if (binding.acbOptionThird.text.toString() == getAnswer) {
-            binding.acbOptionThird.setBackgroundResource(R.drawable.round_back_green_10)
+            binding.acbOptionThird.setBackgroundResource(drawable.round_back_green_10)
             binding.acbOptionThird.setTextColor(Color.WHITE)
         }else if (binding.acbOptionFourth.text.toString() == getAnswer) {
-            binding.acbOptionFourth.setBackgroundResource(R.drawable.round_back_green_10)
+            binding.acbOptionFourth.setBackgroundResource(drawable.round_back_green_10)
             binding.acbOptionFourth.setTextColor(Color.WHITE)
         }
     }
@@ -137,13 +137,13 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
         if (currentQuestionPosition < listOfQuestions.size) {
             selectedOptionByUser = ""
             with(binding) {
-                acbOptionFirst.setBackgroundResource(R.drawable.round_back_white_stroke)
+                acbOptionFirst.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionFirst.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionSecond.setBackgroundResource(R.drawable.round_back_white_stroke)
+                acbOptionSecond.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionSecond.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionThird.setBackgroundResource(R.drawable.round_back_white_stroke)
+                acbOptionThird.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionThird.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionFourth.setBackgroundResource(R.drawable.round_back_white_stroke)
+                acbOptionFourth.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionFourth.setTextColor(Color.parseColor("#FF000000"))
                 tvQuestions.text = "${currentQuestionPosition + 1}/${listOfQuestions.size}"
                 tvQuestion.text = listOfQuestions[currentQuestionPosition].question
@@ -153,8 +153,8 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                 acbOptionFourth.text = listOfQuestions[currentQuestionPosition].fourth
             }
         } else {
-            val action = OnTicketFragmentDirections.actionOnTicketFragmentToResultFragment(correctAnswers,10 - correctAnswers)
-            findNavController().navigate(action)
+            val action = OnExamFragmentDirections.actionOnExamFragmentToResultFragment(correctAnswers,10 - correctAnswers)
+                findNavController().navigate(action)
         }
     }
 
@@ -162,6 +162,4 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
         _binding = null
         super.onDestroyView()
     }
-
-
 }
