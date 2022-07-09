@@ -24,5 +24,6 @@ open class ExamFragment : Fragment(R.layout.fragment_exam) {
             val textQuestion: TextView = view.findViewById(R.id.tv_question)
             textQuestion.text = getInt(ARG_OBJECT).toString()
         }
+
     }
 }

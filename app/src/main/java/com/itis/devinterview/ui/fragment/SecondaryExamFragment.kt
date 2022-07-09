@@ -56,29 +56,6 @@ class SecondaryExamFragment : Fragment(R.layout.fragment_secondary_exam) {
         // Здесь вопросы, 10 вопросов, они уже подобраны.
         // Нужно просто из этого листа перепихать их в вопросы билета на экране
         val listOfQuestions = questionServiceImpl.getTenRandomQuestions(language)
-        val textQuestion = serviceImplForExam.getRandomQuestion()
-
-        with(binding) {
-            tvQuestion.text = textQuestion?.question
-            btnFirstAns.text = textQuestion?.first
-            btnSecondAns.text = textQuestion?.second
-            btnThirdAns.text = textQuestion?.third
-            btnFourthAns.text = textQuestion?.fourth
-        }
-    }
-
-    private fun startCountDownTimer(timeMillis: Long) {
-        timer?.cancel()
-        timer = object : CountDownTimer(timeMillis, 1000){
-            override fun onTick(millisUntilFinished: Long) {
-                binding.tvTimer.text = millisUntilFinished.toString()
-            }
-
-            override fun onFinish() {
-                binding.tvTimer.text = "Finish"
-            }
-        }.start()
-    }
     }
 
     override fun onDestroyView() {
