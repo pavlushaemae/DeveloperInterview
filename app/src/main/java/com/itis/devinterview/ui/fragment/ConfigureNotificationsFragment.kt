@@ -90,7 +90,7 @@ class ConfigureNotificationsFragment :
                     ) + " PM"
             } else {
                 binding.tvSelectedTime.text =
-                    String.format("%02d", picker.hour - 12) + " : " + String.format(
+                    String.format("%02d", picker.hour) + " : " + String.format(
                         "%02d",
                         picker.minute
                     ) + " AM"

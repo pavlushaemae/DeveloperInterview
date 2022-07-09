@@ -19,7 +19,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context!!, "channelId")
             .setSmallIcon(R.mipmap.ic_launcher_round)
             .setContentTitle("Developer interview")
-            .setContentText("Пришло время программировать)")
+            .setContentText("It's code time!")
             .setAutoCancel(true)
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
