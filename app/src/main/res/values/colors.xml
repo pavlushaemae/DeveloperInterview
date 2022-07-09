@@ -22,7 +22,7 @@
     <color name="on_error_color_light">#FFFFFF</color>
     <color name="primary_color_dark">#FFFFFF</color>
     <color name="primary_variant_color_dark">#3700B3</color>
-    <color name="secondary_color_dark">#03DAC6</color>
+    <color name="secondary_color_dark">#FFFFFF</color>
     <color name="background_color_dark">#121212</color>
     <color name="surface_color_dark">#121212</color>
     <color name="error_color_dark">#CF6679</color>
