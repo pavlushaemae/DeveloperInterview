@@ -15,7 +15,7 @@ import com.itis.devinterview.databinding.FragmentOnExamBinding
 import com.itis.devinterview.model.Question
 import com.itis.devinterview.service.impl.QuestionServiceImpl
 
-class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
+class OnTicketFragment : Fragment(R.layout.fragment_on_ticket) {
     private var _binding: FragmentOnExamBinding? = null
     private val binding get() = _binding!!
     private val questionServiceImpl = QuestionServiceImpl()
@@ -23,7 +23,9 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
     private var currentQuestionPosition = 0
     private var selectedOptionByUser = ""
     private lateinit var listOfQuestions: List<Question>
-    private var correctAnswers = 0;
+    private var correctAnswers = 0
+    private lateinit var lang: String
+    private var idOfTick: Int = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,20 +33,22 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
         val args by navArgs<OnTicketFragmentArgs>()
         val idOfTicket: Int = args.idArg
         val language = args.languageArg
+        lang = language
+        idOfTick = idOfTicket
         listOfQuestions = questionServiceImpl.getTenQuestions(idOfTicket, language)
         startTimer(600)
         with(binding) {
-            tvQuestions.text = "${currentQuestionPosition+1}/${listOfQuestions.size}"
+            tvQuestions.text = "${currentQuestionPosition + 1}/${listOfQuestions.size}"
             tvQuestion.text = listOfQuestions[0].question
             acbOptionFirst.text = listOfQuestions[0].first
             acbOptionSecond.text = listOfQuestions[0].second
             acbOptionThird.text = listOfQuestions[0].third
             acbOptionFourth.text = listOfQuestions[0].fourth
             acbOptionFirst.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionFirst.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
                     acbOptionFirst.setBackgroundResource(R.drawable.round_back_red_10)
                     acbOptionFirst.setTextColor(Color.WHITE)
@@ -52,10 +56,10 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                 }
             }
             acbOptionSecond.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionSecond.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
                     acbOptionSecond.setBackgroundResource(R.drawable.round_back_red_10)
                     acbOptionSecond.setTextColor(Color.WHITE)
@@ -63,10 +67,10 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                 }
             }
             acbOptionThird.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionThird.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
                     acbOptionThird.setBackgroundResource(R.drawable.round_back_red_10)
                     acbOptionThird.setTextColor(Color.WHITE)
@@ -74,10 +78,10 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                 }
             }
             acbOptionFourth.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionFourth.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
                     acbOptionFourth.setBackgroundResource(R.drawable.round_back_red_10)
                     acbOptionFourth.setTextColor(Color.WHITE)
@@ -85,8 +89,8 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                 }
             }
             btnNext.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
-                    Toast.makeText(context,"Выберите правильный ответ", Toast.LENGTH_SHORT).show()
+                if (selectedOptionByUser.isEmpty()) {
+                    Toast.makeText(context, "Выберите правильный ответ", Toast.LENGTH_SHORT).show()
                 } else {
                     changeNextQuestion()
                 }
@@ -105,8 +109,13 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
             if (questionTimer.text.toString() == "00:00" || questionTimer.text.toString()[3] == ':') {
                 questionTimer.stop()
 
-                Toast.makeText(context, "Время вышло", Toast.LENGTH_SHORT)
-                val action = OnTicketFragmentDirections.actionOnTicketFragmentToResultFragment(correctAnswers, 10 - correctAnswers)
+                Toast.makeText(context, "Время вышло", Toast.LENGTH_SHORT).show()
+                val action = OnTicketFragmentDirections.actionOnTicketFragmentToResultFragment(
+                    correctAnswers,
+                    10 - correctAnswers,
+                    lang,
+                    idOfTick
+                )
                 findNavController().navigate(action)
             }
         }
@@ -114,16 +123,16 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
 
     private fun revealAnswer() {
         val getAnswer = listOfQuestions[currentQuestionPosition].correct
-        if(binding.acbOptionFirst.text.toString() == getAnswer) {
+        if (binding.acbOptionFirst.text.toString() == getAnswer) {
             binding.acbOptionFirst.setBackgroundResource(R.drawable.round_back_green_10)
             binding.acbOptionFirst.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionSecond.text.toString() == getAnswer) {
+        } else if (binding.acbOptionSecond.text.toString() == getAnswer) {
             binding.acbOptionSecond.setBackgroundResource(R.drawable.round_back_green_10)
             binding.acbOptionSecond.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionThird.text.toString() == getAnswer) {
+        } else if (binding.acbOptionThird.text.toString() == getAnswer) {
             binding.acbOptionThird.setBackgroundResource(R.drawable.round_back_green_10)
             binding.acbOptionThird.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionFourth.text.toString() == getAnswer) {
+        } else if (binding.acbOptionFourth.text.toString() == getAnswer) {
             binding.acbOptionFourth.setBackgroundResource(R.drawable.round_back_green_10)
             binding.acbOptionFourth.setTextColor(Color.WHITE)
         }
@@ -131,7 +140,7 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
 
     private fun changeNextQuestion() {
         currentQuestionPosition++
-        if ((currentQuestionPosition + 1 ) == listOfQuestions.size) {
+        if ((currentQuestionPosition + 1) == listOfQuestions.size) {
             binding.btnNext.text = "Готово"
         }
         if (currentQuestionPosition < listOfQuestions.size) {
@@ -153,7 +162,12 @@ class OnTicketFragment: Fragment(R.layout.fragment_on_ticket) {
                 acbOptionFourth.text = listOfQuestions[currentQuestionPosition].fourth
             }
         } else {
-            val action = OnTicketFragmentDirections.actionOnTicketFragmentToResultFragment(correctAnswers,10 - correctAnswers)
+            val action = OnTicketFragmentDirections.actionOnTicketFragmentToResultFragment(
+                correctAnswers,
+                10 - correctAnswers,
+                lang,
+                idOfTick
+            )
             findNavController().navigate(action)
         }
     }
