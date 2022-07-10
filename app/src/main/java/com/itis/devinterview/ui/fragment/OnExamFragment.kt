@@ -32,7 +32,7 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
         val args by navArgs<OnExamFragmentArgs>()
         val language = args.languageArg
         listOfQuestions = questionServiceImpl.getTenRandomQuestions(language)
-        startTimer(600)
+        startTimer(180)
         with(binding) {
             tvQuestions.text = "${currentQuestionPosition+1}/${listOfQuestions.size}"
             tvQuestion.text = listOfQuestions[0].question
@@ -46,9 +46,9 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionFirst.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionFirst.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionFirst.setTextColor(Color.WHITE)
-                    revealAnswer()
+//                    revealAnswer()
                 }
             }
             acbOptionSecond.setOnClickListener {
@@ -57,9 +57,9 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionSecond.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionSecond.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionSecond.setTextColor(Color.WHITE)
-                    revealAnswer()
+//                    revealAnswer()
                 }
             }
             acbOptionThird.setOnClickListener {
@@ -68,9 +68,9 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionThird.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionThird.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionThird.setTextColor(Color.WHITE)
-                    revealAnswer()
+//                    revealAnswer()
                 }
             }
             acbOptionFourth.setOnClickListener {
@@ -79,9 +79,9 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++;
                     }
-                    acbOptionFourth.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionFourth.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionFourth.setTextColor(Color.WHITE)
-                    revealAnswer()
+//                    revealAnswer()
                 }
             }
             btnNext.setOnClickListener {
@@ -112,22 +112,22 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
         }
     }
 
-    private fun revealAnswer() {
-        val getAnswer = listOfQuestions[currentQuestionPosition].correct
-        if(binding.acbOptionFirst.text.toString() == getAnswer) {
-            binding.acbOptionFirst.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionFirst.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionSecond.text.toString() == getAnswer) {
-            binding.acbOptionSecond.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionSecond.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionThird.text.toString() == getAnswer) {
-            binding.acbOptionThird.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionThird.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionFourth.text.toString() == getAnswer) {
-            binding.acbOptionFourth.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionFourth.setTextColor(Color.WHITE)
-        }
-    }
+//    private fun revealAnswer() {
+//        val getAnswer = listOfQuestions[currentQuestionPosition].correct
+//        if(binding.acbOptionFirst.text.toString() == getAnswer) {
+//            binding.acbOptionFirst.setBackgroundResource(drawable.round_back_green_10)
+//            binding.acbOptionFirst.setTextColor(Color.WHITE)
+//        }else if (binding.acbOptionSecond.text.toString() == getAnswer) {
+//            binding.acbOptionSecond.setBackgroundResource(drawable.round_back_green_10)
+//            binding.acbOptionSecond.setTextColor(Color.WHITE)
+//        }else if (binding.acbOptionThird.text.toString() == getAnswer) {
+//            binding.acbOptionThird.setBackgroundResource(drawable.round_back_green_10)
+//            binding.acbOptionThird.setTextColor(Color.WHITE)
+//        }else if (binding.acbOptionFourth.text.toString() == getAnswer) {
+//            binding.acbOptionFourth.setBackgroundResource(drawable.round_back_green_10)
+//            binding.acbOptionFourth.setTextColor(Color.WHITE)
+//        }
+//    }
 
     private fun changeNextQuestion() {
         currentQuestionPosition++

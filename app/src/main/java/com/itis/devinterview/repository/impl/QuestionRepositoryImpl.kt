@@ -164,7 +164,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Что вернет метод, объявленный следующим образом:\n" +
                     "public static int getAmount() ?",
             "Не ясно, надо смотреть код метода.",
-            "Не ясно, надо смотреть код метода.",
+            "Вернет количество переменных в классе.",
             "Вернет ссылку на объект класса this.",
             "Вернет целочисленное значение. ",
             "Вернет целочисленное значение. "
@@ -185,7 +185,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Выберите вариант, который содержит в основные принципы JAVA-ООП?",
             "Абстракция, наследование, полиморфизм и инкапсуляция ",
             "Только наследование",
-            "Абстракция, наследование, полиморфизм и инкапсуляция ",
+            "Только полиморфизм ",
             "Объективность и ориентированность",
             "Абстракция, наследование, полиморфизм и инкапсуляция "
         ),
@@ -196,7 +196,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "private",
             "structfp",
             "foreign",
-            "foreign",
+            "protected",
             "foreign"
         ),
         Question(
@@ -246,7 +246,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Библиотека для создания UML диаграмм на языке Java",
             "Протокол передачи данных в бинарном виде, а также сериализации данных ",
             "Junit это фреймворк для юнит-тестирования на языке JAVA ",
-            "Junit это фреймворк для юнит-тестирования на языке JAVA ",
+            "Junit это фреймворк для работы с Mockito ",
             "Junit это фреймворк для юнит-тестирования на языке JAVA "
         ),
         Question(
@@ -414,7 +414,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Python",
             "Как создать инициализатор класса А?",
             "A(параметры инициализатора)",
-            "def __init__ (параметры инициализатора)",
+            "__init__ (параметры инициализатора)",
             "def __init__ (параметры инициализатора)",
             "def init(параметры инициализатора)",
             "def __init__ (параметры инициализатора)"
@@ -646,7 +646,12 @@ class QuestionRepositoryImpl : QuestionRepository {
         Question(
             63, "Python", "Что выведет данный код? \n" +
                     "a = 10 \n" +
-                    "print(b)\n", "10", "TypeError", "ValueError", "NameError", "NameError"
+                    "print(b)\n",
+            "10",
+            "TypeError",
+            "ValueError",
+            "NameError",
+            "NameError"
         ),
         Question(
             64,

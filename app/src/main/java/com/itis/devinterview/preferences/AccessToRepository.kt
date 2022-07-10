@@ -30,19 +30,6 @@ object AccessToRepository {
             true
         }
     }
-//    fun deleteQuestion(question: Question) {
-//        val list = getListFromSP()
-//        list?.remove(question)
-//        saveListToSP(list)
-//    }
-//    fun moveMedia(question: Question?, target: MediaStatusEnum) {
-//        val list = getListFromSP()
-//        list?.map { if (it == question) it.status = target }
-//        saveListToSP(list)
-//    }
-//    fun getAllFinishedMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.FINISHED }
-//    fun getAllCurrentMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.CURRENT }
-//    fun getAllNewMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.NEW }
 
     fun getListFromSP(): MutableList<Question>? {
         val gson = Gson()
