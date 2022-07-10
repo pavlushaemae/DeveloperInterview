@@ -1,0 +1,2694 @@
+Index: app/src/main/res/layout/fragment_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_profile.xml b/app/src/main/res/layout/fragment_profile.xml
+new file mode 100644
+--- /dev/null	(date 1657197304839)
++++ b/app/src/main/res/layout/fragment_profile.xml	(date 1657197304839)
+@@ -0,0 +1,72 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/blue">
++
++    <ImageView
++        android:id="@+id/imageView"
++        android:layout_width="match_parent"
++        android:layout_height="200dp"
++        app:layout_constraintBottom_toTopOf="@+id/button"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:srcCompat="@drawable/img_profile" />
++
++    <Button
++        android:id="@+id/button"
++        android:layout_width="360dp"
++        android:layout_height="wrap_content"
++        android:backgroundTint="@color/white"
++        android:fontFamily="@font/source_sans_pro_bold"
++        android:text="Прогресс"
++        android:textColor="#303030"
++        android:textSize="16sp"
++        app:cornerRadius="50dp"
++        app:layout_constraintBottom_toTopOf="@+id/button2"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/imageView"
++        app:strokeColor="#E8DFDF"
++        app:strokeWidth="5dp" />
++
++    <Button
++        android:id="@+id/button2"
++        android:layout_width="360dp"
++        android:layout_height="wrap_content"
++        android:backgroundTint="@color/white"
++        android:fontFamily="@font/source_sans_pro_bold"
++        android:text="Настройки"
++        android:textColor="#303030"
++        android:textSize="16sp"
++        app:cornerRadius="50dp"
++        app:layout_constraintBottom_toTopOf="@+id/button3"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/button"
++        app:strokeColor="#E8DFDF"
++        app:strokeWidth="5dp" />
++
++    <Button
++        android:id="@+id/button3"
++        android:layout_width="360dp"
++        android:layout_height="wrap_content"
++        android:backgroundTint="@color/white"
++        android:fontFamily="@font/source_sans_pro_bold"
++        android:text="что-то"
++        android:textColor="#303030"
++        android:textSize="16sp"
++        app:cornerRadius="50dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/button2"
++        app:rippleColor="#303030"
++        app:strokeColor="#E8DFDF"
++        app:strokeWidth="5dp" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.itis.devinterview\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.DevInterview\">\r\n        <activity\r\n            android:name=\".ui.activity.MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/src/main/AndroidManifest.xml	(date 1657197304826)
+@@ -18,6 +18,9 @@
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
++        <meta-data
++            android:name="preloaded_fonts"
++            android:resource="@array/preloaded_fonts" />
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_configure_notifications.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_configure_notifications.xml b/app/src/main/res/layout/fragment_configure_notifications.xml
+new file mode 100644
+--- /dev/null	(date 1657197304838)
++++ b/app/src/main/res/layout/fragment_configure_notifications.xml	(date 1657197304838)
+@@ -0,0 +1,63 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:paddingStart="10dp"
++    android:paddingEnd="10dp"
++    android:paddingBottom="500dp">
++
++    <TextView
++        android:id="@+id/tv_app_name"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:paddingStart="125dp"
++        android:paddingEnd="0dp"
++        android:text="@string/developer_interview"
++        app:layout_constraintBottom_toTopOf="@id/tv_notifications"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <TextView
++        android:id="@+id/tv_notifications"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/notifications"
++        app:layout_constraintBottom_toTopOf="@id/tv_app_name"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_daily_reminders" />
++
++    <TextView
++        android:id="@+id/tv_daily_reminders"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:layout_marginEnd="50dp"
++        android:text="@string/daily_reminders"
++        app:layout_constraintBottom_toTopOf="@id/tv_notification_time"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_notifications" />
++
++    <TextView
++        android:id="@+id/tv_notification_time"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/notification_time"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_daily_reminders" />
++
++    <androidx.appcompat.widget.SwitchCompat
++        android:id="@+id/switch_daily_reminders"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:checked="true"
++        app:layout_constraintBottom_toTopOf="@id/tv_notification_time"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_notifications" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_feedback.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_feedback.xml b/app/src/main/res/layout/fragment_feedback.xml
+new file mode 100644
+--- /dev/null	(date 1657197304839)
++++ b/app/src/main/res/layout/fragment_feedback.xml	(date 1657197304839)
+@@ -0,0 +1,83 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:paddingStart="10dp"
++    android:paddingTop="0dp"
++    android:paddingEnd="10dp"
++    android:paddingBottom="450dp">
++
++    <TextView
++        android:id="@+id/tv_app_name"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:paddingStart="125dp"
++        android:paddingEnd="10dp"
++        android:text="@string/developer_interview"
++        app:layout_constraintBottom_toTopOf="@id/tv_for_all_questions"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <TextView
++        android:id="@+id/tv_for_all_questions"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/for_all_questions"
++        app:layout_constraintBottom_toTopOf="@id/tv_email_one"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
++
++    <TextView
++        android:id="@+id/tv_email_one"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="Почта1"
++        app:layout_constraintBottom_toTopOf="@id/tv_email_two"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_for_all_questions" />
++
++    <TextView
++        android:id="@+id/tv_email_two"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="Почта2"
++        app:layout_constraintBottom_toTopOf="@id/tv_email_three"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_email_one" />
++
++    <TextView
++        android:id="@+id/tv_email_three"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="Почта3"
++        app:layout_constraintBottom_toTopOf="@id/tv_email_four"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_email_two" />
++
++    <TextView
++        android:id="@+id/tv_email_four"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="Почта4"
++        app:layout_constraintBottom_toTopOf="@id/tv_email_five"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_email_three" />
++
++    <TextView
++        android:id="@+id/tv_email_five"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="Почта5"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_email_four" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/font/ubuntu_bold.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/font/ubuntu_bold.xml b/app/src/main/res/font/ubuntu_bold.xml
+new file mode 100644
+--- /dev/null	(date 1657197304838)
++++ b/app/src/main/res/font/ubuntu_bold.xml	(date 1657197304838)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
++        app:fontProviderAuthority="com.google.android.gms.fonts"
++        app:fontProviderPackage="com.google.android.gms"
++        app:fontProviderQuery="name=Ubuntu&amp;weight=700"
++        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
++</font-family>
+Index: app/src/main/res/layout/fragment_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_settings.xml b/app/src/main/res/layout/fragment_settings.xml
+new file mode 100644
+--- /dev/null	(date 1657197304840)
++++ b/app/src/main/res/layout/fragment_settings.xml	(date 1657197304840)
+@@ -0,0 +1,186 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:paddingStart="10dp"
++    android:paddingEnd="10dp">
++
++    <TextView
++        android:id="@+id/tv_app_name"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:paddingStart="125dp"
++        android:paddingEnd="10dp"
++        android:text="@string/developer_interview"
++        app:layout_constraintBottom_toTopOf="@id/tv_themes"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <!--    <TextView-->
++    <!--        android:id="@+id/tv_language"-->
++    <!--        android:layout_width="0dp"-->
++    <!--        android:layout_height="wrap_content"-->
++    <!--        android:text="Язык"-->
++    <!--        app:layout_constraintBottom_toTopOf="@id/tv_russian"-->
++    <!--        app:layout_constraintEnd_toEndOf="parent"-->
++    <!--        app:layout_constraintStart_toStartOf="parent"-->
++    <!--        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />-->
++
++    <!--    <TextView-->
++    <!--        android:id="@+id/tv_russian"-->
++    <!--        android:layout_width="0dp"-->
++    <!--        android:layout_height="wrap_content"-->
++    <!--        android:text="Русский"-->
++    <!--        app:layout_constraintBottom_toTopOf="@id/tv_english"-->
++    <!--        app:layout_constraintEnd_toEndOf="parent"-->
++    <!--        app:layout_constraintStart_toStartOf="parent"-->
++    <!--        app:layout_constraintTop_toBottomOf="@id/tv_language" />-->
++
++    <!--    <TextView-->
++    <!--        android:id="@+id/tv_english"-->
++    <!--        android:layout_width="0dp"-->
++    <!--        android:layout_height="wrap_content"-->
++    <!--        android:text="Английский"-->
++    <!--        app:layout_constraintBottom_toTopOf="@id/tv_themes"-->
++    <!--        app:layout_constraintEnd_toEndOf="parent"-->
++    <!--        app:layout_constraintStart_toStartOf="parent"-->
++    <!--        app:layout_constraintTop_toBottomOf="@id/tv_russian" />-->
++
++    <TextView
++        android:id="@+id/tv_themes"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/theme_app"
++        app:layout_constraintBottom_toTopOf="@id/tv_theme_change"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
++
++    <TextView
++        android:id="@+id/tv_theme_change"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:shadowColor="@color/teal_200"
++        android:text="@string/theme_change"
++        app:layout_constraintBottom_toTopOf="@id/tv_statistics"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_themes" />
++
++    <!--    <TextView-->
++    <!--        android:id="@+id/tv_theme_dark"-->
++    <!--        android:layout_width="0dp"-->
++    <!--        android:layout_height="wrap_content"-->
++    <!--        android:text="Тёмная"-->
++    <!--        android:layout_marginEnd="50dp"-->
++    <!--        app:layout_constraintBottom_toTopOf="@id/tv_statistics"-->
++    <!--        app:layout_constraintEnd_toEndOf="parent"-->
++    <!--        app:layout_constraintStart_toStartOf="parent"-->
++    <!--        app:layout_constraintTop_toBottomOf="@id/tv_theme_light" />-->
++
++    <TextView
++        android:id="@+id/tv_statistics"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/statistics_app"
++        app:layout_constraintBottom_toTopOf="@id/tv_reset_statistics"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_theme_change" />
++
++    <TextView
++        android:id="@+id/tv_reset_statistics"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/reset_progress"
++        app:layout_constraintBottom_toTopOf="@id/tv_notifications"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_statistics" />
++
++    <TextView
++        android:id="@+id/tv_notifications"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/notifications"
++        app:layout_constraintBottom_toTopOf="@id/tv_configure_notifications"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_reset_statistics" />
++
++    <TextView
++        android:id="@+id/tv_configure_notifications"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:focusable="true"
++        android:text="@string/to_configure"
++        app:layout_constraintBottom_toTopOf="@id/tv_other"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_notifications" />
++
++    <TextView
++        android:id="@+id/tv_other"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/other"
++        app:layout_constraintBottom_toTopOf="@id/tv_feedback"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_configure_notifications" />
++
++    <TextView
++        android:id="@+id/tv_feedback"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/feedback"
++        app:layout_constraintBottom_toTopOf="@id/tv_user_agreement"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_other" />
++
++    <TextView
++        android:id="@+id/tv_user_agreement"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/user_agreement"
++        app:layout_constraintBottom_toTopOf="@id/tv_app_version"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_feedback" />
++
++    <TextView
++        android:id="@+id/tv_app_version"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:text="@string/version_app"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_user_agreement" />
++
++    <TextView
++        android:id="@+id/tv_app_version_number"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:paddingStart="350dp"
++        android:paddingEnd="10dp"
++        android:text="@string/_0_0_1"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_user_agreement" />
++
++    <androidx.appcompat.widget.SwitchCompat
++        android:id="@+id/switch_themes"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="350dp"
++        app:layout_constraintBottom_toTopOf="@id/tv_statistics"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/tv_themes" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_user_agreement.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_user_agreement.xml b/app/src/main/res/layout/fragment_user_agreement.xml
+new file mode 100644
+--- /dev/null	(date 1657197304841)
++++ b/app/src/main/res/layout/fragment_user_agreement.xml	(date 1657197304841)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".ui.fragment.UserAgreementFragment">
++
++    <TextView
++        android:id="@+id/tv_scroll"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_margin="16dp"
++        android:text="@string/large_text"
++        app:layout_constraintBottom_toTopOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_tickets.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_tickets.xml b/app/src/main/res/layout/fragment_tickets.xml
+new file mode 100644
+--- /dev/null	(date 1657197304841)
++++ b/app/src/main/res/layout/fragment_tickets.xml	(date 1657197304841)
+@@ -0,0 +1,77 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/blue">
++
++    <TextView
++        android:id="@+id/tv_ticket_first"
++        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@color/white"
++        android:fontFamily="@font/ubuntu_bold"
++        android:text="text"
++
++        android:textSize="24sp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <TextView
++        android:id="@+id/tv_ticket_second"
++        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginBottom="4dp"
++        android:background="@color/white"
++        android:fontFamily="@font/ubuntu_bold"
++        android:text="text"
++        android:textSize="24sp"
++        app:layout_constraintBottom_toTopOf="@+id/tv_ticket_third"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent" />
++
++    <TextView
++        android:id="@+id/tv_ticket_third"
++        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@color/white"
++        android:fontFamily="@font/ubuntu_bold"
++        android:text="text"
++        android:textSize="24sp"
++        app:layout_constraintBottom_toTopOf="@+id/tv_ticket_fourth"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent" />
++
++    <TextView
++        android:id="@+id/tv_ticket_fourth"
++        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@color/white"
++        android:fontFamily="@font/ubuntu_bold"
++        android:text="text"
++        android:textSize="24sp"
++        app:layout_constraintBottom_toTopOf="@+id/tv_ticket_fifth"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent" />
++
++    <TextView
++        android:id="@+id/tv_ticket_fifth"
++        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@color/white"
++        android:fontFamily="@font/ubuntu_bold"
++        android:text="text"
++        android:textSize="24sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_selection_language.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_selection_language.xml b/app/src/main/res/layout/fragment_selection_language.xml
+new file mode 100644
+--- /dev/null	(date 1657197304840)
++++ b/app/src/main/res/layout/fragment_selection_language.xml	(date 1657197304840)
+@@ -0,0 +1,54 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/blue">
++
++    <TextView
++        android:id="@+id/tv_choose_language"
++        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
++        android:layout_width="match_parent"
++        android:layout_height="100dp"
++        android:layout_marginStart="16dp"
++        android:layout_marginEnd="16dp"
++        android:background="@color/white"
++        android:fontFamily="@font/ubuntu_bold"
++        android:text="Please, choose the language"
++        android:textSize="25sp"
++        app:layout_constraintBottom_toTopOf="@id/btn_java"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <Button
++        android:id="@+id/btn_java"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="8dp"
++        android:layout_marginEnd="8dp"
++        android:fontFamily="@font/ubuntu_bold"
++        android:backgroundTint="@color/dark_blue"
++        android:text="Java"
++        app:layout_constraintBottom_toTopOf="@id/btn_python"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_chainStyle="packed" />
++
++    <Button
++        android:id="@+id/btn_python"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="8dp"
++        android:layout_marginTop="10dp"
++        android:layout_marginEnd="8dp"
++        android:fontFamily="@font/ubuntu_bold"
++        android:backgroundTint="@color/dark_blue"
++        android:text="Python"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/btn_java" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">DevInterview</string>\r\n    <!-- TODO: Remove or change this placeholder text -->\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n    <string name=\"_1\">1</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/src/main/res/values/strings.xml	(date 1657197335763)
+@@ -1,6 +1,110 @@
+ <resources>
+     <string name="app_name">DevInterview</string>
+-    <!-- TODO: Remove or change this placeholder text -->
+-    <string name="hello_blank_fragment">Hello blank fragment</string>
+-    <string name="_1">1</string>
++    <string name="testing_choose">Please, choose type of testing</string>
++    <string name="tickets">Tickets</string>
++    <string name="exam">Exam</string>
++    <string name="large_text">
++        "                               Developer Interview\n\n"
++
++        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
++        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
++        "technologically advanced and open to imagination and magic.\n"
++        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
++        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
++        "flexibility of the material creates new affordances that supercede those in the physical "
++        "world, without breaking the rules of physics.\n"
++        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
++        "interact, and exist in space and in relation to each other. Realistic lighting shows "
++        "seams, divides space, and indicates moving parts.\n\n"
++
++        "Bold, graphic, intentional.\n\n"
++
++        "The foundational elements of print based design typography, grids, space, scale, color, "
++        "and use of imagery guide visual treatments. These elements do far more than please the "
++        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
++        "imagery, large scale typography, and intentional white space create a bold and graphic "
++        "interface that immerse the user in the experience.\n"
++        "An emphasis on user actions makes core functionality immediately apparent and provides "
++        "waypoints for the user.\n\n"
++
++        "Motion provides meaning.\n\n"
++
++        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
++        "inflection points that initiate motion, transforming the whole design.\n"
++        "All action takes place in a single environment. Objects are presented to the user without "
++        "breaking the continuity of experience even as they transform and reorganize.\n"
++        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
++        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
++
++        "3D world.\n\n"
++
++        "The material environment is a 3D space, which means all objects have x, y, and z "
++        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
++        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
++        "position along the z-axis and has a standard 1dp thickness.\n"
++        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
++        "emulated by manipulating the y-axis.\n\n"
++
++        "Light and shadow.\n\n"
++
++        "Within the material environment, virtual lights illuminate the scene. Key lights create "
++        "directional shadows, while ambient light creates soft shadows from all angles.\n"
++        "Shadows in the material environment are cast by these two light sources. In Android "
++        "development, shadows occur when light sources are blocked by sheets of material at "
++        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
++        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
++
++        "Resting elevation.\n\n"
++
++        "All material objects, regardless of size, have a resting elevation, or default elevation "
++        "that does not change. If an object changes elevation, it should return to its resting "
++        "elevation as soon as possible.\n\n"
++
++        "Component elevations.\n\n"
++
++        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
++        "does not vary from 6dp in one app to 16dp in another app).\n"
++        "Components may have different resting elevations across platforms, depending on the depth "
++        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
++
++        "Responsive elevation and dynamic elevation offsets.\n\n"
++
++        "Some component types have responsive elevation, meaning they change elevation in response "
++        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
++        "changes are consistently implemented using dynamic elevation offsets.\n"
++        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
++        "to the component’s resting state. They ensure that elevation changes are consistent "
++        "across actions and component types. For example, all components that lift on press have "
++        "the same elevation change relative to their resting elevation.\n"
++        "Once the input event is completed or cancelled, the component will return to its resting "
++        "elevation.\n\n"
++
++        "Avoiding elevation interference.\n\n"
++
++        "Components with responsive elevations may encounter other components as they move between "
++        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
++        "through other material, components avoid interfering with one another any number of ways, "
++        "whether on a per component basis or using the entire app layout.\n"
++        "On a component level, components can move or be removed before they cause interference. "
++        "For example, a floating action button (FAB) can disappear or move off screen before a "
++        "user picks up a card, or it can move if a snackbar appears.\n"
++        "On the layout level, design your app layout to minimize opportunities for interference. "
++        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
++        "when a user tries to pick up one of cards.\n\n"
++    </string>
++    <string name="developer_interview">Developer Interview</string>
++    <string name="theme_app">Тема приложения</string>
++    <string name="theme_change">Смена темы</string>
++    <string name="statistics_app">Статистика приложения</string>
++    <string name="reset_progress">Сбросить прогресс</string>
++    <string name="notifications">Уведомления</string>
++    <string name="to_configure">Настроить</string>
++    <string name="other">Прочее</string>
++    <string name="feedback">Обратная связь</string>
++    <string name="user_agreement">Пользовательское соглашение</string>
++    <string name="version_app">Версия приложения:</string>
++    <string name="_0_0_1">0.0.1</string>
++    <string name="daily_reminders">Ежеденевные напоминания</string>
++    <string name="notification_time">Время уведомлений</string>
++    <string name="for_all_questions">По всем вопросам</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/preloaded_fonts.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/preloaded_fonts.xml b/app/src/main/res/values/preloaded_fonts.xml
+new file mode 100644
+--- /dev/null	(date 1657197304842)
++++ b/app/src/main/res/values/preloaded_fonts.xml	(date 1657197304842)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <array name="preloaded_fonts" translatable="false">
++        <item>@font/ubuntu_bold</item>
++    </array>
++</resources>
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"purple_200\">#FFBB86FC</color>\r\n    <color name=\"purple_500\">#FF6200EE</color>\r\n    <color name=\"purple_700\">#FF3700B3</color>\r\n    <color name=\"teal_200\">#FF03DAC5</color>\r\n    <color name=\"teal_700\">#FF018786</color>\r\n    <color name=\"black\">#FF000000</color>\r\n    <color name=\"white\">#FFFFFFFF</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/src/main/res/values/colors.xml	(date 1657197304842)
+@@ -6,5 +6,30 @@
+     <color name="teal_200">#FF03DAC5</color>
+     <color name="teal_700">#FF018786</color>
+     <color name="black">#FF000000</color>
+-    <color name="white">#FFFFFFFF</color>
++    <color name="white">#FFFFFF</color>
++    <color name="blue">#9BBFD9</color>
++    <color name="primary_color_light">#6200EE</color>
++    <color name="primary_variant_color_light">#3700B3</color>
++    <color name="secondary_color_light">#03DAC6</color>
++    <color name="secondary_variant_color_light">#018786</color>
++    <color name="background_color_light">#53A1C8</color>
++    <color name="surface_color_light">#53A1C8</color>
++    <color name="error_color_light">#B00020</color>
++    <color name="on_primary_color_light">#FFFFFF</color>
++    <color name="on_secondary_color_light">#000000</color>
++    <color name="on_background_color_light">#000000</color>
++    <color name="on_surface_color_light">#000000</color>
++    <color name="on_error_color_light">#FFFFFF</color>
++    <color name="primary_color_dark">#BB86FC</color>
++    <color name="primary_variant_color_dark">#3700B3</color>
++    <color name="secondary_color_dark">#03DAC6</color>
++    <color name="background_color_dark">#121212</color>
++    <color name="surface_color_dark">#121212</color>
++    <color name="error_color_dark">#CF6679</color>
++    <color name="on_primary_color_dark">#000000</color>
++    <color name="on_secondary_color_dark">#000000</color>
++    <color name="on_background_color_dark">#FFFFFF</color>
++    <color name="on_surface_color_dark">#FFFFFF</color>
++    <color name="on_error_color_dark">#000000</color>
++    <color name="dark_blue">#4C7FAC</color>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/font_certs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/font_certs.xml b/app/src/main/res/values/font_certs.xml
+new file mode 100644
+--- /dev/null	(date 1657197304842)
++++ b/app/src/main/res/values/font_certs.xml	(date 1657197304842)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <array name="com_google_android_gms_fonts_certs">
++        <item>@array/com_google_android_gms_fonts_certs_dev</item>
++        <item>@array/com_google_android_gms_fonts_certs_prod</item>
++    </array>
++    <string-array name="com_google_android_gms_fonts_certs_dev">
++        <item>
++            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
++        </item>
++    </string-array>
++    <string-array name="com_google_android_gms_fonts_certs_prod">
++        <item>
++            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBAKtWLgDYO6IIrgqWbxJOKdoR8qtW0I9Y4sypEwPpt1TTcvZApxsdyxMJZ2JORland2qSGT2y5b+3JKkedxiLDmpHpDsz2WCbdxgxRczfey5YZnTJ4VZbH0xqWVW/8lGmPav5xVwnIiJS6HXk+BVKZF+JcWjAsb/GEuq/eFdpuzSqeYTcfi6idkyugwfYwXFU1+5fZKUaRKYCwkkFQVfcAs1fXA5V+++FGfvjJ/CxURaSxaBvGdGDhfXE28LWuT9ozCl5xw4Yq5OGazvV24mZVSoOO0yZ31j7kYvtwYK6NeADwbSxDdJEqO4k//0zOHKrUiGYXtqw/A0LFFtqoZKFjnkCAQOjgdkwgdYwHQYDVR0OBBYEFMd9jMIhF1Ylmn/Tgt9r45jk14alMIGmBgNVHSMEgZ4wgZuAFMd9jMIhF1Ylmn/Tgt9r45jk14aloXikdjB0MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIEluYy4xEDAOBgNVBAsTB0FuZHJvaWQxEDAOBgNVBAMTB0FuZHJvaWSCCQDC4IdGZEowjTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBAUAA4IBAQBt0lLO74UwLDYKqs6Tm8/yzKkEu116FmH4rkaymUIE0P9KaMftGlMexFlaYjzmB2OxZyl6euNXEsQH8gjwyxCUKRJNexBiGcCEyj6z+a1fuHHvkiaai+KL8W1EyNmgjmyy8AW7P+LLlkR+ho5zEHatRbM/YAnqGcFh5iZBqpknHf1SKMXFh4dd239FJ1jWYfbMDMy3NS5CTMQ2XFI1MvcyUTdZPErjQfTbQe3aDQsQcafEQPD+nqActifKZ0Np0IS9L9kR/wbNvyz6ENwPiTrjV2KRkEjH78ZMcUQXg0L3BYHJ3lc69Vs5Ddf9uUGGMYldX3WfMBEmh/9iFBDAaTCK
++        </item>
++    </string-array>
++</resources>
+Index: app/src/main/res/layout/fragment_testing.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_testing.xml b/app/src/main/res/layout/fragment_testing.xml
+new file mode 100644
+--- /dev/null	(date 1657197304840)
++++ b/app/src/main/res/layout/fragment_testing.xml	(date 1657197304840)
+@@ -0,0 +1,55 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/blue"
++    xmlns:app="http://schemas.android.com/apk/res-auto">
++
++    <TextView
++        android:id="@+id/tv_choose"
++        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
++        android:layout_width="match_parent"
++        android:layout_height="100dp"
++        android:layout_marginStart="16dp"
++        android:layout_marginEnd="16dp"
++        android:background="@color/white"
++        android:fontFamily="@font/ubuntu_bold"
++        android:text="@string/testing_choose"
++        android:textSize="24sp"
++        app:layout_constraintBottom_toTopOf="@id/btn_ticket"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <Button
++        android:id="@+id/btn_ticket"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="8dp"
++        android:layout_marginEnd="8dp"
++        android:fontFamily="@font/ubuntu_bold"
++        android:backgroundTint="@color/dark_blue"
++        android:text="@string/tickets"
++        app:layout_constraintBottom_toTopOf="@id/btn_exam"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_chainStyle="packed" />
++
++    <Button
++        android:id="@+id/btn_exam"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="8dp"
++        android:layout_marginTop="10dp"
++        android:layout_marginEnd="8dp"
++        android:fontFamily="@font/ubuntu_bold"
++        android:backgroundTint="@color/dark_blue"
++        android:text="@string/exam"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/btn_ticket" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_progress.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_progress.xml b/app/src/main/res/layout/fragment_progress.xml
+new file mode 100644
+--- /dev/null	(date 1657197304839)
++++ b/app/src/main/res/layout/fragment_progress.xml	(date 1657197304839)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/navigation/main_graph.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<navigation xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main_graph\"\r\n    app:startDestination=\"@id/secondaryExamFragment2\">\r\n    <fragment\r\n        android:id=\"@+id/secondaryExamFragment2\"\r\n        android:name=\"com.itis.devinterview.ui.activity.SecondaryExamFragment\"\r\n        android:label=\"fragment_secondary_exam\"\r\n        tools:layout=\"@layout/fragment_secondary_exam\" />\r\n</navigation>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/navigation/main_graph.xml b/app/src/main/res/navigation/main_graph.xml
+--- a/app/src/main/res/navigation/main_graph.xml	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/src/main/res/navigation/main_graph.xml	(date 1657197334521)
+@@ -3,10 +3,72 @@
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:id="@+id/main_graph"
+-    app:startDestination="@id/secondaryExamFragment2">
++    app:startDestination="@id/settings_fragment">
++
++    <fragment
++        android:id="@+id/testing"
++        android:name="com.itis.devinterview.ui.fragment.TestingFragment"
++        android:label="Testing">
++        <action
++            android:id="@+id/action_testing_to_selectionLanguage"
++            app:destination="@id/selectionLanguage" />
++    </fragment>
++    <fragment
++        android:id="@+id/selectionLanguage"
++        android:name="com.itis.devinterview.ui.fragment.SelectionLanguageFragment"
++        android:label="SelectionLanguage">
++        <action
++            android:id="@+id/action_selectionLanguage_to_ticketsFragment"
++            app:destination="@id/ticketsFragment" />
++    </fragment>
++    <fragment
++        android:id="@+id/ticketsFragment"
++        android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
++        android:label="TicketsFragment" />
++    <fragment
++        android:id="@+id/settings_fragment"
++        android:name="com.itis.devinterview.ui.fragment.SettingsFragment"
++        android:label="SettingsFragment"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:layout="@layout/fragment_settings">
++        <action
++            android:id="@+id/action_settings_fragment_to_configure_notifications_fragment"
++            app:destination="@id/configure_notifications_fragment" />
++        <action
++            android:id="@+id/action_settings_fragment_to_feedback_fragment"
++            app:destination="@id/feedback_fragment" />
++        <action
++            android:id="@+id/action_settings_fragment_to_user_agreement_fragment"
++            app:destination="@id/user_agreement_fragment" />
++    </fragment>
+     <fragment
+-        android:id="@+id/secondaryExamFragment2"
+-        android:name="com.itis.devinterview.ui.activity.SecondaryExamFragment"
+-        android:label="fragment_secondary_exam"
+-        tools:layout="@layout/fragment_secondary_exam" />
++        android:id="@+id/configure_notifications_fragment"
++        android:name="com.itis.devinterview.ui.fragment.ConfigureNotificationsFragment"
++        android:label="ConfigureNotificationsFragment"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:layout="@layout/fragment_configure_notifications" />
++    <fragment
++        android:id="@+id/feedback_fragment"
++        android:name="com.itis.devinterview.ui.fragment.FeedbackFragment"
++        android:label="FeedbackFragment"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:layout="@layout/fragment_feedback" />
++    <fragment
++        android:id="@+id/user_agreement_fragment"
++        android:name="com.itis.devinterview.ui.fragment.UserAgreementFragment"
++        android:label="UserAgreementFragment"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:layout="@layout/fragment_user_agreement" />
+ </navigation>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'org.jetbrains.kotlin.android'\r\n    id 'androidx.navigation.safeargs.kotlin'\r\n}\r\n\r\nandroid {\r\n    compileSdk 32\r\n\r\n    defaultConfig {\r\n        applicationId \"com.itis.devinterview\"\r\n        minSdk 23\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    buildFeatures {\r\n        viewBinding true\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = '1.8'\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.core:core-ktx:1.7.0'\r\n    implementation 'androidx.appcompat:appcompat:1.4.2'\r\n    implementation 'com.google.android.material:material:1.6.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'\r\n    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n    implementation 'androidx.viewpager2:viewpager2:1.0.0'\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/build.gradle	(date 1657197304863)
+@@ -36,8 +36,9 @@
+ }
+ 
+ dependencies {
+-
++    implementation 'com.google.code.gson:gson:2.8.5'
+     implementation 'androidx.core:core-ktx:1.7.0'
++    implementation 'com.google.android.material:material:1.1.0'
+     implementation 'androidx.appcompat:appcompat:1.4.2'
+     implementation 'com.google.android.material:material:1.6.1'
+     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+Index: app/src/main/res/drawable/ic_exam.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_exam.xml b/app/src/main/res/drawable/ic_exam.xml
+new file mode 100644
+--- /dev/null	(date 1657197304835)
++++ b/app/src/main/res/drawable/ic_exam.xml	(date 1657197304835)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="48dp"
++    android:height="48dp"
++    android:viewportWidth="48"
++    android:viewportHeight="48"
++    android:tint="?attr/colorControlNormal">
++  <path
++      android:fillColor="@android:color/white"
++      android:pathData="M27.15,31Q28,31 28.6,30.4Q29.2,29.8 29.2,28.95Q29.2,28.1 28.6,27.5Q28,26.9 27.15,26.9Q26.3,26.9 25.7,27.5Q25.1,28.1 25.1,28.95Q25.1,29.8 25.7,30.4Q26.3,31 27.15,31ZM25.9,24.7H28.25Q28.35,23.25 28.675,22.55Q29,21.85 30.3,20.6Q31.65,19.3 32.175,18.325Q32.7,17.35 32.7,16.05Q32.7,13.75 31.125,12.3Q29.55,10.85 27,10.85Q25.1,10.85 23.6,11.875Q22.1,12.9 21.4,14.75L23.65,15.7Q24.2,14.45 25.025,13.8Q25.85,13.15 27,13.15Q28.5,13.15 29.425,14Q30.35,14.85 30.35,16.15Q30.35,17.15 29.9,17.9Q29.45,18.65 28.3,19.5Q26.7,20.95 26.3,21.825Q25.9,22.7 25.9,24.7ZM13,38Q11.8,38 10.9,37.1Q10,36.2 10,35V7Q10,5.8 10.9,4.9Q11.8,4 13,4H41Q42.2,4 43.1,4.9Q44,5.8 44,7V35Q44,36.2 43.1,37.1Q42.2,38 41,38ZM13,35H41Q41,35 41,35Q41,35 41,35V7Q41,7 41,7Q41,7 41,7H13Q13,7 13,7Q13,7 13,7V35Q13,35 13,35Q13,35 13,35ZM7,44Q5.8,44 4.9,43.1Q4,42.2 4,41V10H7V41Q7,41 7,41Q7,41 7,41H38V44ZM13,7Q13,7 13,7Q13,7 13,7V35Q13,35 13,35Q13,35 13,35Q13,35 13,35Q13,35 13,35V7Q13,7 13,7Q13,7 13,7Z"/>
++</vector>
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Theme.DevInterview\" parent=\"Theme.MaterialComponents.DayNight.DarkActionBar\">\r\n        <!-- Primary brand color. -->\r\n        <item name=\"colorPrimary\">@color/purple_500</item>\r\n        <item name=\"colorPrimaryVariant\">@color/purple_700</item>\r\n        <item name=\"colorOnPrimary\">@color/white</item>\r\n        <!-- Secondary brand color. -->\r\n        <item name=\"colorSecondary\">@color/teal_200</item>\r\n        <item name=\"colorSecondaryVariant\">@color/teal_700</item>\r\n        <item name=\"colorOnSecondary\">@color/black</item>\r\n        <!-- Status bar color. -->\r\n        <item name=\"android:statusBarColor\" tools:targetApi=\"l\">?attr/colorPrimaryVariant</item>\r\n        <!-- Customize your theme here. -->\r\n    </style>\r\n\r\n    <style name =\"TextAppearanceWithoutCaps\" parent=\"TextAppearance.Design.Tab\">\r\n        <item name =\"textAllCaps\">false</item>\r\n        <item name=\"android:textAllCaps\">false</item>\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/src/main/res/values/themes.xml	(date 1657197304852)
+@@ -1,17 +1,19 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+-    <!-- Base application theme. -->
+-    <style name="Theme.DevInterview" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+-        <!-- Primary brand color. -->
+-        <item name="colorPrimary">@color/purple_500</item>
+-        <item name="colorPrimaryVariant">@color/purple_700</item>
+-        <item name="colorOnPrimary">@color/white</item>
+-        <!-- Secondary brand color. -->
+-        <item name="colorSecondary">@color/teal_200</item>
+-        <item name="colorSecondaryVariant">@color/teal_700</item>
+-        <item name="colorOnSecondary">@color/black</item>
+-        <!-- Status bar color. -->
+-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+-        <!-- Customize your theme here. -->
++
++    <style name="Theme.DevInterview" parent="Theme.MaterialComponents.DayNight">
++        <item name="colorPrimary">@color/primary_color_light</item>
++        <item name="colorPrimaryVariant">@color/primary_variant_color_light</item>
++        <item name="colorSecondary">@color/secondary_color_light</item>
++        <item name="colorSecondaryVariant">@color/secondary_variant_color_light</item>
++        <item name="android:windowBackground">@color/background_color_light</item>
++        <item name="colorSurface">@color/surface_color_light</item>
++        <item name="colorError">@color/error_color_light</item>
++        <item name="colorOnPrimary">@color/on_primary_color_light</item>
++        <item name="colorOnSecondary">@color/on_secondary_color_light</item>
++        <item name="colorOnBackground">@color/on_background_color_light</item>
++        <item name="colorOnSurface">@color/on_surface_color_light</item>
++        <item name="colorOnError">@color/on_error_color_light</item>
++        <item name="android:textColor">@color/white</item>
+     </style>
+ 
+     <style name ="TextAppearanceWithoutCaps" parent="TextAppearance.Design.Tab">
+Index: app/src/main/res/drawable/ic_education.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_education.xml b/app/src/main/res/drawable/ic_education.xml
+new file mode 100644
+--- /dev/null	(date 1657197304835)
++++ b/app/src/main/res/drawable/ic_education.xml	(date 1657197304835)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="48dp"
++    android:height="48dp"
++    android:viewportWidth="48"
++    android:viewportHeight="48"
++    android:tint="?attr/colorControlNormal">
++  <path
++      android:fillColor="@android:color/white"
++      android:pathData="M23.95,42 L9.45,34.05V22.05L2,18L23.95,6L46,18V33.85H43V19.75L38.45,22.05V34.05ZM23.95,26.6 L39.7,18 23.95,9.55 8.3,18ZM23.95,38.6 L35.45,32.25V23.85L23.95,30L12.45,23.75V32.25ZM24,26.6ZM23.95,30.3ZM23.95,30.3Z"/>
++</vector>
+Index: app/src/main/res/drawable/ic_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_profile.xml b/app/src/main/res/drawable/ic_profile.xml
+new file mode 100644
+--- /dev/null	(date 1657197304835)
++++ b/app/src/main/res/drawable/ic_profile.xml	(date 1657197304835)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="48dp"
++    android:height="48dp"
++    android:viewportWidth="48"
++    android:viewportHeight="48"
++    android:tint="?attr/colorControlNormal">
++  <path
++      android:fillColor="@android:color/white"
++      android:pathData="M24,23.95Q20.7,23.95 18.6,21.85Q16.5,19.75 16.5,16.45Q16.5,13.15 18.6,11.05Q20.7,8.95 24,8.95Q27.3,8.95 29.4,11.05Q31.5,13.15 31.5,16.45Q31.5,19.75 29.4,21.85Q27.3,23.95 24,23.95ZM8,40V35.3Q8,33.4 8.95,32.05Q9.9,30.7 11.4,30Q14.75,28.5 17.825,27.75Q20.9,27 24,27Q27.1,27 30.15,27.775Q33.2,28.55 36.55,30Q38.1,30.7 39.05,32.05Q40,33.4 40,35.3V40ZM11,37H37V35.3Q37,34.5 36.525,33.775Q36.05,33.05 35.35,32.7Q32.15,31.15 29.5,30.575Q26.85,30 24,30Q21.15,30 18.45,30.575Q15.75,31.15 12.6,32.7Q11.9,33.05 11.45,33.775Q11,34.5 11,35.3ZM24,20.95Q25.95,20.95 27.225,19.675Q28.5,18.4 28.5,16.45Q28.5,14.5 27.225,13.225Q25.95,11.95 24,11.95Q22.05,11.95 20.775,13.225Q19.5,14.5 19.5,16.45Q19.5,18.4 20.775,19.675Q22.05,20.95 24,20.95ZM24,16.45Q24,16.45 24,16.45Q24,16.45 24,16.45Q24,16.45 24,16.45Q24,16.45 24,16.45Q24,16.45 24,16.45Q24,16.45 24,16.45Q24,16.45 24,16.45Q24,16.45 24,16.45ZM24,37Q24,37 24,37Q24,37 24,37Q24,37 24,37Q24,37 24,37Q24,37 24,37Q24,37 24,37Q24,37 24,37Q24,37 24,37Z"/>
++</vector>
+Index: app/src/main/java/com/itis/devinterview/repository/QuestionRepository.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/repository/QuestionRepository.kt b/app/src/main/java/com/itis/devinterview/repository/QuestionRepository.kt
+new file mode 100644
+--- /dev/null	(date 1657197304828)
++++ b/app/src/main/java/com/itis/devinterview/repository/QuestionRepository.kt	(date 1657197304828)
+@@ -0,0 +1,12 @@
++package com.itis.devinterview.repository
++
++import com.itis.devinterview.model.Question
++
++interface QuestionRepository {
++    fun getQuestionById(id: Int): Question?
++    fun getRandomQuestion(): Question?
++    fun getAllQuestions(): List<Question>?
++    fun addList(list: List<Question>)
++    fun getQuestionListByLanguage(language: String): List<Question>?
++    fun addQuestionList()
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/preferences/AccessToRepository.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/preferences/AccessToRepository.kt b/app/src/main/java/com/itis/devinterview/preferences/AccessToRepository.kt
+new file mode 100644
+--- /dev/null	(date 1657197304827)
++++ b/app/src/main/java/com/itis/devinterview/preferences/AccessToRepository.kt	(date 1657197304827)
+@@ -0,0 +1,65 @@
++package com.itis.devinterview.preferences
++
++import android.annotation.SuppressLint
++import android.content.SharedPreferences
++import com.google.gson.Gson
++import com.google.gson.reflect.TypeToken
++import com.itis.devinterview.model.Question
++
++object AccessToRepository {
++    var newQuestionId: Int = 0
++    private var sharedPreferences: SharedPreferences? = null
++    private const val QUESTIONS_LIST = "questions_list"
++    private var ADDED_OR_NOT = false
++    fun getSP(sharedPreferences: SharedPreferences) {
++        AccessToRepository.sharedPreferences = sharedPreferences
++        var list = getListFromSP()
++        list?.map { it.id = newQuestionId++ }
++        if (list != null) {
++            saveListToSP(list)
++        }
++    }
++
++    fun addQuestion(question: Question): Boolean {
++        val list = getListFromSP() ?: mutableListOf()
++        return if (list.contains(question)) {
++            false
++        } else {
++            list.add(question)
++            saveListToSP(list)
++            true
++        }
++    }
++//    fun deleteQuestion(question: Question) {
++//        val list = getListFromSP()
++//        list?.remove(question)
++//        saveListToSP(list)
++//    }
++
++//    fun moveMedia(question: Question?, target: MediaStatusEnum) {
++//        val list = getListFromSP()
++//        list?.map { if (it == question) it.status = target }
++//        saveListToSP(list)
++//    }
++//    fun getAllFinishedMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.FINISHED }
++//    fun getAllCurrentMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.CURRENT }
++//    fun getAllNewMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.NEW }
++
++    fun getListFromSP(): MutableList<Question>? {
++        val gson = Gson()
++        val json = sharedPreferences?.getString(QUESTIONS_LIST, null)
++        val type = object : TypeToken<MutableList<Question>>() {}.type
++        return gson.fromJson(json, type)
++    }
++
++    @SuppressLint("CommitPrefEdits")
++    fun saveListToSP(list: List<Question>) {
++        if (!ADDED_OR_NOT) {
++            sharedPreferences?.edit()?.apply {
++                putString(QUESTIONS_LIST, Gson().toJson(list))
++                apply()
++                ADDED_OR_NOT = true
++            }
++        }
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/model/Question.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/model/Question.kt b/app/src/main/java/com/itis/devinterview/model/Question.kt
+new file mode 100644
+--- /dev/null	(date 1657197304827)
++++ b/app/src/main/java/com/itis/devinterview/model/Question.kt	(date 1657197304827)
+@@ -0,0 +1,22 @@
++package com.itis.devinterview.model
++
++import com.google.gson.annotations.SerializedName
++
++data class Question(
++    @SerializedName("id")
++    var id: Int,
++    @SerializedName("language")
++    val language: String = "",
++    @SerializedName("question")
++    val question: String = "",
++    @SerializedName("first")
++    val first: String = "",
++    @SerializedName("second")
++    val second: String = "",
++    @SerializedName("third")
++    val third: String = "",
++    @SerializedName("fourth")
++    val fourth: String = "",
++    @SerializedName("correct")
++    val correct: String = "",
++)
+\ No newline at end of file
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Theme.DevInterview\" parent=\"Theme.MaterialComponents.DayNight.DarkActionBar\">\r\n        <!-- Primary brand color. -->\r\n        <item name=\"colorPrimary\">@color/purple_200</item>\r\n        <item name=\"colorPrimaryVariant\">@color/purple_700</item>\r\n        <item name=\"colorOnPrimary\">@color/black</item>\r\n        <!-- Secondary brand color. -->\r\n        <item name=\"colorSecondary\">@color/teal_200</item>\r\n        <item name=\"colorSecondaryVariant\">@color/teal_200</item>\r\n        <item name=\"colorOnSecondary\">@color/black</item>\r\n        <!-- Status bar color. -->\r\n        <item name=\"android:statusBarColor\" tools:targetApi=\"l\">?attr/colorPrimaryVariant</item>\r\n        <!-- Customize your theme here. -->\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+--- a/app/src/main/res/values-night/themes.xml	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/src/main/res/values-night/themes.xml	(date 1657197304841)
+@@ -1,16 +1,17 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+-    <!-- Base application theme. -->
+-    <style name="Theme.DevInterview" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+-        <!-- Primary brand color. -->
+-        <item name="colorPrimary">@color/purple_200</item>
+-        <item name="colorPrimaryVariant">@color/purple_700</item>
+-        <item name="colorOnPrimary">@color/black</item>
+-        <!-- Secondary brand color. -->
+-        <item name="colorSecondary">@color/teal_200</item>
+-        <item name="colorSecondaryVariant">@color/teal_200</item>
+-        <item name="colorOnSecondary">@color/black</item>
+-        <!-- Status bar color. -->
+-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+-        <!-- Customize your theme here. -->
++
++    <style name="Theme.DevInterview" parent="Theme.MaterialComponents">
++        <item name="colorPrimary">@color/primary_color_dark</item>
++        <item name="colorPrimaryVariant">@color/primary_variant_color_dark</item>
++        <item name="colorSecondary">@color/secondary_color_dark</item>
++        <item name="colorBackgroundFloating">@color/background_color_dark</item>
++        <item name="colorSurface">@color/surface_color_dark</item>
++        <item name="colorError">@color/error_color_dark</item>
++        <item name="colorOnPrimary">@color/on_primary_color_dark</item>
++        <item name="colorOnSecondary">@color/on_secondary_color_dark</item>
++        <item name="colorOnBackground">@color/on_background_color_dark</item>
++        <item name="colorOnSurface">@color/on_surface_color_dark</item>
++        <item name="colorOnError">@color/on_error_color_dark</item>
++        <item name="android:textColor">@color/white</item>
+     </style>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/service/impl/QuestionServiceImpl.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/service/impl/QuestionServiceImpl.kt b/app/src/main/java/com/itis/devinterview/service/impl/QuestionServiceImpl.kt
+new file mode 100644
+--- /dev/null	(date 1657197304829)
++++ b/app/src/main/java/com/itis/devinterview/service/impl/QuestionServiceImpl.kt	(date 1657197304829)
+@@ -0,0 +1,35 @@
++package com.itis.devinterview.service.impl
++
++import com.itis.devinterview.model.Question
++import com.itis.devinterview.repository.QuestionRepository
++import com.itis.devinterview.repository.impl.QuestionRepositoryImpl
++import com.itis.devinterview.service.QuestionService
++
++class QuestionServiceImpl: QuestionService {
++
++    private val repository: QuestionRepository = QuestionRepositoryImpl()
++
++    override fun getQuestionById(id: Int): Question? {
++        return repository.getQuestionById(id)
++    }
++
++    override fun getRandomQuestion(): Question? {
++        return repository.getRandomQuestion()
++    }
++
++    override fun getAllQuestions(): List<Question>? {
++        return repository.getAllQuestions()
++    }
++
++    override fun addList(list: List<Question>) {
++        repository.addList(list)
++    }
++
++    override fun getQuestionListByLanguage(language: String): List<Question>? {
++        return repository.getQuestionListByLanguage(language)
++    }
++
++    override fun addQuestionList() {
++        repository.addQuestionList()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/service/QuestionService.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/service/QuestionService.kt b/app/src/main/java/com/itis/devinterview/service/QuestionService.kt
+new file mode 100644
+--- /dev/null	(date 1657197304829)
++++ b/app/src/main/java/com/itis/devinterview/service/QuestionService.kt	(date 1657197304829)
+@@ -0,0 +1,12 @@
++package com.itis.devinterview.service
++
++import com.itis.devinterview.model.Question
++
++interface QuestionService {
++    fun getQuestionById(id: Int): Question?
++    fun getRandomQuestion(): Question?
++    fun getAllQuestions(): List<Question>?
++    fun addList(list: List<Question>)
++    fun getQuestionListByLanguage(language: String): List<Question>?
++    fun addQuestionList()
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/repository/impl/QuestionRepositoryImpl.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/repository/impl/QuestionRepositoryImpl.kt b/app/src/main/java/com/itis/devinterview/repository/impl/QuestionRepositoryImpl.kt
+new file mode 100644
+--- /dev/null	(date 1657197304828)
++++ b/app/src/main/java/com/itis/devinterview/repository/impl/QuestionRepositoryImpl.kt	(date 1657197304828)
+@@ -0,0 +1,839 @@
++package com.itis.devinterview.repository.impl
++
++import com.itis.devinterview.model.Question
++import com.itis.devinterview.preferences.AccessToRepository
++import com.itis.devinterview.repository.QuestionRepository
++
++class QuestionRepositoryImpl : QuestionRepository {
++    private val questions = arrayListOf(
++        Question(
++            0,
++            "Java",
++            "Что будет результатом выполнения такого фрагмента кода?\n" +
++                    "int counter = 5;\n" +
++                    "System.out.println(“Counter value is %s”, counter)\n",
++            "Сounter value is 5",
++            "Counter value is",
++            "Код не скомпилируется, нужно использовать printf",
++            "Код не скомпилируется, так как оператор % является остатком от деления",
++            "Код не скомпилируется, нужно использовать printf"
++        ),
++        Question(
++            1,
++            "Java",
++            "Какого рода коллекция больше всего подходит для решения задачи хранения наименований параметров и их значений?",
++            "TreeMap<String, Parameter>",
++            "SortedMap<Object, String>",
++            "HashMap<String, Object>",
++            "List<Object>",
++            "HashMap<String, Object>"
++        ),
++        Question(
++            2,
++            "Java",
++            "Где правильно создан массив?",
++            "int[] a = int[] {1, 2, 3, 4, 5};",
++            "int[] a = new int[] {1, 2, 3, 4, 5};",
++            "int a = new int[] {1, 2, 3, 4, 5};",
++            "int[] a = new int {1, 2, 3, 4, 5};",
++            "int a = new int[] {1, 2, 3, 4, 5};"
++        ),
++        Question(
++            3,
++            "Java",
++            "Сколько параметров может принимать функция?",
++            "Неограниченное количество",
++            "Не более 3",
++            "Не более 20 ",
++            "Только один параметр",
++            "Неограниченное количество"
++        ),
++        Question(
++            4,
++            "Java",
++            "Для чего используется оператор NEW?",
++            "Для создания новой переменной.",
++            "Для объявления нового класса.",
++            "Для создания экземпляра класса. ",
++            "Это антагонист оператора OLD.",
++            "Для создания экземпляра класса. "
++        ),
++        Question(
++            5,
++            "Java",
++            "Где правильно присвоено новое значение к многомерному массиву?",
++            "a[0, 0] = 1;",
++            "a[0 0] = 1;",
++            "a(0)(0) = 1;",
++            "a[0][0] = 1;",
++            "a[0][0] = 1;"
++        ),
++        Question(
++            6,
++            "Java",
++            "Что означает перегрузка метода в Java (overload)?",
++            "Изменение поведения метода класса относительно родительского.",
++            "Изменение поведения метода класса относительно дочернего.",
++            "Несколько методов с одинаковым названием, но разным набором  параметров. ",
++            "Несколько разных классов с одинаковым методом.",
++            "Несколько методов с одинаковым названием, но разным набором  параметров. "
++        ),
++        Question(
++            7,
++            "Java",
++            "Какой метод позволяет запустить программу на Java ?",
++            "Любой, его можно задавать в настройках проекта",
++            "Запуск программы происходит через компиляцию проекта, основного метода нет",
++            "С класса, что был написан первым и с методов что есть внутри него",
++            "С метода main в любом из классов",
++            "С метода main в любом из классов"
++        ),
++        Question(
++            8,
++            "Java",
++            "Где правильно создана простая переменная? ",
++            "bool isDone = true;",
++            "float x = 23.3f;",
++            "byte x = 100000;",
++            "char str = ‘ab’;",
++            "float x = 23.3f;"
++        ),
++        Question(
++            9,
++            "Java",
++            "Что общего у всех элементов массива?",
++            "Их названия ",
++            "Их тип данных",
++            "Их адрес в памяти",
++            "Их размер",
++            "Их тип данных"
++        ),
++        Question(
++            10,
++            "Java",
++            "Какой класс отвечает за получение информации от пользователя?",
++            "System",
++            "Get",
++            "Scaner",
++            "Scanner",
++            "Scanner"
++        ),
++        Question(
++            11,
++            "Java",
++            "Каждый файл должен называться ….",
++            "По имени основного метода в нем",
++            "По имени первой библиотеки в нём",
++            "По имени названия пакета",
++            "По имени класса в нём",
++            "По имени класса в нём"
++        ),
++        Question(
++            12,
++            "Java",
++            "Что означает переопределение метода в Java (override) ?",
++            "Изменение поведения метода класса относительно родительского",
++            "Изменение поведения метода класса относительно дочернего",
++            "Несколько методов с одинаковым названием, но разным набором параметров",
++            "Несколько разных классов с одинаковым методом",
++            "Изменение поведения метода класса относительно родительского"
++        ),
++        Question(
++            13,
++            "Java",
++            "Какие математические операции есть в Java?",
++            "+, -, *, /",
++            "+, -, *, /, --, ++",
++            "+, -, *, /, %",
++            "Все перечисленные",
++            "Все перечисленные"
++        ),
++        Question(
++            14,
++            "Java",
++            "Где правильно осуществлен вывод?",
++            "System.print(\"Hello World!\");",
++            "System.out(\"Hello World!\");",
++            "System.out.print = \"Hello World!\";",
++            "System.out.print(\"Hello World!\");",
++            "System.out.print(\"Hello World!\");"
++        ),
++        Question(
++            15,
++            "Java",
++            "Что вернет метод, объявленный следующим образом:\n" +
++                    "public static int getAmount() ?",
++            "Не ясно, надо смотреть код метода.",
++            "Не ясно, надо смотреть код метода.",
++            "Вернет ссылку на объект класса this.",
++            "Вернет целочисленное значение. ",
++            "Вернет целочисленное значение. "
++        ),
++        Question(
++            16,
++            "Java",
++            "Какой тип данных не является примитивным? ",
++            "boolean",
++            "string",
++            "float",
++            "int",
++            "string"
++        ),
++        Question(
++            17,
++            "Java",
++            "Выберите вариант, который содержит в основные принципы JAVA-ООП?",
++            "Абстракция, наследование, полиморфизм и инкапсуляция ",
++            "Только наследование",
++            "Абстракция, наследование, полиморфизм и инкапсуляция ",
++            "Объективность и ориентированность",
++            "Абстракция, наследование, полиморфизм и инкапсуляция "
++        ),
++        Question(
++            18,
++            "Java",
++            "Какого модификатора класса не существует ?",
++            "private",
++            "structfp",
++            "foreign",
++            "foreign",
++            "foreign"
++        ),
++        Question(19, "Java", "Какого оператора не существует в Java?", "==", "??", "!=", "*", "??"),
++        Question(
++            20,
++            "Java",
++            "Какую функцию выполняет оператор %?",
++            "Остаток от деления ",
++            "Процент от числа",
++            "В Java нет такого оператора",
++            "Процентное деление ",
++            "Остаток от деления "
++        ),
++        Question(
++            21,
++            "Java",
++            "Какой метод сканирует строку ввода перед первым пробелом?",
++            "nextLine()",
++            "next()",
++            "readLine()",
++            "functionSpace()",
++            "next()"
++        ),
++        Question(
++            22,
++            "Java",
++            "Каково значение переменной double d = 2.0 - 1.1;?",
++            "1",
++            "0.9",
++            "0,9",
++            "0.8999999999999999",
++            "0.8999999999999999"
++        ),
++        Question(
++            23,
++            "Java",
++            "Что из себя представляет библиотека JUnit?",
++            "Библиотека для создания UML диаграмм на языке Java",
++            "Протокол передачи данных в бинарном виде, а также сериализации данных ",
++            "Junit это фреймворк для юнит-тестирования на языке JAVA ",
++            "Junit это фреймворк для юнит-тестирования на языке JAVA ",
++            "Junit это фреймворк для юнит-тестирования на языке JAVA "
++        ),
++        Question(
++            24,
++            "Java",
++            "Зачем нужен метод public static void main(String[] args) в Java?",
++            "Напугать начинающего разработчика",
++            "По соглашению разработчики называют первый метод программы именно так, часть конвенции кодирования JAVA",
++            "Данный метод является точкой входа в программу, именно в нее передается управление при старте JAVA программы ",
++            "Данный метод выполняет роль конструктора программы, его можно не писать, если программа состоит из одного класса",
++            "Данный метод является точкой входа в программу, именно в нее передается управление при старте JAVA программы "
++        ),
++        Question(
++            25,
++            "Java",
++            "Какой модификатор объявляет, что метод может быть использован только в своем классе?",
++            "private",
++            "public",
++            "static",
++            "final",
++            "private"
++        ),
++        Question(
++            26,
++            "Java",
++            "Для чего нужен блок finally?",
++            "Для выполнения действий по освобождению ресурсов объекта",
++            "Для определения набора методов, которые будут выполнены при завершении программы",
++            "Для обязательного выполнения определенных действий после try и catch блоков ",
++            "Завершить работу программы",
++            "Для обязательного выполнения определенных действий после try и catch блоков "
++        ),
++        Question(
++            27,
++            "Java",
++            "Какое ключевое слово используется для наследования класса?",
++            "extends",
++            "super",
++            "override",
++            "implements",
++            "extends"
++        ),
++        Question(
++            28,
++            "Java",
++            "Какое ключевое слово используется для реализации интерфейса?",
++            "goto",
++            "implements",
++            "annotation",
++            "interface",
++            "implements"
++        ),
++        Question(
++            29,
++            "Java",
++            "Какой вариант объявления обязательного метода main() верный?",
++            "public void main(String[] args)",
++            "public static void main(String[] args) ",
++            "private static void main(String[] args)",
++            "public static void main(int[] args)",
++            "public static void main(String[] args) "
++        ),
++        Question(
++            30,
++            "Java",
++            "Пусть надо принять список чисел (INTEGER/DOUBLE и тд) Какой тип аргумента нужно прописать у этого метода ?",
++            "function(List<? super Number> list)",
++            "function(List<? extends Object> list)",
++            "function (<? extends Number> list) ",
++            "function(List<Number> list)",
++            "function (<? extends Number> list) "
++        ),
++        Question(
++            31,
++            "Java",
++            "Пусть вам нужно написать метод, который будет сортировать список. Вам хотелось бы, чтобы элементы этого списка можно было сравнить между собой. Какой тип аргумента нужно прописать у этого метода?",
++            "sort(List<? implements Comparable> list)",
++            "sort(List<? implements Comparator> list)",
++            "sort(List<? extends Comparable> list) ",
++            "sort(List<? super Comparable> list)",
++            "sort(List<? extends Comparable> list) "
++        ),
++        Question(
++            32,
++            "Java",
++            "Что такое инкапсуляция? ",
++            "Возможность подтипам вести себя как супертипы",
++            "Механизм сокрытия внутреннего устройства объектов для контроля за доступом ",
++            "Частный случай множественного наследования, в котором участвуют родительские классы ",
++            "Обертка над классом",
++            "Механизм сокрытия внутреннего устройства объектов для контроля за доступом "
++        ),
++        Question(
++            33,
++            "Java",
++            "Что означает модификатор Static у поля класса?",
++            "Данное поле будет сохранено в памяти после удаления объекта",
++            "Данное поле будет доступно только для чтения",
++            "Данное поле принадлежит классу, а не его экземпляру ",
++            "Модификатор доступа, который позволяет делать экземляры только статическими",
++            "Данное поле принадлежит классу, а не его экземпляру "
++        ),
++        Question(
++            34,
++            "Java",
++            "Что необходимо использовать чтобы прервать цикл (for, while или do-while)?",
++            "Stop",
++            "Break",
++            "End",
++            "Continue",
++            "Break"
++        ),
++        Question(
++            35,
++            "Java",
++            "Какой оператор можно использовать, чтобы инвертировать булевое значение?",
++            "not",
++            "!",
++            "&",
++            "-",
++            "!"
++        ),
++        Question(
++            36,
++            "Java",
++            "Какое ключевое слово используется для доступа к текущему объекту?",
++            "That",
++            "This",
++            "Super",
++            "Object",
++            "This"
++        ),
++        Question(
++            37,
++            "Java",
++            "За счет чего Java является кроссплатформенным языком программирования?",
++            "За счет наличия сборщика мусора",
++            "Наличие сборок jre для множества платформ ",
++            "За счет использования виртуальной машины и байт-кода ",
++            "Java не является действительно кроссплатформенным языком",
++            "За счет использования виртуальной машины и байт-кода "
++        ),
++        Question(
++            38,
++            "Java",
++            "Вложенный класс имеет доступ ко всем методам и свойствам класса в котором он объявлен?",
++            "Да",
++            "Да, только если они не объявлены приватными",
++            "Нет",
++            "Вложенных классов в JAVA не существует",
++            "Да"
++        ),
++        Question(
++            39,
++            "Java",
++            "Что будет, если в Map положить два значения с одинаковым ключом?",
++            "Последнее значение перезапишет предыдущее",
++            "Первое значение перезапишет последнее",
++            "Код не будет скомпилирован в таком случае",
++            "В Map нельзя положить значение",
++            "Последнее значение перезапишет предыдущее"
++        ),
++        Question(
++            40,
++            "Python",
++            "Как создать инициализатор класса А?",
++            "A(параметры инициализатора)",
++            "def __init__ (параметры инициализатора)",
++            "def __init__ (параметры инициализатора)",
++            "def init(параметры инициализатора)",
++            "def __init__ (параметры инициализатора)"
++        ),
++        Question(
++            41,
++            "Python",
++            "Какого понятия в python не существует?",
++            "Python interning",
++            "Name mangling",
++            "List comprehension ",
++            "Python simplification",
++            "Python simplification"
++        ),
++        Question(
++            42,
++            "Python",
++            "В какой версии python появился оператор \"морж\"(:=)?",
++            "Python 3.7",
++            "Python 3.4 ",
++            "Python 3.8 ",
++            "Еще не появился",
++            "Python 3.8 "
++        ),
++        Question(
++            43,
++            "Python",
++            "Что выведет данный код?\n" +
++                    "class A:\n" +
++                    "\tpass\n" +
++                    "\n" +
++                    "print(A.__class__)\n",
++            "class ‘type’ ",
++            "type ‘class’",
++            "Ошибку",
++            "Ничего",
++            "class ‘type’ "
++        ),
++        Question(
++            44,
++            "Python",
++            "Что делает следующий код? def a(b, c, d): pass",
++            "Определяет список и инициализирует его.",
++            "Определяет функцию, которая ничего не делает.",
++            "Определяет функцию, которая передает параметры.",
++            "Определяет пустой класс.",
++            "Определяет функцию, которая ничего не делает."
++        ),
++        Question(
++            45,
++            "Python",
++            "Сколько библиотек можно импортировать в один проект?",
++            "Не более 3",
++            "Не более 5",
++            "Неограниченное количество ",
++            "Только одну",
++            "Неограниченное количество "
++        ),
++        Question(
++            46,
++            "Python",
++            "Какая библиотека отвечает за время?",
++            "time",
++            "clock",
++            "Time",
++            "Localtime",
++            "time"
++        ),
++        Question(
++            47,
++            "Python",
++            "Как получить данные от пользователя?",
++            "Использовать метод input()",
++            "Использовать метод read()",
++            "Использовать метод readLine()",
++            "Использовать метод read_input()",
++            "Использовать метод input()"
++        ),
++        Question(
++            48,
++            "Python",
++            "Какая функция выводит что-либо в консоль?",
++            "write();",
++            "log();",
++            "print();",
++            "out();",
++            "print();"
++        ),
++        Question(
++            49,
++            "Python",
++            "Где правильно создана переменная?",
++            "int num = 2 ",
++            "var num = 2",
++            "'$'num = 2",
++            "Нет подходящего ответа ",
++            "Нет подходящего ответа "
++        ),
++        Question(
++            50,
++            "Python",
++            "С помощью какого метода можно посчитать, сколько раз в списке встречается переданный аргумент?",
++            "counter()",
++            "count()",
++            "number()",
++            "int()",
++            "count()"
++        ),
++        Question(
++            51,
++            "Python",
++            "C помощью какого метода можно развернуть список? ",
++            "back()",
++            "return()",
++            "reversed()",
++            "reverse()",
++            "reverse()"
++        ),
++        Question(
++            52,
++            "Python",
++            "Что произойдет, если обратиться к списку по -1 индексу?",
++            "Вернется последний элемент",
++            "Ошибка IndexError",
++            "Вернется первый элемент",
++            "Ошибка KeyError",
++            "Вернется последний элемент"
++        ),
++        Question(
++            53,
++            "Python",
++            "Что такое кортеж?",
++            "Упорядоченная неизменяемая коллекция объектов произвольных типов",
++            "Неупорядоченная неизменяемая коллекция объектов одного типа",
++            "Неупорядоченная изменяемая коллекция объектов произвольных типов",
++            "Упорядоченная изменяемая коллекция объектов одного типа",
++            "Упорядоченная неизменяемая коллекция объектов произвольных типов"
++        ),
++        Question(
++            54,
++            "Python",
++            "Чем отличаются методы remove() и discard(), применяемые к множеству?",
++            "Ничем",
++            "remove() удаляет элемент если он есть, но бросает ошибку если элемента нет, discard() просто удаляет элемент, если он есть",
++            "discard() удаляет элемент если он есть, но бросает ошибку, если элемента нет, remove() просто удаляет элемент, если он есть",
++            "Метода discard() для множеств не существует",
++            "remove() удаляет элемент если он есть, но бросает ошибку если элемента нет, discard() просто удаляет элемент, если он есть"
++        ),
++        Question(
++            55,
++            "Python",
++            "Элемент под каким индексом будет выдан из множества при использовании метода pop()?",
++            "-1, то есть последний ",
++            "0, первый элемент",
++            "Никакой, потому что множество – неупорядоченная последовательность",
++            "Неизвестно, будет выдан случайный элемент",
++            "Неизвестно, будет выдан случайный элемент"
++        ),
++        Question(
++            56,
++            "Python",
++            "Какой метод используется для добавления элемента в множество?",
++            "add()",
++            "append()",
++            "get()",
++            "new()",
++            "add()"
++        ),
++        Question(
++            57,
++            "Python",
++            "Что такое множество в Python?",
++            "Это любая коллекция элементов",
++            "Это список, содержащий в себе только функции",
++            "Это контейнер, значения в котором не повторяются",
++            "Это список, содержащий вложенные списки в себе",
++            "Это контейнер, значения в котором не повторяются"
++        ),
++        Question(
++            58,
++            "Python",
++            "Что такое frozenset?",
++            "Множество, которое нельзя изменять",
++            "Множество, которое хранит в себе только неизменяемые объекты",
++            "Множество, которое используется для хранения констант",
++            "Выдумка автора вопроса",
++            "Множество, которое нельзя изменять"
++        ),
++        Question(
++            59,
++            "Python",
++            "Каким образом правильно объявляется множество?",
++            "a = set()",
++            "a = []",
++            "a = {}",
++            "a = set",
++            "a = set()"
++        ),
++        Question(
++            60,
++            "Python",
++            "Пусть есть список, который лежит в frozenset. Можно ли его изменить?",
++            "Да, но в frozenset останется лежать его оригинал",
++            "Да, к тому же он изменится внутри frozenset",
++            "Нет, frozenset – неизменяемая структура",
++            "Нет, список – неизменяемая структура",
++            "Да, к тому же он изменится внутри frozenset"
++        ),
++        Question(
++            61,
++            "Python",
++            "Что возвращает метод set.difference(another_set)?",
++            "Возвращает True, если два множества одинаковые, False если хотя бы один элемент не совпадает",
++            "Возвращает True, если два множества разные, False если хотя бы один элемент совпадает",
++            "Возвращает множество из элементов, которые встречаются только в множестве set",
++            "Возвращает множество из элементов, которые встречаются только в множестве another_set",
++            "Возвращает множество из элементов, которые встречаются только в множестве set"
++        ),
++        Question(
++            62,
++            "Python",
++            "Каким методом можно очистить множество?",
++            "clear()",
++            "delete()",
++            "empty()",
++            "zero()",
++            "clear()"
++        ),
++        Question(
++            63, "Python", "Что выведет данный код? \n" +
++                    "a = 10 \n" +
++                    "print(b)\n", "10", "TypeError", "ValueError", "NameError", "NameError"
++        ),
++        Question(
++            64,
++            "Python",
++            "Какая разница между sort() и sorted()?",
++            "sort сортирует исходный список, а sorted возвращает новый",
++            "sorted сортирует исходный список, а sort возвращает новый",
++            "Отличий нет",
++            "Функции sorted не существует",
++            "sort сортирует исходный список, а sorted возвращает новый"
++        ),
++        Question(
++            65,
++            "Python",
++            "Выберите неверное утверждение про словари:",
++            "Словари изменяемы",
++            "Словари могут быть любой “глубины”",
++            "Словарь может содержать объект любого типа, кроме другого словаря",
++            "Доступ к элементам словаря осуществляется с помощью ключа",
++            "Словарь может содержать объект любого типа, кроме другого словаря"
++        ),
++        Question(
++            66,
++            "Python",
++            "Ниже представлены несколько вариантов кода. Какой из них удалит элемент с ключом ‘baz’ из словаря?",
++            "d[‘baz’]",
++            "del.d(baz)",
++            "del d[‘baz’]",
++            "del d(baz)",
++            "del d[‘baz’]"
++        ),
++        Question(
++            67,
++            "Python",
++            "Объявлен словарь — d = {'foo': 100, 'bar': 200, 'baz': 300}.\n" +
++                    "Какой результат будет у d['bar':'baz']?\n",
++            "Возникнет ошибка",
++            "(200, 300)",
++            "[200, 300]",
++            "200 300",
++            "Возникнет ошибка"
++        ),
++        Question(
++            68,
++            "Python",
++            "Ниже представлен список ключей. Что из этого синтактически неверно?",
++            "(‘foo’, ‘bar’)",
++            "[‘foo’, ‘bar’]",
++            "‘foo’",
++            "Len",
++            "[‘foo’, ‘bar’]"
++        ),
++        Question(
++            69,
++            "Python",
++            "Для чего нужна функция map?",
++            "Она используется в программировании географических карт",
++            "Она объявляет карту сайта в Django",
++            "Для применения функции к каждому элементу переданной последовательности",
++            "Для создания массива в python",
++            "Для применения функции к каждому элементу переданной последовательности"
++        ),
++        Question(
++            70,
++            "Python",
++            "Какое ключевое слово используется для возврата значения из функции?",
++            "get",
++            "post",
++            "return",
++            "answer",
++            "return"
++        ),
++        Question(
++            71,
++            "Python",
++            "Какое ключевое слово используется для объявления функции?",
++            "fun",
++            "function",
++            "def",
++            "void",
++            "def"
++        ),
++        Question(
++            72,
++            "Python",
++            "В какой области видимости находится переменная, объявленная в теле функции?",
++            "local",
++            "enclosed",
++            "global",
++            "built-in",
++            "local"
++        ),
++        Question(
++            73,
++            "Python",
++            "Каким ключевым словом обозначается анонимная функция?",
++            "alpha",
++            "anonym",
++            "Таких функций не существует",
++            "lambda",
++            "lambda"
++        ),
++        Question(
++            74,
++            "Python",
++            "Для чего нужно ключевое слово global?",
++            "Чтобы сделать переменную доступной из любой точки кода",
++            "Такого ключевого слова в Python нет",
++            "Чтобы переменную можно было изменять за пределами текущей области видимости",
++            "Чтобы сделать переменную константой",
++            "Чтобы сделать переменную доступной из любой точки кода"
++        ),
++        Question(
++            75,
++            "Python",
++            "Что такое рекурсивная функция",
++            "Функция, которая курсирует между модулями",
++            "Функция, которая возвращает саму себя",
++            "Функция, которая выполняется с последней строки по первую",
++            "Функция, написанная курсивом",
++            "Функция, которая возвращает саму себя"
++        ),
++        Question(
++            76,
++            "Python",
++            "Какой принцип ООП описывает следующее предложение? Этот принцип является способностью использовать общий интерфейс для нескольких форм (типов данных).",
++            "Инкапсуляция",
++            "Полиморфизм",
++            "Абстракция",
++            "Наследование",
++            "Полиморфизм"
++        ),
++        Question(
++            77,
++            "Python",
++            "Какой из перечисленных вариантов является верным объявлением private поля?",
++            "Private field = 0",
++            "field = 0",
++            "_field = 0",
++            "__field = 0",
++            "__field = 0"
++        ),
++        Question(
++            78,
++            "Python",
++            "Как много конструкторов в классе может иметь Python?",
++            "0, в них нет необходимости",
++            "1, в Python можно создать лишь один конструктор",
++            "Не более 5",
++            "Бесконечно много",
++            "1, в Python можно создать лишь один конструктор"
++        ),
++        Question(
++            79,
++            "Python",
++            "Какой параметр обязательно принимает в себя метод экземпляра?",
++            "Тип объекта",
++            "Сам экземпляр объекта",
++            "Название класса",
++            "Таких аргументов нет",
++            "Сам экземпляр объекта"
++        ),
++        )
++
++
++    override fun getQuestionById(id: Int): Question? {
++        val list = AccessToRepository.getListFromSP()
++        return list?.get(id)
++    }
++
++    override fun getRandomQuestion(): Question {
++        val list = AccessToRepository.getListFromSP()
++        val size = list?.size
++        val rand = (0 until size!!).random()
++        return list[rand]
++    }
++
++    override fun getAllQuestions(): List<Question>? {
++        return AccessToRepository.getListFromSP()?.toList()
++    }
++
++    override fun addList(list: List<Question>) {
++        AccessToRepository.saveListToSP(list)
++    }
++
++    override fun getQuestionListByLanguage(language: String): List<Question> {
++        val list = AccessToRepository.getListFromSP()
++        val ans = arrayListOf<Question>()
++        if (list != null) for (question: Question in list) {
++            if (question.language == language)
++                ans.add(question)
++        }
++        return ans
++    }
++
++    override fun addQuestionList() {
++        addList(questions)
++    }
++}
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/ProfileFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/ProfileFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/ProfileFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304830)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/ProfileFragment.kt	(date 1657197304830)
+@@ -0,0 +1,11 @@
++package com.itis.devinterview.ui.fragment
++
++import androidx.fragment.app.Fragment
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentProfileBinding
++
++class ProfileFragment : Fragment(R.layout.fragment_profile){
++
++    private var _binding: FragmentProfileBinding? = null
++    private val binding get() = _binding!!
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/FeedbackFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/FeedbackFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/FeedbackFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304830)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/FeedbackFragment.kt	(date 1657197304830)
+@@ -0,0 +1,7 @@
++package com.itis.devinterview.ui.fragment
++
++import androidx.fragment.app.Fragment
++import com.itis.devinterview.R
++
++class FeedbackFragment: Fragment(R.layout.fragment_feedback) {
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/ConfigureNotificationsFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/ConfigureNotificationsFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/ConfigureNotificationsFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304830)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/ConfigureNotificationsFragment.kt	(date 1657197304830)
+@@ -0,0 +1,7 @@
++package com.itis.devinterview.ui.fragment
++
++import androidx.fragment.app.Fragment
++import com.itis.devinterview.R
++
++class ConfigureNotificationsFragment: Fragment(R.layout.fragment_configure_notifications) {
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/TestingFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/TestingFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/TestingFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304834)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/TestingFragment.kt	(date 1657197304834)
+@@ -0,0 +1,39 @@
++package com.itis.devinterview.ui.fragment
++
++import android.content.Context
++import android.os.Bundle
++import android.view.View
++import androidx.fragment.app.Fragment
++import androidx.navigation.fragment.findNavController
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentTestingBinding
++import com.itis.devinterview.preferences.AccessToRepository.getSP
++import com.itis.devinterview.service.impl.QuestionServiceImpl
++
++class TestingFragment : Fragment(R.layout.fragment_testing) {
++    private var _binding: FragmentTestingBinding? = null
++    private val binding get() = _binding!!
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        _binding = FragmentTestingBinding.bind(view)
++        with(binding) {
++            btnTicket.setOnClickListener {
++                findNavController().navigate(R.id.action_testing_to_selectionLanguage)
++            }
++            btnExam.setOnClickListener {
++//                findNavController().navigate(R.id.)
++            }
++        }
++        val pref = activity?.getSharedPreferences("TEST", Context.MODE_PRIVATE)
++        if (pref != null) {
++            getSP(pref)
++        }
++        val serviceImpl: QuestionServiceImpl = QuestionServiceImpl()
++        serviceImpl.addQuestionList()
++
++    }
++    override fun onDestroyView() {
++        super.onDestroyView()
++        _binding = null
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/SettingsFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/SettingsFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/SettingsFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304833)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/SettingsFragment.kt	(date 1657197304833)
+@@ -0,0 +1,52 @@
++package com.itis.devinterview.ui.fragment
++
++import android.os.Bundle
++import android.view.View
++import androidx.appcompat.app.AppCompatDelegate
++import androidx.fragment.app.Fragment
++import androidx.navigation.fragment.findNavController
++import com.itis.devinterview.databinding.FragmentSettingsBinding
++
++class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settings) {
++
++    private var _binding: FragmentSettingsBinding? = null
++    private val binding get() = _binding!!
++
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        _binding = FragmentSettingsBinding.bind(view)
++
++        with(binding) {
++            switchThemes.setOnCheckedChangeListener { _, checkedId ->
++                when (checkedId) {
++                    true -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
++
++                    false -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
++                }
++            }
++            tvResetStatistics.setOnClickListener {
++
++            }
++            tvConfigureNotifications.setOnClickListener {
++                findNavController().navigate(
++                    com.itis.devinterview.R.id.action_settings_fragment_to_configure_notifications_fragment
++                )
++            }
++            tvFeedback.setOnClickListener {
++                findNavController().navigate(
++                    com.itis.devinterview.R.id.action_settings_fragment_to_feedback_fragment
++                )
++            }
++            tvUserAgreement.setOnClickListener {
++                findNavController().navigate(
++                    com.itis.devinterview.R.id.action_settings_fragment_to_user_agreement_fragment
++                )
++            }
++        }
++    }
++
++    override fun onDestroyView() {
++        super.onDestroyView()
++        _binding = null
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/SelectionLanguageFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/SelectionLanguageFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/SelectionLanguageFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304831)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/SelectionLanguageFragment.kt	(date 1657197304831)
+@@ -0,0 +1,33 @@
++package com.itis.devinterview.ui.fragment;
++
++import android.os.Bundle
++import android.util.Log
++import android.view.View
++import androidx.fragment.app.Fragment
++import androidx.navigation.fragment.findNavController
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentSelectionLanguageBinding
++
++
++class SelectionLanguageFragment : Fragment(R.layout.fragment_selection_language) {
++    private var _binding: FragmentSelectionLanguageBinding? = null
++    private val binding get() = _binding!!
++
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        _binding = FragmentSelectionLanguageBinding.bind(view)
++        with(binding) {
++            btnJava.setOnClickListener {
++                findNavController().navigate(R.id.action_selectionLanguage_to_ticketsFragment)
++            }
++            btnPython.setOnClickListener {
++                findNavController().navigate(R.id.action_selectionLanguage_to_ticketsFragment)
++            }
++        }
++    }
++
++    override fun onDestroyView() {
++        super.onDestroyView()
++        _binding = null
++    }
++}
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/ProgressFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/ProgressFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/ProgressFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304831)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/ProgressFragment.kt	(date 1657197304831)
+@@ -0,0 +1,13 @@
++package com.itis.devinterview.ui.fragment
++
++import androidx.fragment.app.Fragment
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentProgressBinding
++
++class ProgressFragment : Fragment(R.layout.fragment_progress) {
++
++    private var _binding: FragmentProgressBinding? = null
++    private val binding get() = _binding!!
++
++
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/UserAgreementFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/UserAgreementFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/UserAgreementFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304834)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/UserAgreementFragment.kt	(date 1657197304834)
+@@ -0,0 +1,19 @@
++package com.itis.devinterview.ui.fragment
++
++import android.os.Bundle
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import androidx.fragment.app.Fragment
++import com.itis.devinterview.R
++
++class UserAgreementFragment : Fragment(R.layout.fragment_user_agreement) {
++
++    override fun onCreateView(
++        inflater: LayoutInflater,
++        container: ViewGroup?,
++        savedInstanceState: Bundle?
++    ): View? {
++        return inflater.inflate(R.layout.fragment_user_agreement, container, false)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/TicketsFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/TicketsFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/TicketsFragment.kt
+new file mode 100644
+--- /dev/null	(date 1657197304834)
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/TicketsFragment.kt	(date 1657197304834)
+@@ -0,0 +1,33 @@
++package com.itis.devinterview.ui.fragment
++
++import android.os.Bundle
++import android.view.View
++import androidx.fragment.app.Fragment
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentTicketsBinding
++import com.itis.devinterview.service.impl.QuestionServiceImpl
++
++class TicketsFragment : Fragment(R.layout.fragment_tickets) {
++
++    private var _binding: FragmentTicketsBinding? = null
++    private val binding get() = _binding!!
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        _binding = FragmentTicketsBinding.bind(view)
++        val serviceImpl: QuestionServiceImpl = QuestionServiceImpl()
++        val q = serviceImpl.getRandomQuestion()
++        with(binding) {
++            tvTicketFirst.text = q?.question
++            tvTicketSecond.text = q?.first
++            tvTicketThird.text = q?.second
++            tvTicketFourth.text = q?.third
++            tvTicketFifth.text = q?.fourth
++        }
++
++    }
++
++    override fun onDestroyView() {
++        super.onDestroyView()
++        _binding = null
++    }
++}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/activity_main.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/fragment_exam.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/fragment_secondary_exam.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml\" value=\"0.10989583333333333\" />\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_choicing_language.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml\" value=\"0.25\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/.idea/misc.xml	(date 1657197335286)
+@@ -3,20 +3,29 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
+-        <entry key="..\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.1" />
+-        <entry key="..\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/fragment_exam.xml" value="0.1" />
+-        <entry key="..\:/SummerPractice/DeveloperInterview/app/src/main/res/layout/fragment_secondary_exam.xml" value="0.1" />
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_choicing_language.xml" value="0.25" />
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml" value="0.264" />
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml" value="0.25" />
++        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_education.xml" value="0.236" />
++        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_exam.xml" value="0.236" />
++        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_profile.xml" value="0.174" />
++        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
++        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_progress.xml" value="0.24954710144927536" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/btn_active.xml" value="0.17" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_round_settings_24.xml" value="0.17" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/light_theme.xml" value="0.1895" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/tv_button.xml" value="0.17" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.1" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_configure_notifications.xml" value="0.264" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_feedback.xml" value="0.264" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_scrolling.xml" value="0.264" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_selection_language.xml" value="0.4" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_settings.xml" value="0.4" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml" value="0.1" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml" value="0.1" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement.xml" value="0.176" />
++        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement_unvailable.xml" value="0.11197916666666667" />        
+       </map>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/build/classes" />
+-  </component>
+-  <component name="ProjectType">
+-    <option name="id" value="Android" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.itis.devinterview.ui.activity\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport androidx.navigation.NavController\r\nimport androidx.navigation.fragment.NavHostFragment\r\nimport com.itis.devinterview.R\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    private lateinit var controller: NavController\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n        controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt b/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt
+--- a/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/app/src/main/java/com/itis/devinterview/ui/activity/MainActivity.kt	(date 1657197304860)
+@@ -6,11 +6,12 @@
+ import androidx.navigation.fragment.NavHostFragment
+ import com.itis.devinterview.R
+ 
+-class MainActivity : AppCompatActivity() {
++class MainActivity() : AppCompatActivity() {
+     private lateinit var controller: NavController
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main)
+         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
+     }
++
+ }
+\ No newline at end of file
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nbuildscript {\r\n    repositories {\r\n        google()\r\n    }\r\n    dependencies {\r\n        classpath 'com.android.tools.build:gradle:3.1.4'\r\n        classpath \"androidx.navigation:navigation-safe-args-gradle-plugin:2.5.0\"\r\n\r\n        // NOTE: Do not place your application dependencies here; they belong\r\n        // in the individual module build.gradle files\r\n    }\r\n}\r\nplugins {\r\n    id 'com.android.application' version '7.1.2' apply false\r\n    id 'com.android.library' version '7.1.2' apply false\r\n    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 83cb96c3a703ff39122c4e0f8d7d66739a9ce1d2)
++++ b/build.gradle	(date 1657197304849)
+@@ -2,9 +2,10 @@
+ buildscript {
+     repositories {
+         google()
++        jcenter()
+     }
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:3.1.4'
++        classpath 'com.android.tools.build:gradle:3.2.1'
+         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.0"
+ 
+         // NOTE: Do not place your application dependencies here; they belong
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1657197304826)
++++ b/.idea/.name	(date 1657197304826)
+@@ -0,0 +1,1 @@
++DevInterview
+\ No newline at end of file

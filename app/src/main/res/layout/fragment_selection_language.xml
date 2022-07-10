@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tv_choose_language"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Please, choose the language"
+        android:layout_height="0dp"
+        android:background="#719FC8"
+        android:gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="20dp"
+        android:scaleType="centerCrop"
+        android:text="@string/choose_language"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@id/btn_java"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        tools:ignore="RtlCompat" />
 
     <Button
         android:id="@+id/btn_java"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Java"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/java"
         app:layout_constraintBottom_toTopOf="@id/btn_python"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,10 +43,60 @@
         android:id="@+id/btn_python"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
-        android:text="Python"
+        android:layout_marginEnd="50dp"
+        android:text="@string/python"
+        app:layout_constraintBottom_toTopOf="@id/btn_c_plus_plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_java" />
+
+    <Button
+        android:id="@+id/btn_c_plus_plus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/dark_blue"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/c_plus_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_python"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btn_kotlin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/dark_blue"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/kotlin"
+        app:layout_constraintBottom_toTopOf="@id/btn_php"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_c_plus_plus"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btn_php"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/dark_blue"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/php"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_kotlin"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,71 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.DevInterview" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+    <style name="Theme.DevInterview" parent="Theme.MaterialComponents">
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="colorPrimary">@color/primary_color_dark</item>
+        <item name="colorPrimaryVariant">@color/primary_variant_color_dark</item>
+        <item name="colorSecondary">@color/secondary_color_dark</item>
+        <item name="colorBackgroundFloating">@color/background_color_dark</item>
+        <item name="colorSurface">@color/surface_color_dark</item>
+        <item name="colorError">@color/error_color_dark</item>
+        <item name="colorOnPrimary">@color/on_primary_color_dark</item>
+        <item name="colorOnSecondary">@color/on_secondary_color_dark</item>
+        <item name="colorOnBackground">@color/on_background_color_dark</item>
+        <item name="colorOnSurface">@color/on_surface_color_dark</item>
+        <item name="colorOnError">@color/on_error_color_dark</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="alertDialogTheme">@style/YDialog</item>
     </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="UbuntuTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="YDialog" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <!-- Base colors -->
+        <item name="android:textColorPrimary">@color/dialog_text</item>
+        <item name="android:windowBackground">@drawable/bg_dialog_dark</item>
+        <item name="colorControlNormal">@color/dialog_checkbox</item>
+        <!--        <item name="colorControlActivated">@color/dialog_checkbox_activated</item>-->
+        <item name="textColorAlertDialogListItem">@color/dialog_list_item</item>
+
+        <!-- Button styles -->
+        <item name="buttonBarPositiveButtonStyle">@style/YDialogPositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/YDialogNegativeButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/YDialogNeutralButton</item>
+
+        <!-- Sizes -->
+        <item name="android:lineSpacingExtra">@dimen/dialog_line_spacing</item>
+        <item name="android:textSize">@dimen/dialog_text_size</item>
+        <item name="android:windowTitleStyle">@style/YDialogTitleTextAppearance</item>
+    </style>
+
+    <style name="YDialogButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/dialog_button</item>
+        <item name="android:textSize">@dimen/dialog_buttons_size</item>
+    </style>
+
+    <style name="YDialogPositiveButton" parent="YDialogButton"/>
+
+    <style name="YDialogNegativeButton" parent="YDialogButton">
+        <item name="android:textColor">@color/dialog_reject_button</item>
+    </style>
+
+        <style name="YDialogNeutralButton" parent="YDialogButton"/>
+
+    <style name="YDialogTitleTextAppearance" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">@dimen/dialog_title_size</item>
+    </style>
+
+    <dimen name="dialog_line_spacing">2dp</dimen>
+    <dimen name="dialog_title_size">20sp</dimen>
+    <dimen name="dialog_text_size">16sp</dimen>
+    <dimen name="dialog_buttons_size">14sp</dimen>
 </resources>
