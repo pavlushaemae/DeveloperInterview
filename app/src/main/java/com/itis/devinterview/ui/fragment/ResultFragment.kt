@@ -1,7 +1,9 @@
 package com.itis.devinterview.ui.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -25,5 +27,17 @@ class ResultFragment: Fragment(R.layout.fragment_result) {
                 findNavController().navigate(R.id.action_resultFragment_to_testing)
             }
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true)
+            {
+                override fun handleOnBackPressed() {
+                    findNavController().navigate(R.id.action_resultFragment_to_testing)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this,callback)
     }
 }
