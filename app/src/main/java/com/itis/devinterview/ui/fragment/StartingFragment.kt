@@ -20,7 +20,6 @@ class StartingFragment: Fragment(R.layout.fragment_starting) {
                 findNavController().navigate(R.id.action_startingFragment_to_helloFragment)
             }
         }
-
     }
 
 
