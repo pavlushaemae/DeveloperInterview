@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.itis.devinterview.R
-import com.itis.devinterview.databinding.FragmentOnExamBinding
 import com.itis.devinterview.databinding.FragmentResultBinding
 
 class ResultFragment: Fragment(R.layout.fragment_result) {
