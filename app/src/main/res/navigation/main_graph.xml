@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/testing">
-
+    app:startDestination="@id/profile_fragment">
+    
     <fragment
         android:id="@+id/testing"
         android:name="com.itis.devinterview.ui.fragment.TestingFragment"
-        android:label="Testing" >
+        android:label="Testing"
+        tools:layout="@layout/fragment_testing">
         <action
             android:id="@+id/action_testing_to_selectionLanguage"
             app:destination="@id/selectionLanguage" />
@@ -16,14 +17,200 @@
     <fragment
         android:id="@+id/selectionLanguage"
         android:name="com.itis.devinterview.ui.fragment.SelectionLanguageFragment"
-        android:label="SelectionLanguage" >
+        android:label="SelectionLanguage"
+        tools:layout="@layout/fragment_selection_language">
         <action
             android:id="@+id/action_selectionLanguage_to_ticketsFragment"
             app:destination="@id/ticketsFragment" />
+        <argument
+            android:name="typeOfTestingArg"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_selectionLanguage_to_inDevelopingFragment"
+            app:destination="@id/inDevelopingFragment" />
+        <action
+            android:id="@+id/action_selectionLanguage_to_onExamFragment"
+            app:destination="@id/onExamFragment" />
     </fragment>
     <fragment
         android:id="@+id/ticketsFragment"
         android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
+        android:label="TicketsFragment"
+        tools:layout="@layout/fragment_tickets">
+        <argument
+            android:name="languageArg"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_ticketsFragment_to_onTicketFragment"
+            app:destination="@id/onTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationFragment"
+        android:name="com.itis.devinterview.ui.fragment.EducationFragment"
+        android:label="EducationFragment" >
+        <action
+            android:id="@+id/action_educationFragment_to_javaFragment"
+            app:destination="@id/javaFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_kotlinFragment"
+            app:destination="@id/kotlinFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_pythonFragment"
+            app:destination="@id/pythonFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_cplusFragment"
+            app:destination="@id/cplusFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_phpFragment"
+            app:destination="@id/phpFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.itis.devinterview.ui.fragment.SettingsFragment"
+        android:label="SettingsFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_fragment_to_configure_notifications_fragment"
+            app:destination="@id/configure_notifications_fragment" />
+        <action
+            android:id="@+id/action_settings_fragment_to_feedback_fragment"
+            app:destination="@id/feedback_fragment" />
+        <action
+            android:id="@+id/action_settings_fragment_to_user_agreement_fragment"
+            app:destination="@id/user_agreement_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/configure_notifications_fragment"
+        android:name="com.itis.devinterview.ui.fragment.ConfigureNotificationsFragment"
+        android:label="ConfigureNotificationsFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_configure_notifications" />
+    <fragment
+        android:id="@+id/feedback_fragment"
+        android:name="com.itis.devinterview.ui.fragment.FeedbackFragment"
+        android:label="FeedbackFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/user_agreement_fragment"
+        android:name="com.itis.devinterview.ui.fragment.UserAgreementFragment"
+        android:label="UserAgreementFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_user_agreement" />
+    <fragment
+        android:id="@+id/cplusFragment"
+        android:name="com.itis.devinterview.ui.fragment.CplusFragment"
+        android:label="CplusFragment" >
+        <action
+            android:id="@+id/action_cplusFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/javaFragment"
+        android:name="com.itis.devinterview.ui.fragment.JavaFragment"
+        android:label="JavaFragment" >
+        <action
+            android:id="@+id/action_javaFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startingFragment"
+        android:name="com.itis.devinterview.ui.fragment.StartingFragment"
+        android:label="StartingFragment"
+        tools:layout="@layout/fragment_starting">
+        <action
+            android:id="@+id/action_startingFragment_to_helloFragment"
+            app:destination="@id/helloFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.itis.devinterview.ui.fragment.HelloFragment"
+        android:label="HelloFragment"
+        tools:layout="@layout/hello_fragment">
+        <action
+            android:id="@+id/action_helloFragment_to_nameFragment"
+            app:destination="@id/nameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pythonFragment"
+        android:name="com.itis.devinterview.ui.fragment.PythonFragment"
+        android:label="PythonFragment" >
+        <action
+            android:id="@+id/action_pythonFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+        android:id="@+id/profile_fragment"
+        android:name="com.itis.devinterview.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_fragment_to_settings_fragment"
+            app:destination="@id/settings_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inDevelopingFragment"
+        android:name="com.itis.devinterview.ui.fragment.InDevelopingFragment"
+        android:label="InDevelopingFragment"
+        tools:layout="@layout/fragment_in_developing"/>
+    <fragment
+        android:id="@+id/onExamFragment"
+        android:name="com.itis.devinterview.ui.fragment.OnExamFragment"
+        android:label="OnExamFragment"
+        tools:layout="@layout/fragment_on_exam">
+        <action
+            android:id="@+id/action_onExamFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <argument
+            android:name="languageArg"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.itis.devinterview.ui.fragment.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <argument android:name="answersArg"
+            app:argType="integer"
+            app:nullable="false"/>
+        <argument android:name="incorrectAnswersArg"
+            app:argType="integer"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_resultFragment_to_testing"
+            app:destination="@id/testing" />
+    </fragment>
+    <fragment
+        android:id="@+id/onTicketFragment"
+        android:name="com.itis.devinterview.ui.fragment.OnTicketFragment"
+        android:label="OnTicketFragment" >
+        <action
+            android:id="@+id/action_onTicketFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <argument
+            android:name="idArg"
+            app:argType="integer"
+            app:nullable="false"/>
+        <argument
+            android:name="languageArg"
+            app:argType="string"
+            app:nullable="false"/>
+    </fragment>
         android:label="TicketsFragment" />
     <fragment
         android:id="@+id/startingFragment"
