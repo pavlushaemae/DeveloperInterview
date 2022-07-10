@@ -22,6 +22,7 @@
 
     <Button
         android:id="@+id/btn_ticket"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -35,6 +36,7 @@
 
     <Button
         android:id="@+id/btn_exam"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"

@@ -46,6 +46,7 @@
 
     <Button
         android:id="@+id/btn_select_time"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -58,6 +59,7 @@
 
     <Button
         android:id="@+id/btn_set_notification_time"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -70,6 +72,7 @@
 
     <Button
         android:id="@+id/btn_off_notifications"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
