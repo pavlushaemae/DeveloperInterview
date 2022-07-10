@@ -1,5 +1,6 @@
 package com.itis.devinterview.ui.fragment
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -50,7 +51,6 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     }
                     acbOptionFirst.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionFirst.setTextColor(Color.WHITE)
-//                    revealAnswer()
                 }
             }
             acbOptionSecond.setOnClickListener {
@@ -61,7 +61,6 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     }
                     acbOptionSecond.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionSecond.setTextColor(Color.WHITE)
-//                    revealAnswer()
                 }
             }
             acbOptionThird.setOnClickListener {
@@ -72,7 +71,6 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     }
                     acbOptionThird.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionThird.setTextColor(Color.WHITE)
-//                    revealAnswer()
                 }
             }
             acbOptionFourth.setOnClickListener {
@@ -83,7 +81,6 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     }
                     acbOptionFourth.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionFourth.setTextColor(Color.WHITE)
-//                    revealAnswer()
                 }
             }
             btnNext.setOnClickListener {
@@ -119,23 +116,7 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
         }
     }
 
-//    private fun revealAnswer() {
-//        val getAnswer = listOfQuestions[currentQuestionPosition].correct
-//        if(binding.acbOptionFirst.text.toString() == getAnswer) {
-//            binding.acbOptionFirst.setBackgroundResource(drawable.round_back_green_10)
-//            binding.acbOptionFirst.setTextColor(Color.WHITE)
-//        }else if (binding.acbOptionSecond.text.toString() == getAnswer) {
-//            binding.acbOptionSecond.setBackgroundResource(drawable.round_back_green_10)
-//            binding.acbOptionSecond.setTextColor(Color.WHITE)
-//        }else if (binding.acbOptionThird.text.toString() == getAnswer) {
-//            binding.acbOptionThird.setBackgroundResource(drawable.round_back_green_10)
-//            binding.acbOptionThird.setTextColor(Color.WHITE)
-//        }else if (binding.acbOptionFourth.text.toString() == getAnswer) {
-//            binding.acbOptionFourth.setBackgroundResource(drawable.round_back_green_10)
-//            binding.acbOptionFourth.setTextColor(Color.WHITE)
-//        }
-//    }
-
+    @SuppressLint("ResourceType")
     private fun changeNextQuestion() {
         currentQuestionPosition++
         if ((currentQuestionPosition + 1) == listOfQuestions.size) {
@@ -144,13 +125,13 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
         if (currentQuestionPosition < listOfQuestions.size) {
             selectedOptionByUser = ""
             with(binding) {
-                acbOptionFirst.setBackgroundResource(drawable.round_back_white_stroke)
+                acbOptionFirst.setBackgroundResource(style.round_back)
                 acbOptionFirst.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionSecond.setBackgroundResource(drawable.round_back_white_stroke)
+                acbOptionSecond.setBackgroundResource(style.round_back)
                 acbOptionSecond.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionThird.setBackgroundResource(drawable.round_back_white_stroke)
+                acbOptionThird.setBackgroundResource(style.round_back)
                 acbOptionThird.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionFourth.setBackgroundResource(drawable.round_back_white_stroke)
+                acbOptionFourth.setBackgroundResource(style.round_back)
                 acbOptionFourth.setTextColor(Color.parseColor("#FF000000"))
                 tvQuestions.text = "${currentQuestionPosition + 1}/${listOfQuestions.size}"
                 tvQuestion.text = listOfQuestions[currentQuestionPosition].question
