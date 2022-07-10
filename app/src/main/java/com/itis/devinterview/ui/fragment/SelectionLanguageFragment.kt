@@ -41,12 +41,12 @@ class SelectionLanguageFragment : Fragment(R.layout.fragment_selection_language)
             }else if (typeOfTesting == "Exam"){
                 btnJava.setOnClickListener {
                     val action = SelectionLanguageFragmentDirections
-                        .actionSelectionLanguageToSecondaryExamFragment("Java")
+                        .actionSelectionLanguageToOnExamFragment("Java")
                     findNavController().navigate(action)
                 }
                 btnPython.setOnClickListener {
                     val action = SelectionLanguageFragmentDirections
-                        .actionSelectionLanguageToSecondaryExamFragment("Python")
+                        .actionSelectionLanguageToOnExamFragment("Python")
                     findNavController().navigate(action)
                 }
                 btnCPlusPlus.setOnClickListener {
