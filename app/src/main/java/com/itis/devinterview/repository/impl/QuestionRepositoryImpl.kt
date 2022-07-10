@@ -877,4 +877,20 @@ class QuestionRepositoryImpl : QuestionRepository {
         }
         return ans
     }
+
+    override fun addOneTicket(language: String) {
+        AccessToRepository.addIntToSP(language)
+    }
+
+    override fun getCountOfTestedTickets(language: String): Int? {
+        return AccessToRepository.getCountOfTestedTickets(language)
+    }
+
+    override fun addFirstLaunch() {
+        AccessToRepository.addFirstLaunch()
+    }
+
+    override fun getFirstLaunch(): Boolean {
+        return AccessToRepository.getFirstLaunch()
+    }
 }
