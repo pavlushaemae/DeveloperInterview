@@ -1,15 +1,20 @@
 package com.itis.devinterview.ui.fragment
 
+import android.R
+import android.graphics.Color.alpha
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.databinding.FragmentSettingsBinding
 
-class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settings) {
 
-    private var _binding: FragmentSettingsBinding? = null
+class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settings) {
+//    val animAlpha: Animation = AnimationUtils.loadAnimation(context, R.anim.accelerate_interpolator)
+    private var _binding: com.itis.devinterview.databinding.FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

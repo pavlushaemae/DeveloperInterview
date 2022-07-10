@@ -15,10 +15,22 @@
         android:text="@string/notificate"
         android:textAlignment="center"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@id/tv_selected_time"
+        app:layout_constraintBottom_toTopOf="@id/tv_everyday_notifications"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_everyday_notifications"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ежедневные уведомления"
+        android:textSize="15sp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_selected_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_notificate"/>
 
     <TextView
         android:id="@+id/tv_selected_time"
@@ -30,7 +42,7 @@
         app:layout_constraintBottom_toTopOf="@id/btn_select_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_notificate" />
+        app:layout_constraintTop_toBottomOf="@id/tv_everyday_notifications" />
 
     <Button
         android:id="@+id/btn_select_time"
@@ -67,5 +79,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_set_notification_time" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_notifications"
+        android:layout_marginStart="275dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/tv_selected_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_notificate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
