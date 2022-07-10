@@ -9,33 +9,33 @@ object LanguageRepository {
         Language(
             0,
             "PYTHON",
-            R.drawable.python,
+            R.drawable.fone,
 
         ),
 
         Language(
-            0,
+            1,
             "C++",
-            R.drawable.cplus,
+            R.drawable.fone,
 
         ),
 
         Language(
-            0,
+            2,
             "JAVA",
-            R.drawable.java,
+            R.drawable.fone,
         ),
 
         Language(
-            0,
+            3,
             "KOTLIN",
-            R.drawable.kotlin,
+            R.drawable.fone,
         ),
 
         Language(
-            0,
+            4,
             "PHP",
-            R.drawable.php,
+            R.drawable.fone,
         )
     )
 }

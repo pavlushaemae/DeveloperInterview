@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_graph">
+    android:id="@+id/main_graph"
+    app:startDestination="@id/educationFragment">
     <fragment
         android:id="@+id/testing"
         android:name="com.itis.devinterview.ui.fragment.TestingFragment"
@@ -26,7 +27,23 @@
     <fragment
         android:id="@+id/educationFragment"
         android:name="com.itis.devinterview.ui.fragment.EducationFragment"
-        android:label="EducationFragment" />
+        android:label="EducationFragment" >
+        <action
+            android:id="@+id/action_educationFragment_to_javaFragment"
+            app:destination="@id/javaFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_kotlinFragment"
+            app:destination="@id/kotlinFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_pythonFragment"
+            app:destination="@id/pythonFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_cplusFragment"
+            app:destination="@id/cplusFragment" />
+        <action
+            android:id="@+id/action_educationFragment_to_phpFragment"
+            app:destination="@id/phpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settings_fragment"
         android:name="com.itis.devinterview.ui.fragment.SettingsFragment"
@@ -73,4 +90,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_user_agreement" />
+    <fragment
+        android:id="@+id/cplusFragment"
+        android:name="com.itis.devinterview.ui.fragment.CplusFragment"
+        android:label="CplusFragment" >
+        <action
+            android:id="@+id/action_cplusFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/javaFragment"
+        android:name="com.itis.devinterview.ui.fragment.JavaFragment"
+        android:label="JavaFragment" >
+        <action
+            android:id="@+id/action_javaFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/phpFragment"
+        android:name="com.itis.devinterview.ui.fragment.PhpFragment"
+        android:label="PhpFragment" >
+        <action
+            android:id="@+id/action_phpFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kotlinFragment"
+        android:name="com.itis.devinterview.ui.fragment.KotlinFragment"
+        android:label="KotlinFragment" >
+        <action
+            android:id="@+id/action_kotlinFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pythonFragment"
+        android:name="com.itis.devinterview.ui.fragment.PythonFragment"
+        android:label="PythonFragment" >
+        <action
+            android:id="@+id/action_pythonFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+    </fragment>
 </navigation>

@@ -180,7 +180,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/ubuntu_bold"
-        android:text="Общий информация:"
+        android:text="Общая информация:"
         app:layout_constraintBottom_toTopOf="@+id/textView27"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -226,15 +226,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="132dp"
-        android:layout_height="249dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.989"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966"
-        app:srcCompat="@drawable/javaedication" />
 </androidx.constraintlayout.widget.ConstraintLayout>
