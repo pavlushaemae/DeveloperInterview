@@ -189,4 +189,8 @@
     <string name="option_3">Option 3</string>
     <string name="option_4">Option 4</string>
     <string name="next_question">Следующий вопрос</string>
+    <string name="count_of_incorrect_answers">Количество неправильных ответов: 0</string>
+    <string name="count_of_correct_answers">Количество правильных ответов: 0</string>
+    <string name="start_new_test">Начать новый тест</string>
+    <string name="your_result">Ваш результат:</string>
 </resources>
