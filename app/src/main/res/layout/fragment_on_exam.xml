@@ -6,11 +6,11 @@
 
     <Chronometer
         android:id="@+id/tv_timer"
+        style="@style/Chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
         android:text="@string/_00_59"
-        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_question"
         app:layout_constraintEnd_toEndOf="parent"

@@ -23,6 +23,7 @@
 
     <Button
         android:id="@+id/btn_java"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -36,6 +37,7 @@
 
     <Button
         android:id="@+id/btn_python"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -49,6 +51,7 @@
 
     <Button
         android:id="@+id/btn_c_plus_plus"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -63,6 +66,7 @@
 
     <Button
         android:id="@+id/btn_kotlin"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -77,6 +81,7 @@
 
     <Button
         android:id="@+id/btn_php"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
