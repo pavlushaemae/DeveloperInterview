@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/educationFragment">
-
     <fragment
         android:id="@+id/testing"
         android:name="com.itis.devinterview.ui.fragment.TestingFragment"
-        android:label="Testing" >
+        android:label="Testing">
         <action
             android:id="@+id/action_testing_to_selectionLanguage"
             app:destination="@id/selectionLanguage" />
@@ -15,7 +14,7 @@
     <fragment
         android:id="@+id/selectionLanguage"
         android:name="com.itis.devinterview.ui.fragment.SelectionLanguageFragment"
-        android:label="SelectionLanguage" >
+        android:label="SelectionLanguage">
         <action
             android:id="@+id/action_selectionLanguage_to_ticketsFragment"
             app:destination="@id/ticketsFragment" />
@@ -28,4 +27,50 @@
         android:id="@+id/educationFragment"
         android:name="com.itis.devinterview.ui.fragment.EducationFragment"
         android:label="EducationFragment" />
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.itis.devinterview.ui.fragment.SettingsFragment"
+        android:label="SettingsFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_fragment_to_configure_notifications_fragment"
+            app:destination="@id/configure_notifications_fragment" />
+        <action
+            android:id="@+id/action_settings_fragment_to_feedback_fragment"
+            app:destination="@id/feedback_fragment" />
+        <action
+            android:id="@+id/action_settings_fragment_to_user_agreement_fragment"
+            app:destination="@id/user_agreement_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/configure_notifications_fragment"
+        android:name="com.itis.devinterview.ui.fragment.ConfigureNotificationsFragment"
+        android:label="ConfigureNotificationsFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_configure_notifications" />
+    <fragment
+        android:id="@+id/feedback_fragment"
+        android:name="com.itis.devinterview.ui.fragment.FeedbackFragment"
+        android:label="FeedbackFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/user_agreement_fragment"
+        android:name="com.itis.devinterview.ui.fragment.UserAgreementFragment"
+        android:label="UserAgreementFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_user_agreement" />
 </navigation>
