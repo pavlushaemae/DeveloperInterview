@@ -52,7 +52,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/acb_option_first"
-        style="@style/UbuntuTextViewStyle"
+        style="@style/TextViewExamAndTickets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -67,7 +67,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/acb_option_second"
-        style="@style/UbuntuTextViewStyle"
+        style="@style/TextViewExamAndTickets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -82,7 +82,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/acb_option_third"
-        style="@style/UbuntuTextViewStyle"
+        style="@style/TextViewExamAndTickets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -97,7 +97,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/acb_option_fourth"
-        style="@style/UbuntuTextViewStyle"
+        style="@style/TextViewExamAndTickets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

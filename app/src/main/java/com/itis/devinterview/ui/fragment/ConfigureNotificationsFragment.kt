@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -28,17 +29,36 @@ class ConfigureNotificationsFragment :
     private lateinit var alarmManager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
     private var switchFlag: Boolean = false
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentConfigureNotificationsBinding.bind(view)
         createNotificationChannel()
 
         with(binding) {
+            sharedPreferences = requireActivity().getSharedPreferences("save", Context.MODE_PRIVATE)
+            switchNotifications.isChecked = sharedPreferences.getBoolean("value", true)
             switchNotifications.setOnCheckedChangeListener { _, checkedId ->
                 when (checkedId) {
-                    true -> switchFlag = true
+                    true -> {
+                        switchFlag = true
+                        val editor: SharedPreferences.Editor =
+                            requireActivity().getSharedPreferences("save", Context.MODE_PRIVATE)
+                                .edit()
+                        editor.putBoolean("value", true)
+                        editor.apply()
+                        switchNotifications.isChecked = true
+                    }
 
-                    false -> switchFlag = false
+                    false -> {
+                        switchFlag = false
+                        val editor: SharedPreferences.Editor =
+                            requireActivity().getSharedPreferences("save", Context.MODE_PRIVATE)
+                                .edit()
+                        editor.putBoolean("value", false)
+                        editor.apply()
+                        switchNotifications.isChecked = false
+                    }
                 }
             }
             btnSelectTime.setOnClickListener {
