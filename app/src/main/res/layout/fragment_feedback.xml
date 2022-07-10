@@ -6,78 +6,74 @@
     android:paddingStart="10dp"
     android:paddingTop="0dp"
     android:paddingEnd="10dp"
-    android:paddingBottom="450dp">
-
-    <TextView
-        android:id="@+id/tv_app_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingStart="125dp"
-        android:paddingEnd="10dp"
-        android:text="@string/developer_interview"
-        app:layout_constraintBottom_toTopOf="@id/tv_for_all_questions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:paddingBottom="350dp" >
 
     <TextView
         android:id="@+id/tv_for_all_questions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:scaleType="centerCrop"
         android:text="@string/for_all_questions"
-        app:layout_constraintBottom_toTopOf="@id/tv_email_one"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_email_one"
+        android:id="@+id/tv_link_one"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Почта1"
-        app:layout_constraintBottom_toTopOf="@id/tv_email_two"
+        android:textSize="22sp"
+        android:text="@string/dinara_link"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_for_all_questions" />
 
     <TextView
-        android:id="@+id/tv_email_two"
+        android:id="@+id/tv_link_two"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Почта2"
-        app:layout_constraintBottom_toTopOf="@id/tv_email_three"
+        android:textSize="22sp"
+        android:text="@string/andrew_link"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_three"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_email_one" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_one" />
 
     <TextView
-        android:id="@+id/tv_email_three"
+        android:id="@+id/tv_link_three"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Почта3"
-        app:layout_constraintBottom_toTopOf="@id/tv_email_four"
+        android:textSize="22sp"
+        android:text="@string/danila_link"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_four"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_email_two" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_two" />
 
     <TextView
-        android:id="@+id/tv_email_four"
+        android:id="@+id/tv_link_four"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Почта4"
-        app:layout_constraintBottom_toTopOf="@id/tv_email_five"
+        android:textSize="22sp"
+        android:text="@string/pavel_link"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_five"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_email_three" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_three" />
 
     <TextView
-        android:id="@+id/tv_email_five"
+        android:id="@+id/tv_link_five"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Почта5"
+        android:textSize="22sp"
+        android:text="@string/alina_link"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_email_four" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_four" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

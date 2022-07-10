@@ -7,56 +7,27 @@
     android:paddingEnd="10dp">
 
     <TextView
-        android:id="@+id/tv_app_name"
-        android:layout_width="0dp"
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="125dp"
-        android:paddingEnd="10dp"
-        android:text="@string/developer_interview"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/tv_themes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/tv_language"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Язык"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/tv_russian"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/tv_russian"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Русский"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/tv_english"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tv_language" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/tv_english"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Английский"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/tv_themes"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tv_russian" />-->
 
     <TextView
         android:id="@+id/tv_themes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/theme_app"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_theme_change"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+        app:layout_constraintTop_toBottomOf="@+id/settings" />
 
     <TextView
         android:id="@+id/tv_theme_change"
@@ -69,22 +40,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_themes" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/tv_theme_dark"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Тёмная"-->
-    <!--        android:layout_marginEnd="50dp"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/tv_statistics"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tv_theme_light" />-->
-
     <TextView
         android:id="@+id/tv_statistics"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/statistics_app"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_reset_statistics"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +66,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/notifications"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_configure_notifications"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +88,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/other"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -165,8 +128,8 @@
         android:id="@+id/tv_app_version_number"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingStart="350dp"
-        android:paddingEnd="10dp"
+        android:paddingStart="300dp"
+        android:paddingEnd="0dp"
         android:text="@string/_0_0_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +140,8 @@
         android:id="@+id/switch_themes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="350dp"
+        android:paddingStart="300dp"
+        android:paddingEnd="0dp"
         app:layout_constraintBottom_toTopOf="@id/tv_statistics"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

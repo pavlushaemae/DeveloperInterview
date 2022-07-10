@@ -164,7 +164,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Что вернет метод, объявленный следующим образом:\n" +
                     "public static int getAmount() ?",
             "Не ясно, надо смотреть код метода.",
-            "Не ясно, надо смотреть код метода.",
+            "Вернет количество переменных в классе.",
             "Вернет ссылку на объект класса this.",
             "Вернет целочисленное значение. ",
             "Вернет целочисленное значение. "
@@ -185,7 +185,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Выберите вариант, который содержит в основные принципы JAVA-ООП?",
             "Абстракция, наследование, полиморфизм и инкапсуляция ",
             "Только наследование",
-            "Абстракция, наследование, полиморфизм и инкапсуляция ",
+            "Только полиморфизм ",
             "Объективность и ориентированность",
             "Абстракция, наследование, полиморфизм и инкапсуляция "
         ),
@@ -196,10 +196,19 @@ class QuestionRepositoryImpl : QuestionRepository {
             "private",
             "structfp",
             "foreign",
-            "foreign",
+            "protected",
             "foreign"
         ),
-        Question(19, "Java", "Какого оператора не существует в Java?", "==", "??", "!=", "*", "??"),
+        Question(
+            19,
+            "Java",
+            "Какого оператора не существует в Java?",
+            "==",
+            "??",
+            "!=",
+            "*",
+            "??"
+        ),
         Question(
             20,
             "Java",
@@ -237,7 +246,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Библиотека для создания UML диаграмм на языке Java",
             "Протокол передачи данных в бинарном виде, а также сериализации данных ",
             "Junit это фреймворк для юнит-тестирования на языке JAVA ",
-            "Junit это фреймворк для юнит-тестирования на языке JAVA ",
+            "Junit это фреймворк для работы с Mockito ",
             "Junit это фреймворк для юнит-тестирования на языке JAVA "
         ),
         Question(
@@ -405,7 +414,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Python",
             "Как создать инициализатор класса А?",
             "A(параметры инициализатора)",
-            "def __init__ (параметры инициализатора)",
+            "__init__ (параметры инициализатора)",
             "def __init__ (параметры инициализатора)",
             "def init(параметры инициализатора)",
             "def __init__ (параметры инициализатора)"
@@ -637,7 +646,12 @@ class QuestionRepositoryImpl : QuestionRepository {
         Question(
             63, "Python", "Что выведет данный код? \n" +
                     "a = 10 \n" +
-                    "print(b)\n", "10", "TypeError", "ValueError", "NameError", "NameError"
+                    "print(b)\n",
+            "10",
+            "TypeError",
+            "ValueError",
+            "NameError",
+            "NameError"
         ),
         Question(
             64,
@@ -800,7 +814,7 @@ class QuestionRepositoryImpl : QuestionRepository {
             "Таких аргументов нет",
             "Сам экземпляр объекта"
         ),
-        )
+    )
 
 
     override fun getQuestionById(id: Int): Question? {
@@ -835,5 +849,32 @@ class QuestionRepositoryImpl : QuestionRepository {
 
     override fun addQuestionList() {
         addList(questions)
+    }
+
+    override fun getTenQuestions(id: Int, language: String): List<Question> {
+        val list = getQuestionListByLanguage(language)
+        var count = 0
+        val ans = arrayListOf<Question>()
+        val it = ("${id - 1}" + "$count").toInt()
+        for (i in it until list.size) {
+            if (count == 10) {
+                break
+            }
+            ans.add(list[i])
+            count++
+        }
+        return ans
+    }
+
+    override fun getTenRandomQuestions(language: String): List<Question> {
+        val list = getQuestionListByLanguage(language).toMutableList()
+        val ans = arrayListOf<Question>()
+        for (i in 0..9) {
+            val size = list.size
+            val rand = (0 until size).random()
+            ans.add(list[rand])
+            list.removeAt(rand)
+        }
+        return ans
     }
 }

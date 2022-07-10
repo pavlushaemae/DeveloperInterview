@@ -25,7 +25,9 @@ class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settin
                 }
             }
             tvResetStatistics.setOnClickListener {
-
+                val myDialogFragment = DialogFragmentResetStatistics()
+                val manager = this@SettingsFragment.parentFragmentManager
+                myDialogFragment.show(manager, "myDialog")
             }
             tvConfigureNotifications.setOnClickListener {
                 findNavController().navigate(
