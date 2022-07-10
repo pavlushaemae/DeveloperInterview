@@ -5,8 +5,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentEducationBinding
+import com.itis.devinterview.ui.rv.Language
 import com.itis.devinterview.ui.rv.LanguageAdapter
 import com.itis.devinterview.ui.rv.LanguageRepository
 
@@ -26,7 +28,7 @@ class EducationFragment : Fragment(R.layout.fragment_education) {
         languageAdapter = LanguageAdapter(
             LanguageRepository.languages
         ){
-            navigate(it.url)
+            navigate(it.id)
         }
         _binding?.let{
             it.recyclerView.adapter = languageAdapter
@@ -36,13 +38,21 @@ class EducationFragment : Fragment(R.layout.fragment_education) {
 
     }
 
-    private fun navigate(url: String) {
-        val uri: Uri = Uri.parse(url)
-        val intent: Intent = Intent(
-            Intent.ACTION_VIEW,
-            uri
-        )
-        startActivity(intent)
+    private fun navigate(id: Int) {
+
+        when (id){
+            0 -> findNavController().navigate(R.id.action_educationFragment_to_pythonFragment)
+            1 -> findNavController().navigate(R.id.action_educationFragment_to_cplusFragment)
+            2 -> findNavController().navigate(R.id.action_educationFragment_to_javaFragment)
+            3 -> findNavController().navigate(R.id.action_educationFragment_to_kotlinFragment)
+            4 -> findNavController().navigate(R.id.action_educationFragment_to_phpFragment)
+
+
+        }
+
+
+
+
 
 
     }

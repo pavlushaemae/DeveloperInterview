@@ -9,36 +9,33 @@ object LanguageRepository {
         Language(
             0,
             "PYTHON",
-            R.mipmap.ic_launcher_python,
-            "https://stepik.org/course/67/promo"
+            R.drawable.fone,
+
         ),
 
         Language(
-            0,
+            1,
             "C++",
-            R.mipmap.ic_launcher_cplus,
-            "https://stepik.org/course/7/promo"
+            R.drawable.fone,
+
         ),
 
         Language(
-            0,
+            2,
             "JAVA",
-            R.mipmap.ic_launcher_java,
-            "https://stepik.org/course/187/promo"
+            R.drawable.fone,
         ),
 
         Language(
-            0,
+            3,
             "KOTLIN",
-            R.mipmap.ic_launcher_kotlin,
-            "https://stepik.org/course/5448/promo"
+            R.drawable.fone,
         ),
 
         Language(
-            0,
+            4,
             "PHP",
-            R.mipmap.ic_launcher_php,
-            "https://stepik.org/course/62383/promo"
+            R.drawable.fone,
         )
     )
 }
