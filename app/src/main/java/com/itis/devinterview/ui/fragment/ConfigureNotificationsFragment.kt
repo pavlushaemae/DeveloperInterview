@@ -75,77 +75,79 @@ class ConfigureNotificationsFragment :
             )
             Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
         }
-        if(calendar != null && !switchFlag){
-            alarmManager.set(AlarmManager.RTC_WAKEUP,
+        if (calendar != null && !switchFlag) {
+            alarmManager.set(
+                AlarmManager.RTC_WAKEUP,
                 calendar!!.timeInMillis,
-                pendingIntent)
+                pendingIntent
+            )
             Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
-        if (calendar == null) {
-            Toast.makeText(context, "Выберите время", Toast.LENGTH_SHORT).show()
+            if (calendar == null) {
+                Toast.makeText(context, "Выберите время", Toast.LENGTH_SHORT).show()
+            }
         }
     }
-}
 
-private fun showTimePicker() {
-    picker = MaterialTimePicker.Builder()
-        .setTimeFormat(TimeFormat.CLOCK_12H)
-        .setHour(12)
-        .setMinute(0)
-        .setTitleText("Select Alarm Time")
-        .build()
+    private fun showTimePicker() {
+        picker = MaterialTimePicker.Builder()
+            .setTimeFormat(TimeFormat.CLOCK_12H)
+            .setHour(12)
+            .setMinute(0)
+            .setTitleText("Select Alarm Time")
+            .build()
 
-    requireActivity().supportFragmentManager.let { picker.show(it, "channelId") }
-    picker.addOnPositiveButtonClickListener {
-        if (picker.hour > 12) {
-            binding.tvSelectedTime.text =
-                String.format("%02d", picker.hour - 12) + " : " + String.format(
-                    "%02d",
-                    picker.minute
-                ) + " PM"
+        requireActivity().supportFragmentManager.let { picker.show(it, "channelId") }
+        picker.addOnPositiveButtonClickListener {
+            if (picker.hour > 12) {
+                binding.tvSelectedTime.text =
+                    String.format("%02d", picker.hour - 12) + " : " + String.format(
+                        "%02d",
+                        picker.minute
+                    ) + " PM"
+            } else {
+                binding.tvSelectedTime.text =
+                    String.format("%02d", picker.hour) + " : " + String.format(
+                        "%02d",
+                        picker.minute
+                    ) + " AM"
+            }
+            calendar = Calendar.getInstance()
+            calendar!![Calendar.HOUR_OF_DAY] = picker.hour
+            calendar!![Calendar.MINUTE] = picker.minute
+            calendar!![Calendar.SECOND] = 0
+            calendar!![Calendar.MILLISECOND] = 0
+        }
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name: CharSequence = "channelIdReminderChannel"
+            val description = "Channel for Alarm Manager"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel("channelId", name, importance)
+            channel.description = description
+            val notificationManager = requireActivity().getSystemService(
+                NotificationManager::class.java
+            )
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+    private fun createPendingIntentGetBroadcast(
+        context: Context?,
+        id: Int,
+        intent: Intent?,
+        flag: Int
+    ): PendingIntent {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            PendingIntent.getBroadcast(context, id, intent!!, PendingIntent.FLAG_IMMUTABLE or flag)
         } else {
-            binding.tvSelectedTime.text =
-                String.format("%02d", picker.hour) + " : " + String.format(
-                    "%02d",
-                    picker.minute
-                ) + " AM"
+            PendingIntent.getBroadcast(context, id, intent!!, flag)
         }
-        calendar = Calendar.getInstance()
-        calendar!![Calendar.HOUR_OF_DAY] = picker.hour
-        calendar!![Calendar.MINUTE] = picker.minute
-        calendar!![Calendar.SECOND] = 0
-        calendar!![Calendar.MILLISECOND] = 0
     }
-}
 
-private fun createNotificationChannel() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        val name: CharSequence = "channelIdReminderChannel"
-        val description = "Channel for Alarm Manager"
-        val importance = NotificationManager.IMPORTANCE_HIGH
-        val channel = NotificationChannel("channelId", name, importance)
-        channel.description = description
-        val notificationManager = requireActivity().getSystemService(
-            NotificationManager::class.java
-        )
-        notificationManager.createNotificationChannel(channel)
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
     }
-}
-
-private fun createPendingIntentGetBroadcast(
-    context: Context?,
-    id: Int,
-    intent: Intent?,
-    flag: Int
-): PendingIntent {
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        PendingIntent.getBroadcast(context, id, intent!!, PendingIntent.FLAG_IMMUTABLE or flag)
-    } else {
-        PendingIntent.getBroadcast(context, id, intent!!, flag)
-    }
-}
-
-override fun onDestroyView() {
-    _binding = null
-    super.onDestroyView()
-}
 }
