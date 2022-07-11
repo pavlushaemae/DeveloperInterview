@@ -22,7 +22,7 @@
             android:id="@+id/iv_congratulations"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:src="@drawable/congratulations"
+            android:src="@drawable/congr"
             tools:ignore="ContentDescription" />
 
     </androidx.cardview.widget.CardView>
