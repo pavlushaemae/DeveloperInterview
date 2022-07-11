@@ -246,6 +246,10 @@
         <action
             android:id="@+id/action_startingFragment_to_profile_fragment"
             app:destination="@id/profile_fragment" />
+        <action
+            android:id="@+id/action_startingFragment_to_startingFragment"
+            app:destination="@id/startingFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/helloFragment"
