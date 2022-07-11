@@ -16,57 +16,57 @@
         android:scaleType="centerCrop"
         android:text="@string/for_all_questions"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/tv_link_one"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_dinara"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_link_one"
+        android:id="@+id/tv_link_dinara"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:text="@string/dinara_link"
-        app:layout_constraintBottom_toTopOf="@id/tv_link_two"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_andrew"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_for_all_questions" />
 
     <TextView
-        android:id="@+id/tv_link_two"
+        android:id="@+id/tv_link_andrew"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:text="@string/andrew_link"
-        app:layout_constraintBottom_toTopOf="@id/tv_link_three"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_danila"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_link_one" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_dinara" />
 
     <TextView
-        android:id="@+id/tv_link_three"
+        android:id="@+id/tv_link_danila"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:text="@string/danila_link"
-        app:layout_constraintBottom_toTopOf="@id/tv_link_four"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_pavel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_link_two" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_andrew" />
 
     <TextView
-        android:id="@+id/tv_link_four"
+        android:id="@+id/tv_link_pavel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:text="@string/pavel_link"
-        app:layout_constraintBottom_toTopOf="@id/tv_link_five"
+        app:layout_constraintBottom_toTopOf="@id/tv_link_alina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_link_three" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_danila" />
 
     <TextView
-        android:id="@+id/tv_link_five"
+        android:id="@+id/tv_link_alina"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="22sp"
@@ -74,6 +74,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_link_four" />
+        app:layout_constraintTop_toBottomOf="@id/tv_link_pavel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
