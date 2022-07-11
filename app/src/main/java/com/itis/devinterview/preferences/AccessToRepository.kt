@@ -10,6 +10,9 @@ object AccessToRepository {
     private var newQuestionId: Int = 0
     private var sharedPreferences: SharedPreferences? = null
     private const val QUESTIONS_LIST = "questions_list"
+    private const val JAVA = "Java"
+    private const val PYTHON = "Python"
+    private var FIRST_LAUNCH = false
     private var ADDED_OR_NOT = false
     fun getSP(sharedPreferences: SharedPreferences) {
         AccessToRepository.sharedPreferences = sharedPreferences
@@ -38,6 +41,25 @@ object AccessToRepository {
         return gson.fromJson(json, type)
     }
 
+    private fun saveIntToSP(int: Int, language: String) {
+        sharedPreferences?.edit()?.apply {
+            putInt(language.uppercase(), int)
+            apply()
+        }
+    }
+
+    fun getCountOfTestedTickets(language: String): Int? {
+        return sharedPreferences?.getInt(language.uppercase(), 0)
+    }
+
+    fun addIntToSP(language: String) {
+        var count = sharedPreferences?.getInt(language.uppercase(), 0)
+        count = count?.plus(1)
+        if (count != null) {
+            saveIntToSP(count, language)
+        }
+    }
+
     @SuppressLint("CommitPrefEdits")
     fun saveListToSP(list: List<Question>) {
         if (!ADDED_OR_NOT) {
@@ -47,5 +69,13 @@ object AccessToRepository {
                 ADDED_OR_NOT = true
             }
         }
+    }
+
+    fun getFirstLaunch(): Boolean {
+        return FIRST_LAUNCH
+    }
+
+    fun addFirstLaunch() {
+        FIRST_LAUNCH = true
     }
 }

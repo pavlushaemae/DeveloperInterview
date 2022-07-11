@@ -60,7 +60,7 @@
     <string name="choose_language">Выберите язык</string>
     <string name="java">Java</string>
     <string name="python">Python</string>
-    <string name="notificate">Уведомления</string>
+    <string name="notification">Уведомления</string>
     <string name="dinara_link"><a href="https://vk.com/dinozavrog">Зарипова Динара</a></string>
     <string name="andrew_link"><a href="https://vk.com/w1nway">Бартновский Андрей</a></string>
     <string name="danila_link"><a href="https://vk.com/danilagorlov">Горлов Данила</a></string>
@@ -180,6 +180,7 @@
 "13.2. Если иное прямо не указано в положениях настоящего Соглашения или прямо не вытекает из норм действующего"" законодательства, к условиям настоящего Договора применяется материальное право Российской Федерации."
 "13.3. Неотъемлемой частью настоящего Соглашение является Политика конфиденциальности приложения."
     </string>
+    <string name="everyday_notifications">Ежедневные уведомления</string>
     <string name="_00_59">00:59</string>
     <string name="_1_10">1/10</string>
     <string name="question_will_be_here">Вопрос будет здесь</string>
@@ -188,4 +189,8 @@
     <string name="option_3">Option 3</string>
     <string name="option_4">Option 4</string>
     <string name="next_question">Следующий вопрос</string>
+    <string name="count_of_incorrect_answers">Количество неправильных ответов: 0</string>
+    <string name="count_of_correct_answers">Количество правильных ответов: 0</string>
+    <string name="start_new_test">Начать новый тест</string>
+    <string name="your_result">Ваш результат:</string>
 </resources>

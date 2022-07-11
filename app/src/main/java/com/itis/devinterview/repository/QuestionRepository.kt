@@ -11,4 +11,8 @@ interface QuestionRepository {
     fun addQuestionList()
     fun getTenQuestions(id: Int, language: String): List<Question>
     fun getTenRandomQuestions(language: String): List<Question>
+    fun addOneTicket(language: String)
+    fun getCountOfTestedTickets(language: String): Int?
+    fun addFirstLaunch()
+    fun getFirstLaunch(): Boolean
 }

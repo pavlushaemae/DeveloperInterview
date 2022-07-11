@@ -9,16 +9,28 @@
     android:paddingBottom="200dp">
 
     <TextView
-        android:id="@+id/tv_notificate"
+        android:id="@+id/tv_notification"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/notificate"
+        android:text="@string/notification"
         android:textAlignment="center"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@id/tv_selected_time"
+        app:layout_constraintBottom_toTopOf="@id/tv_everyday_notifications"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_everyday_notifications"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:text="@string/everyday_notifications"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_selected_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_notification" />
 
     <TextView
         android:id="@+id/tv_selected_time"
@@ -30,10 +42,11 @@
         app:layout_constraintBottom_toTopOf="@id/btn_select_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_notificate" />
+        app:layout_constraintTop_toBottomOf="@id/tv_everyday_notifications" />
 
     <Button
         android:id="@+id/btn_select_time"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -46,6 +59,7 @@
 
     <Button
         android:id="@+id/btn_set_notification_time"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -58,6 +72,7 @@
 
     <Button
         android:id="@+id/btn_off_notifications"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,5 +82,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_set_notification_time" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="275dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_selected_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_notification" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

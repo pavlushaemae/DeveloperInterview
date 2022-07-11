@@ -12,7 +12,7 @@
     <color name="primary_variant_color_light">#3700B3</color>
     <color name="secondary_color_light">#FFFFFF</color>
     <color name="secondary_variant_color_light">#018786</color>
-    <color name="background_color_light">#9BBFD9</color>
+    <color name="background_color_light">#3894D6</color>
     <color name="surface_color_light">#9BBFD9</color>
     <color name="error_color_light">#B00020</color>
     <color name="on_primary_color_light">#FFFFFF</color>
@@ -40,4 +40,5 @@
     <color name="dialog_reject_button">#FFF</color>
     <color name="dialog_button">#77FFFFFF</color>
     <color name="dark_blue">#4C7FAC</color>
+    <color name="ripple_color">#303030</color>
 </resources>
