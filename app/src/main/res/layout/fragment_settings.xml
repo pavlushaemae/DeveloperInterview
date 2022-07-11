@@ -156,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:paddingStart="325dp"
+        android:paddingStart="300dp"
         android:paddingEnd="0dp"
         android:text="@string/_0_0_1"
         app:layout_constraintBottom_toBottomOf="parent"
