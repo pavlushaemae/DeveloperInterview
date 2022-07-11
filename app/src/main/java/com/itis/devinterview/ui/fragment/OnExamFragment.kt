@@ -1,6 +1,8 @@
 package com.itis.devinterview.ui.fragment
 
 import android.annotation.SuppressLint
+import android.content.res.Resources
+import android.content.res.Resources.Theme
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -125,13 +127,13 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
         if (currentQuestionPosition < listOfQuestions.size) {
             selectedOptionByUser = ""
             with(binding) {
-                acbOptionFirst.setBackgroundResource(style.round_back)
+                acbOptionFirst.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionFirst.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionSecond.setBackgroundResource(style.round_back)
+                acbOptionSecond.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionSecond.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionThird.setBackgroundResource(style.round_back)
+                acbOptionThird.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionThird.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionFourth.setBackgroundResource(style.round_back)
+                acbOptionFourth.setBackgroundResource(drawable.round_back_white_stroke)
                 acbOptionFourth.setTextColor(Color.parseColor("#FF000000"))
                 tvQuestions.text = "${currentQuestionPosition + 1}/${listOfQuestions.size}"
                 tvQuestion.text = listOfQuestions[currentQuestionPosition].question
