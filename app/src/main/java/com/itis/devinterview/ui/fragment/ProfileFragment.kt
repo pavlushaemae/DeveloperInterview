@@ -15,6 +15,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile){
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentProfileBinding.bind(view)
         with(binding){
+            button.setOnClickListener{
+                findNavController().navigate(R.id.action_profile_fragment_to_progressFragment)
+            }
             button2.setOnClickListener{
                 findNavController().navigate(R.id.action_profileFragment_to_settings_fragment)
             }

@@ -14,20 +14,20 @@ class FeedbackFragment : Fragment(R.layout.fragment_feedback) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentFeedbackBinding.bind(view)
         with(binding) {
-            tvLinkOne.setOnClickListener {
-                tvLinkOne.movementMethod = LinkMovementMethod.getInstance()
+            tvLinkDinara.setOnClickListener {
+                tvLinkDinara.movementMethod = LinkMovementMethod.getInstance()
             }
-            tvLinkTwo.setOnClickListener {
-                tvLinkTwo.movementMethod = LinkMovementMethod.getInstance()
+            tvLinkAndrew.setOnClickListener {
+                tvLinkAndrew.movementMethod = LinkMovementMethod.getInstance()
             }
-            tvLinkThree.setOnClickListener {
-                tvLinkThree.movementMethod = LinkMovementMethod.getInstance()
+            tvLinkDanila.setOnClickListener {
+                tvLinkDanila.movementMethod = LinkMovementMethod.getInstance()
             }
-            tvLinkFour.setOnClickListener {
-                tvLinkFour.movementMethod = LinkMovementMethod.getInstance()
+            tvLinkPavel.setOnClickListener {
+                tvLinkPavel.movementMethod = LinkMovementMethod.getInstance()
             }
-            tvLinkFive.setOnClickListener {
-                tvLinkFive.movementMethod = LinkMovementMethod.getInstance()
+            tvLinkAlina.setOnClickListener {
+                tvLinkAlina.movementMethod = LinkMovementMethod.getInstance()
             }
         }
     }
