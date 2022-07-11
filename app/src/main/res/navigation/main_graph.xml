@@ -206,4 +206,16 @@
             app:argType="string"
             app:nullable="false"/>
     </fragment>
+    <fragment
+        android:id="@+id/startingFragment2"
+        android:name="com.itis.devinterview.ui.fragment.StartingFragment"
+        android:label="StartingFragment" >
+        <action
+            android:id="@+id/action_startingFragment2_to_helloFragment2"
+            app:destination="@id/helloFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/helloFragment2"
+        android:name="com.itis.devinterview.ui.fragment.HelloFragment"
+        android:label="HelloFragment" />
 </navigation>

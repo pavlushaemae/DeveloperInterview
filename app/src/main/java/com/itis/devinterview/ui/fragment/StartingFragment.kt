@@ -6,10 +6,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentStartingBinding
+import com.itis.devinterview.service.impl.QuestionServiceImpl
 
 class StartingFragment: Fragment(R.layout.fragment_starting) {
     private var _binding: FragmentStartingBinding? = null
     private val binding get() = _binding!!
+    val service = QuestionServiceImpl()
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
