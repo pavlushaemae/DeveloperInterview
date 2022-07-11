@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
     app:startDestination="@id/testing">
 
@@ -18,7 +19,7 @@
         android:label="SelectionLanguage" >
         <action
             android:id="@+id/action_selectionLanguage_to_ticketsFragment"
-            app:destination="@id/ticketsFragment" />
+            app:destination="@id/navigation" />
         <argument
             android:name="typeOfTestingArg"
             app:argType="string"
@@ -29,19 +30,6 @@
         <action
             android:id="@+id/action_selectionLanguage_to_onExamFragment"
             app:destination="@id/onExamFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/ticketsFragment"
-        android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
-        android:label="TicketsFragment"
-        tools:layout="@layout/fragment_tickets">
-        <argument
-            android:name="languageArg"
-            app:argType="string"
-            app:nullable="false" />
-        <action
-            android:id="@+id/action_ticketsFragment_to_onTicketFragment"
-            app:destination="@id/onTicketFragment" />
     </fragment>
     <fragment
         android:id="@+id/educationFragment"
@@ -218,4 +206,24 @@
         android:id="@+id/helloFragment2"
         android:name="com.itis.devinterview.ui.fragment.HelloFragment"
         android:label="HelloFragment" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/ticketsFragment">
+        <fragment
+            android:id="@+id/ticketsFragment"
+            android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
+            android:label="TicketsFragment"
+            tools:layout="@layout/fragment_tickets">
+            <argument
+                android:name="languageArg"
+                app:argType="string"
+                app:nullable="false" />
+            <action
+                android:id="@+id/action_ticketsFragment_to_onTicketFragment"
+                app:destination="@id/onTicketFragment" />
+        </fragment>
+    </navigation>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.itis.devinterview.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment" />
 </navigation>
