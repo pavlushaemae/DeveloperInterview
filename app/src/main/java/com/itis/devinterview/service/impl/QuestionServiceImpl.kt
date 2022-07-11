@@ -40,4 +40,20 @@ class QuestionServiceImpl: QuestionService {
     override fun getTenRandomQuestions(language: String): List<Question> {
         return repository.getTenRandomQuestions(language)
     }
+
+    override fun addOneTicket(language: String) {
+        repository.addOneTicket(language)
+    }
+
+    override fun getCountOfTestedTickets(language: String): Int? {
+        return repository.getCountOfTestedTickets(language)
+    }
+
+    override fun addFirstLaunch() {
+        repository.addFirstLaunch()
+    }
+
+    override fun getFirstLaunch(): Boolean {
+        return repository.getFirstLaunch()
+    }
 }

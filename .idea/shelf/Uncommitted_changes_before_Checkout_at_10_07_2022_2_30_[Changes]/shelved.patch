@@ -1,0 +1,606 @@
+Index: app/src/main/res/navigation/main_graph.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<navigation xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:id=\"@+id/main_graph\"\r\n    app:startDestination=\"@id/testing\">\r\n\r\n    <fragment\r\n        android:id=\"@+id/testing\"\r\n        android:name=\"com.itis.devinterview.ui.fragment.TestingFragment\"\r\n        android:label=\"Testing\" >\r\n        <action\r\n            android:id=\"@+id/action_testing_to_selectionLanguage\"\r\n            app:destination=\"@id/selectionLanguage\" />\r\n    </fragment>\r\n    <fragment\r\n        android:id=\"@+id/selectionLanguage\"\r\n        android:name=\"com.itis.devinterview.ui.fragment.SelectionLanguageFragment\"\r\n        android:label=\"SelectionLanguage\" >\r\n        <action\r\n            android:id=\"@+id/action_selectionLanguage_to_ticketsFragment\"\r\n            app:destination=\"@id/ticketsFragment\" />\r\n    </fragment>\r\n    <fragment\r\n        android:id=\"@+id/ticketsFragment\"\r\n        android:name=\"com.itis.devinterview.ui.fragment.TicketsFragment\"\r\n        android:label=\"TicketsFragment\" />\r\n</navigation>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/navigation/main_graph.xml b/app/src/main/res/navigation/main_graph.xml
+--- a/app/src/main/res/navigation/main_graph.xml	
++++ b/app/src/main/res/navigation/main_graph.xml	
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
+     android:id="@+id/main_graph"
+     app:startDestination="@id/testing">
+ 
+@@ -24,4 +25,27 @@
+         android:id="@+id/ticketsFragment"
+         android:name="com.itis.devinterview.ui.fragment.TicketsFragment"
+         android:label="TicketsFragment" />
++    <fragment
++        android:id="@+id/startingFragment"
++        android:name="com.itis.devinterview.ui.fragment.StartingFragment"
++        android:label="StartingFragment"
++        tools:layout="@layout/fragment_starting">
++        <action
++            android:id="@+id/action_startingFragment_to_helloFragment"
++            app:destination="@id/helloFragment" />
++    </fragment>
++    <fragment
++        android:id="@+id/helloFragment"
++        android:name="com.itis.devinterview.ui.fragment.HelloFragment"
++        android:label="HelloFragment"
++        tools:layout="@layout/hello_fragment">
++        <action
++            android:id="@+id/action_helloFragment_to_nameFragment"
++            app:destination="@id/nameFragment" />
++    </fragment>
++    <fragment
++        android:id="@+id/nameFragment"
++        android:name="com.itis.devinterview.ui.fragment.NameFragment"
++        android:label="NameFragment"
++        tools:layout="@layout/fragment_name"/>
+ </navigation>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml\" value=\"0.10989583333333333\" />\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_choicing_language.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml\" value=\"0.25\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -3,17 +3,21 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_choicing_language.xml" value="0.25" />
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml" value="0.264" />
+-        <entry key="..\:/Users/pavel/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml" value="0.25" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.231" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/fragment_name.xml" value="0.2785" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_icon_background.xml" value="0.168" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_launcher_background.xml" value="0.231" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.23958333333333334" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_education.xml" value="0.264" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_information.xml" value="0.20878623188405798" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_name.xml" value="0.1" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_starting.xml" value="0.1" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml" value="0.15172101449275363" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/hello_fragment.xml" value="0.264" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/item_bottom_of_education.xml" value="0.264" />
++        <entry key="..\:/Users/Dinara/AndroidStudioProjects/DeveloperInterview/app/src/main/res/mipmap-anydpi-v26/ic_icon.xml" value="0.168" />
+       </map>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/build/classes" />
+-  </component>
+-  <component name="ProjectType">
+-    <option name="id" value="Android" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.itis.devinterview\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.DevInterview\">\r\n        <activity\r\n            android:name=\".ui.activity.MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	
++++ b/app/src/main/AndroidManifest.xml	
+@@ -18,6 +18,9 @@
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
++        <meta-data
++            android:name="preloaded_fonts"
++            android:resource="@array/preloaded_fonts" />
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"purple_200\">#FFBB86FC</color>\r\n    <color name=\"purple_500\">#FF6200EE</color>\r\n    <color name=\"purple_700\">#FF3700B3</color>\r\n    <color name=\"teal_200\">#FF03DAC5</color>\r\n    <color name=\"teal_700\">#FF018786</color>\r\n    <color name=\"black\">#FF000000</color>\r\n    <color name=\"white\">#FFFFFFFF</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	
++++ b/app/src/main/res/values/colors.xml	
+@@ -7,4 +7,6 @@
+     <color name="teal_700">#FF018786</color>
+     <color name="black">#FF000000</color>
+     <color name="white">#FFFFFFFF</color>
++    <color name="blue">#9BBFD9</color>
++    <color name="grey">#7C7F8F</color>
+ </resources>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"GRADLE\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	
++++ b/.idea/gradle.xml	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+@@ -12,7 +13,6 @@
+             <option value="$PROJECT_DIR$/app" />
+           </set>
+         </option>
+-        <option name="resolveModulePerSourceSet" value="false" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: app/src/main/res/drawable/ic_icon_background.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_icon_background.xml b/app/src/main/res/drawable/ic_icon_background.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/drawable/ic_icon_background.xml	
+@@ -0,0 +1,74 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector
++    android:height="108dp"
++    android:width="108dp"
++    android:viewportHeight="108"
++    android:viewportWidth="108"
++    xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="#3DDC84"
++          android:pathData="M0,0h108v108h-108z"/>
++    <path android:fillColor="#00000000" android:pathData="M9,0L9,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,0L19,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,0L29,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,0L39,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,0L49,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,0L59,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,0L69,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,0L79,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M89,0L89,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M99,0L99,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,9L108,9"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,19L108,19"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,29L108,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,39L108,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,49L108,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,59L108,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,69L108,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,79L108,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,89L108,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,99L108,99"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,29L89,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,39L89,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,49L89,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,59L89,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,69L89,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,79L89,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,19L29,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,19L39,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,19L49,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,19L59,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,19L69,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,19L79,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++</vector>
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/HelloFragment.kt
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/HelloFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/HelloFragment.kt
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/HelloFragment.kt	
+@@ -0,0 +1,32 @@
++package com.itis.devinterview.ui.fragment
++
++import android.os.Bundle
++import android.view.View
++import androidx.fragment.app.Fragment
++import androidx.navigation.fragment.findNavController
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentStartingBinding
++import com.itis.devinterview.databinding.HelloFragmentBinding
++
++class HelloFragment: Fragment(R.layout.hello_fragment) {
++    private var _binding: HelloFragmentBinding? = null
++    private val binding get() = _binding!!
++
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        _binding = HelloFragmentBinding.bind(view)
++
++        with(binding) {
++            btnHello.setOnClickListener {
++                findNavController().navigate(R.id.action_helloFragment_to_nameFragment)
++            }
++        }
++
++    }
++
++
++    override fun onDestroyView() {
++        _binding = null
++        super.onDestroyView()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/hello_fragment.xml
+===================================================================
+diff --git a/app/src/main/res/layout/hello_fragment.xml b/app/src/main/res/layout/hello_fragment.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/hello_fragment.xml	
+@@ -0,0 +1,52 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/blue">
++
++    <ImageView
++        android:id="@+id/imageView"
++        android:layout_width="327dp"
++        android:layout_height="302dp"
++        android:layout_marginBottom="-10dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:srcCompat="@drawable/second" />
++
++    <Button
++        android:id="@+id/btn_hello"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="230dp"
++        android:text="Далее"
++        android:backgroundTint="@color/grey"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="@+id/imageView" />
++
++    <TextView
++        android:id="@+id/textView3"
++        android:layout_width="382dp"
++        android:layout_height="408dp"
++        android:fontFamily="monospace"
++        android:text="Приветствуем вас! Данное приложение поможет\nразработчикам при устройстве на работу.\nЗдесь вы можете готовиться к собеседованиям.\nМы предоставляем множество различных сфер программирования,
++        \nтакие как Python, Java, C# и другие. Задания представлены
++        \nв двух вариациях: тесты и экзамены. В тестах пользователь
++        \nимеет право на ошибку, а также небольшую помощь при решении задания.
++        \nЭкзамены же включают лишь сам вопрос и варианты ответа.
++        \nЕсли же Вы понимаете, что в какой-то теме вашего языка
++        \nпрограммирования нужно подтянуть знания, то Вы можете перейти
++        \nво вкладку обучение и освежить свои знания."
++        android:textSize="16sp"
++        app:layout_constraintBottom_toTopOf="@+id/imageView"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.551"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="1.0" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/StartingFragment.kt
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/StartingFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/StartingFragment.kt
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/StartingFragment.kt	
+@@ -0,0 +1,33 @@
++package com.itis.devinterview.ui.fragment
++
++import android.os.Bundle
++import android.view.View
++import androidx.fragment.app.Fragment
++import androidx.navigation.fragment.findNavController
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentStartingBinding
++
++class StartingFragment: Fragment(R.layout.fragment_starting) {
++    private var _binding: FragmentStartingBinding? = null
++    private val binding get() = _binding!!
++
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        _binding = FragmentStartingBinding.bind(view)
++
++        with(binding) {
++            btnStarting.setOnClickListener {
++                findNavController().navigate(R.id.action_startingFragment_to_helloFragment)
++            }
++        }
++
++    }
++
++
++
++    override fun onDestroyView() {
++        _binding = null
++        super.onDestroyView()
++    }
++
++}
+\ No newline at end of file
+Index: app/src/main/java/com/itis/devinterview/ui/fragment/NameFragment.kt
+===================================================================
+diff --git a/app/src/main/java/com/itis/devinterview/ui/fragment/NameFragment.kt b/app/src/main/java/com/itis/devinterview/ui/fragment/NameFragment.kt
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/itis/devinterview/ui/fragment/NameFragment.kt	
+@@ -0,0 +1,34 @@
++package com.itis.devinterview.ui.fragment
++
++import android.os.Bundle
++import android.view.View
++import androidx.fragment.app.Fragment
++import androidx.navigation.fragment.FragmentNavigator
++import androidx.navigation.fragment.findNavController
++import com.itis.devinterview.R
++import com.itis.devinterview.databinding.FragmentNameBinding
++import com.itis.devinterview.databinding.FragmentStartingBinding
++
++class NameFragment: Fragment(R.layout.fragment_name) {
++    private var _binding: FragmentNameBinding? = null
++    private val binding get() = _binding!!
++
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        _binding = FragmentNameBinding.bind(view)
++
++        with(binding) {
++            btnName.setOnClickListener {
++                findNavController().navigate(R.id.acti)
++            }
++        }
++
++    }
++
++
++
++    override fun onDestroyView() {
++        _binding = null
++        super.onDestroyView()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/font/alata.xml
+===================================================================
+diff --git a/app/src/main/res/font/alata.xml b/app/src/main/res/font/alata.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/font/alata.xml	
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
++        app:fontProviderAuthority="com.google.android.gms.fonts"
++        app:fontProviderPackage="com.google.android.gms"
++        app:fontProviderQuery="Alata"
++        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
++</font-family>
+Index: app/src/main/res/layout/fragment_name.xml
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_name.xml b/app/src/main/res/layout/fragment_name.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_name.xml	
+@@ -0,0 +1,47 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/blue">
++
++    <Button
++        android:id="@+id/btn_name"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="650dp"
++        android:text="Начать"
++        android:backgroundTint="@color/grey"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <EditText
++        android:id="@+id/editTextTextPersonName"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:ems="10"
++        android:inputType="textPersonName"
++        android:text="Имя"
++        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <EditText
++        android:id="@+id/editTextTextPersonName2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="-10dp"
++        android:layout_marginBottom="50dp"
++        android:ems="10"
++        android:inputType="textPersonName"
++        android:text="Фамилия"
++        app:layout_constraintBottom_toTopOf="@+id/button3"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.502"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/font_certs.xml
+===================================================================
+diff --git a/app/src/main/res/values/font_certs.xml b/app/src/main/res/values/font_certs.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/values/font_certs.xml	
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <array name="com_google_android_gms_fonts_certs">
++        <item>@array/com_google_android_gms_fonts_certs_dev</item>
++        <item>@array/com_google_android_gms_fonts_certs_prod</item>
++    </array>
++    <string-array name="com_google_android_gms_fonts_certs_dev">
++        <item>
++            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
++        </item>
++    </string-array>
++    <string-array name="com_google_android_gms_fonts_certs_prod">
++        <item>
++            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBAKtWLgDYO6IIrgqWbxJOKdoR8qtW0I9Y4sypEwPpt1TTcvZApxsdyxMJZ2JORland2qSGT2y5b+3JKkedxiLDmpHpDsz2WCbdxgxRczfey5YZnTJ4VZbH0xqWVW/8lGmPav5xVwnIiJS6HXk+BVKZF+JcWjAsb/GEuq/eFdpuzSqeYTcfi6idkyugwfYwXFU1+5fZKUaRKYCwkkFQVfcAs1fXA5V+++FGfvjJ/CxURaSxaBvGdGDhfXE28LWuT9ozCl5xw4Yq5OGazvV24mZVSoOO0yZ31j7kYvtwYK6NeADwbSxDdJEqO4k//0zOHKrUiGYXtqw/A0LFFtqoZKFjnkCAQOjgdkwgdYwHQYDVR0OBBYEFMd9jMIhF1Ylmn/Tgt9r45jk14alMIGmBgNVHSMEgZ4wgZuAFMd9jMIhF1Ylmn/Tgt9r45jk14aloXikdjB0MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIEluYy4xEDAOBgNVBAsTB0FuZHJvaWQxEDAOBgNVBAMTB0FuZHJvaWSCCQDC4IdGZEowjTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBAUAA4IBAQBt0lLO74UwLDYKqs6Tm8/yzKkEu116FmH4rkaymUIE0P9KaMftGlMexFlaYjzmB2OxZyl6euNXEsQH8gjwyxCUKRJNexBiGcCEyj6z+a1fuHHvkiaai+KL8W1EyNmgjmyy8AW7P+LLlkR+ho5zEHatRbM/YAnqGcFh5iZBqpknHf1SKMXFh4dd239FJ1jWYfbMDMy3NS5CTMQ2XFI1MvcyUTdZPErjQfTbQe3aDQsQcafEQPD+nqActifKZ0Np0IS9L9kR/wbNvyz6ENwPiTrjV2KRkEjH78ZMcUQXg0L3BYHJ3lc69Vs5Ddf9uUGGMYldX3WfMBEmh/9iFBDAaTCK
++        </item>
++    </string-array>
++</resources>
+Index: app/src/main/res/values/preloaded_fonts.xml
+===================================================================
+diff --git a/app/src/main/res/values/preloaded_fonts.xml b/app/src/main/res/values/preloaded_fonts.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/values/preloaded_fonts.xml	
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <array name="preloaded_fonts" translatable="false">
++        <item>@font/alata</item>
++        <item>@font/ubuntu_light</item>
++    </array>
++</resources>
+Index: app/src/main/res/layout/fragment_starting.xml
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_starting.xml b/app/src/main/res/layout/fragment_starting.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_starting.xml	
+@@ -0,0 +1,59 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/blue">
++
++    <ImageView
++        android:id="@+id/imageView5"
++        android:layout_width="188dp"
++        android:layout_height="216dp"
++        app:layout_constraintBottom_toTopOf="@+id/textView2"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.497"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.746"
++        app:srcCompat="@drawable/label" />
++
++    <TextView
++        android:id="@+id/textView2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="monospace"
++        android:text="DEVELOPER INTERVIEW"
++        android:textSize="30sp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.498"
++        app:layout_constraintStart_toStartOf="parent"
++        tools:layout_editor_absoluteY="283dp"
++        tools:ignore="MissingConstraints" />
++
++    <ImageView
++        android:id="@+id/imageView7"
++        android:layout_width="391dp"
++        android:layout_height="475dp"
++        android:layout_marginTop="20dp"
++        android:layout_marginBottom="4dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/imageView5"
++        app:srcCompat="@drawable/first" />
++
++    <Button
++        android:id="@+id/btn_starting"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginBottom="100dp"
++        android:backgroundTint="@color/grey"
++        android:text="Далее"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/font/ubuntu_light.xml
+===================================================================
+diff --git a/app/src/main/res/font/ubuntu_light.xml b/app/src/main/res/font/ubuntu_light.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/font/ubuntu_light.xml	
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
++        app:fontProviderAuthority="com.google.android.gms.fonts"
++        app:fontProviderPackage="com.google.android.gms"
++        app:fontProviderQuery="name=Ubuntu&amp;weight=300"
++        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
++</font-family>

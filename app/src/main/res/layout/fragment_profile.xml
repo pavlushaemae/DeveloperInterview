@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/iv_profile"
@@ -22,23 +22,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/dark_blue"
+        android:layout_marginEnd="24dp"       
+        style="@style/ButtonMain"
         android:text="Прогресс"
+        android:textSize="16sp"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />   
 
     <Button
         android:id="@+id/button2"
+        style="@style/ButtonMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Настройки"
+        android:textSize="16sp"
+        app:cornerRadius="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/dark_blue"
-        android:text="Настройки"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -51,14 +55,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/dark_blue"
         android:text="В разработке"
+        style="@style/ButtonMain"
+        android:text="что-то"
+        android:textSize="16sp"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:strokeColor="#E8DFDF" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        
 
     <Spinner
         android:id="@+id/spinner"
@@ -90,5 +97,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
-
+      
 </androidx.constraintlayout.widget.ConstraintLayout>

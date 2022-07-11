@@ -1,5 +1,8 @@
 package com.itis.devinterview.ui.fragment
 
+import android.annotation.SuppressLint
+import android.content.res.Resources
+import android.content.res.Resources.Theme
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -16,7 +19,7 @@ import com.itis.devinterview.model.Question
 import com.itis.devinterview.service.impl.QuestionServiceImpl
 
 
-class OnExamFragment: Fragment(layout.fragment_on_exam) {
+class OnExamFragment : Fragment(layout.fragment_on_exam) {
     private var _binding: FragmentOnExamBinding? = null
     private val binding get() = _binding!!
     private val questionServiceImpl = QuestionServiceImpl()
@@ -24,69 +27,67 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
     private var currentQuestionPosition = 0
     private var selectedOptionByUser = ""
     private lateinit var listOfQuestions: List<Question>
-    private var correctAnswers = 0;
+    private var correctAnswers = 0
+    private lateinit var lang: String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentOnExamBinding.bind(view)
         val args by navArgs<OnExamFragmentArgs>()
         val language = args.languageArg
+        lang = language
         listOfQuestions = questionServiceImpl.getTenRandomQuestions(language)
-        startTimer(600)
+        startTimer(180)
         with(binding) {
-            tvQuestions.text = "${currentQuestionPosition+1}/${listOfQuestions.size}"
+            tvQuestions.text = "${currentQuestionPosition + 1}/${listOfQuestions.size}"
             tvQuestion.text = listOfQuestions[0].question
             acbOptionFirst.text = listOfQuestions[0].first
             acbOptionSecond.text = listOfQuestions[0].second
             acbOptionThird.text = listOfQuestions[0].third
             acbOptionFourth.text = listOfQuestions[0].fourth
             acbOptionFirst.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionFirst.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
-                    acbOptionFirst.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionFirst.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionFirst.setTextColor(Color.WHITE)
-                    revealAnswer()
                 }
             }
             acbOptionSecond.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionSecond.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
-                    acbOptionSecond.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionSecond.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionSecond.setTextColor(Color.WHITE)
-                    revealAnswer()
                 }
             }
             acbOptionThird.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionThird.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
-                    acbOptionThird.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionThird.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionThird.setTextColor(Color.WHITE)
-                    revealAnswer()
                 }
             }
             acbOptionFourth.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
+                if (selectedOptionByUser.isEmpty()) {
                     selectedOptionByUser = acbOptionFourth.text.toString()
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
-                        correctAnswers++;
+                        correctAnswers++
                     }
-                    acbOptionFourth.setBackgroundResource(drawable.round_back_red_10)
+                    acbOptionFourth.setBackgroundResource(drawable.round_back_dark_blue_10)
                     acbOptionFourth.setTextColor(Color.WHITE)
-                    revealAnswer()
                 }
             }
             btnNext.setOnClickListener {
-                if(selectedOptionByUser.isEmpty()) {
-                    Toast.makeText(context,"Выберите правильный ответ", Toast.LENGTH_SHORT).show()
+                if (selectedOptionByUser.isEmpty()) {
+                    Toast.makeText(context, "Выберите правильный ответ", Toast.LENGTH_SHORT).show()
                 } else {
                     changeNextQuestion()
                 }
@@ -105,33 +106,22 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
             if (questionTimer.text.toString() == "00:00" || questionTimer.text.toString()[3] == ':') {
                 questionTimer.stop()
 
-                Toast.makeText(context, "Время вышло", Toast.LENGTH_SHORT)
-                val action = OnExamFragmentDirections.actionOnExamFragmentToResultFragment(correctAnswers, 10 - correctAnswers)
+                Toast.makeText(context, "Время вышло", Toast.LENGTH_SHORT).show()
+                val action = OnExamFragmentDirections.actionOnExamFragmentToResultFragment(
+                    correctAnswers,
+                    10 - correctAnswers,
+                    null,
+                    0
+                )
                 findNavController().navigate(action)
             }
         }
     }
 
-    private fun revealAnswer() {
-        val getAnswer = listOfQuestions[currentQuestionPosition].correct
-        if(binding.acbOptionFirst.text.toString() == getAnswer) {
-            binding.acbOptionFirst.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionFirst.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionSecond.text.toString() == getAnswer) {
-            binding.acbOptionSecond.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionSecond.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionThird.text.toString() == getAnswer) {
-            binding.acbOptionThird.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionThird.setTextColor(Color.WHITE)
-        }else if (binding.acbOptionFourth.text.toString() == getAnswer) {
-            binding.acbOptionFourth.setBackgroundResource(drawable.round_back_green_10)
-            binding.acbOptionFourth.setTextColor(Color.WHITE)
-        }
-    }
-
+    @SuppressLint("ResourceType")
     private fun changeNextQuestion() {
         currentQuestionPosition++
-        if ((currentQuestionPosition + 1 ) == listOfQuestions.size) {
+        if ((currentQuestionPosition + 1) == listOfQuestions.size) {
             binding.btnNext.text = "Готово"
         }
         if (currentQuestionPosition < listOfQuestions.size) {
@@ -153,8 +143,13 @@ class OnExamFragment: Fragment(layout.fragment_on_exam) {
                 acbOptionFourth.text = listOfQuestions[currentQuestionPosition].fourth
             }
         } else {
-            val action = OnExamFragmentDirections.actionOnExamFragmentToResultFragment(correctAnswers,10 - correctAnswers)
-                findNavController().navigate(action)
+            val action = OnExamFragmentDirections.actionOnExamFragmentToResultFragment(
+                correctAnswers,
+                10 - correctAnswers,
+                null,
+                0
+            )
+            findNavController().navigate(action)
         }
     }
 

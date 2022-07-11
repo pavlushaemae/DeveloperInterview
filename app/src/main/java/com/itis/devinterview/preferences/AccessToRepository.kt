@@ -10,6 +10,9 @@ object AccessToRepository {
     private var newQuestionId: Int = 0
     private var sharedPreferences: SharedPreferences? = null
     private const val QUESTIONS_LIST = "questions_list"
+    private const val JAVA = "Java"
+    private const val PYTHON = "Python"
+    private var FIRST_LAUNCH = false
     private var ADDED_OR_NOT = false
     fun getSP(sharedPreferences: SharedPreferences) {
         AccessToRepository.sharedPreferences = sharedPreferences
@@ -30,25 +33,31 @@ object AccessToRepository {
             true
         }
     }
-//    fun deleteQuestion(question: Question) {
-//        val list = getListFromSP()
-//        list?.remove(question)
-//        saveListToSP(list)
-//    }
-//    fun moveMedia(question: Question?, target: MediaStatusEnum) {
-//        val list = getListFromSP()
-//        list?.map { if (it == question) it.status = target }
-//        saveListToSP(list)
-//    }
-//    fun getAllFinishedMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.FINISHED }
-//    fun getAllCurrentMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.CURRENT }
-//    fun getAllNewMedia() = getListFromSP()?.filter { it.status == MediaStatusEnum.NEW }
 
     fun getListFromSP(): MutableList<Question>? {
         val gson = Gson()
         val json = sharedPreferences?.getString(QUESTIONS_LIST, null)
         val type = object : TypeToken<MutableList<Question>>() {}.type
         return gson.fromJson(json, type)
+    }
+
+    private fun saveIntToSP(int: Int, language: String) {
+        sharedPreferences?.edit()?.apply {
+            putInt(language.uppercase(), int)
+            apply()
+        }
+    }
+
+    fun getCountOfTestedTickets(language: String): Int? {
+        return sharedPreferences?.getInt(language.uppercase(), 0)
+    }
+
+    fun addIntToSP(language: String) {
+        var count = sharedPreferences?.getInt(language.uppercase(), 0)
+        count = count?.plus(1)
+        if (count != null) {
+            saveIntToSP(count, language)
+        }
     }
 
     @SuppressLint("CommitPrefEdits")
@@ -60,5 +69,13 @@ object AccessToRepository {
                 ADDED_OR_NOT = true
             }
         }
+    }
+
+    fun getFirstLaunch(): Boolean {
+        return FIRST_LAUNCH
+    }
+
+    fun addFirstLaunch() {
+        FIRST_LAUNCH = true
     }
 }

@@ -9,17 +9,17 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.itis.devinterview.R
 import com.itis.devinterview.ui.activity.MainActivity
-import com.itis.devinterview.ui.fragment.SettingsFragment
 
 class AlarmReceiver : BroadcastReceiver() {
+
     override fun onReceive(context: Context?, intent: Intent?) {
         val i = Intent(context, MainActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val pendingIntent = createPendingIntentGetActivity(context, 0, i, 0)
         val builder = NotificationCompat.Builder(context!!, "channelId")
             .setSmallIcon(R.mipmap.ic_launcher_round)
-            .setContentTitle("Developer interview")
-            .setContentText("Пришло время программировать)")
+            .setContentTitle("Пришло время кода!")
+            .setContentText("Вы всего в нескольких минутах от того, чтобы узнать что-то новое.")
             .setAutoCancel(true)
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

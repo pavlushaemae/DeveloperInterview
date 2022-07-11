@@ -18,6 +18,32 @@
     <string name="daily_reminders">Ежеденевные напоминания</string>
     <string name="notification_time">Время уведомлений</string>
     <string name="for_all_questions">По всем вопросам</string>
+    <string name="first_java_oop_oop"><a href="https://javarush.ru/groups/posts/principy-oop">Принципы ООП</a></string>
+    <string name="second_java_oop"><a href="https://javarush.ru/groups/posts/1969-principih-inkapsuljacii">Инкапсуляция</a></string>
+    <string name="third_java_oop"><a href="https://metanit.com/java/tutorial/3.5.php">Наследование</a></string>
+    <string name="fourth_java_oop"><a href="https://javarush.ru/groups/posts/polimorfizm-v-java">Полиморфизм</a></string>
+    <string name="fifth_java_oop"><a href="https://vertex-academy.com/tutorials/ru/samouchitel-po-java-s-nulya/">Особенности в Java</a></string>
+    <string name="second_java_variable"><a href="https://vertex-academy.com/tutorials/ru/sozdanie-peremennyx-i-tipy-peremenny/">Переменные</a></string>
+    <string name="third_java_variable"><a href="https://javarush.ru/groups/posts/massivy-java">Массивы</a></string>
+    <string name="fourth_java_variable"><a href="https://javarush.ru/groups/posts/2496-podrobnihy-razbor-klassa-hashmap">Хеш-структуры</a></string>
+    <string name="fifth_java_variable"><a href="https://upread.ru/art.php?id=986">Связные списки</a></string>
+    <string name="first_java_variable"><a href="https://proglib.io/p/8-data-structures">Основные структуры</a></string>
+    <string name="first_java_lesson"><a href="https://stepik.org/course/187/promo">Особенности Java</a></string>
+    <string name="second_java_lesson"><a href="https://javarush.ru/">Краткое изложение</a></string>
+    <string name="third_java_lesson"><a href="https://metanit.com/java/tutorial/1.1.php">Курс для начинающих</a></string>
+    <string name="first_python_oop"><a href="https://proglib.io/p/python-oop">Принципы ООП</a></string>
+    <string name="second_python_oop"><a href="https://habr.com/ru/post/444338/">Инкапсуляция</a></string>
+    <string name="third_python_oop"><a href="https://ru.hexlet.io/courses/python-oop-basics/lessons/inheritance/theory_unit">Наследование</a></string>
+    <string name="fourth_python_oop"><a href="https://habr.com/ru/post/552922/">Полиморфизм</a></string>
+    <string name="fifth_python_oop"><a href="https://pythonchik.ru/osnovy/osnovy-oop-v-python-klassy-obekty-metody">Особенности в Python</a></string>
+    <string name="first_python_variable"><a href="https://metanit.com/python/tutorial/2.2.php">Основные структуры</a></string>
+    <string name="third_python_variable"><a href="https://pythonworld.ru/tipy-dannyx-v-python/spiski-list-funkcii-i-metody-spiskov.html">Списки</a></string>
+    <string name="fourth_python_variable"><a href="https://pythonworld.ru/tipy-dannyx-v-python/kortezhi-tuple.html">Кортежи</a></string>
+    <string name="fifth_python_variable"><a href="https://habr.com/ru/company/otus/blog/470828/">Связные списки</a></string>
+    <string name="second_python_variable"><a href="https://metanit.com/python/tutorial/2.2.php">Переменные</a></string>
+    <string name="first_python_lesson"><a href="https://stepik.org/course/67/promo">Особенности Python</a></string>
+    <string name="second_python_lesson"><a href="https://habr.com/ru/post/29778/">Краткое изложение</a></string>
+    <string name="third_python_lesson"><a href="https://ru.code-basics.com/languages/python">Курс для начинающих</a></string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="_08_45_pm">08:45 PM</string>
     <string name="select_time">Выберите время</string>
@@ -34,7 +60,7 @@
     <string name="choose_language">Выберите язык</string>
     <string name="java">Java</string>
     <string name="python">Python</string>
-    <string name="notificate">Уведомления</string>
+    <string name="notification">Уведомления</string>
     <string name="dinara_link"><a href="https://vk.com/dinozavrog">Зарипова Динара</a></string>
     <string name="andrew_link"><a href="https://vk.com/w1nway">Бартновский Андрей</a></string>
     <string name="danila_link"><a href="https://vk.com/danilagorlov">Горлов Данила</a></string>
@@ -154,7 +180,6 @@
 "13.2. Если иное прямо не указано в положениях настоящего Соглашения или прямо не вытекает из норм действующего"" законодательства, к условиям настоящего Договора применяется материальное право Российской Федерации."
 "13.3. Неотъемлемой частью настоящего Соглашение является Политика конфиденциальности приложения."
     </string>
-
     <string-array name="levels">
         <item>Неизвестно</item>
         <item>Новичок</item>
@@ -167,4 +192,17 @@
         <item>Ищу работу</item>
         <item>Работаю</item>
     </string-array>
+    <string name="everyday_notifications">Ежедневные уведомления</string>
+    <string name="_00_59">00:59</string>
+    <string name="_1_10">1/10</string>
+    <string name="question_will_be_here">Вопрос будет здесь</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="option_3">Option 3</string>
+    <string name="option_4">Option 4</string>
+    <string name="next_question">Следующий вопрос</string>
+    <string name="count_of_incorrect_answers">Количество неправильных ответов: 0</string>
+    <string name="count_of_correct_answers">Количество правильных ответов: 0</string>
+    <string name="start_new_test">Начать новый тест</string>
+    <string name="your_result">Ваш результат:</string>
 </resources>

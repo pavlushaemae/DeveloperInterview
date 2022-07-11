@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -25,16 +26,41 @@ class ConfigureNotificationsFragment :
     private val binding get() = _binding!!
     private lateinit var picker: MaterialTimePicker
     private var calendar: Calendar? = null
-
     private lateinit var alarmManager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
-
+    private var switchFlag: Boolean = false
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentConfigureNotificationsBinding.bind(view)
         createNotificationChannel()
 
         with(binding) {
+            sharedPreferences = requireActivity().getSharedPreferences("save", Context.MODE_PRIVATE)
+            switchNotifications.isChecked = sharedPreferences.getBoolean("value", true)
+            switchNotifications.setOnCheckedChangeListener { _, checkedId ->
+                when (checkedId) {
+                    true -> {
+                        switchFlag = true
+                        val editor: SharedPreferences.Editor =
+                            requireActivity().getSharedPreferences("save", Context.MODE_PRIVATE)
+                                .edit()
+                        editor.putBoolean("value", true)
+                        editor.apply()
+                        switchNotifications.isChecked = true
+                    }
+
+                    false -> {
+                        switchFlag = false
+                        val editor: SharedPreferences.Editor =
+                            requireActivity().getSharedPreferences("save", Context.MODE_PRIVATE)
+                                .edit()
+                        editor.putBoolean("value", false)
+                        editor.apply()
+                        switchNotifications.isChecked = false
+                    }
+                }
+            }
             btnSelectTime.setOnClickListener {
                 showTimePicker()
             }
@@ -52,7 +78,6 @@ class ConfigureNotificationsFragment :
             requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager //require
         val intent = Intent(activity, AlarmReceiver::class.java)
         pendingIntent = createPendingIntentGetBroadcast(activity, 0, intent, 0)
-//            PendingIntent.getBroadcast(activity, 0, intent, 0);
         alarmManager.cancel(pendingIntent)
         Toast.makeText(context, "Уведомления отключены", Toast.LENGTH_LONG).show()
     }
@@ -61,8 +86,7 @@ class ConfigureNotificationsFragment :
         alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(activity, AlarmReceiver::class.java)
         pendingIntent = createPendingIntentGetBroadcast(activity, 0, intent, 0)
-//            PendingIntent.getBroadcast(activity, 0, intent, 0)
-        if (calendar != null) {
+        if (calendar != null && switchFlag) {
             alarmManager.setRepeating(
                 AlarmManager.RTC_WAKEUP,
                 calendar!!.timeInMillis,
@@ -70,8 +94,17 @@ class ConfigureNotificationsFragment :
                 pendingIntent
             )
             Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(context, "Выберите время", Toast.LENGTH_SHORT).show()
+        }
+        if (calendar != null && !switchFlag) {
+            alarmManager.set(
+                AlarmManager.RTC_WAKEUP,
+                calendar!!.timeInMillis,
+                pendingIntent
+            )
+            Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
+            if (calendar == null) {
+                Toast.makeText(context, "Выберите время", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -93,7 +126,7 @@ class ConfigureNotificationsFragment :
                     ) + " PM"
             } else {
                 binding.tvSelectedTime.text =
-                    String.format("%02d", picker.hour - 12) + " : " + String.format(
+                    String.format("%02d", picker.hour) + " : " + String.format(
                         "%02d",
                         picker.minute
                     ) + " AM"
@@ -107,7 +140,6 @@ class ConfigureNotificationsFragment :
     }
 
     private fun createNotificationChannel() {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name: CharSequence = "channelIdReminderChannel"
             val description = "Channel for Alarm Manager"
