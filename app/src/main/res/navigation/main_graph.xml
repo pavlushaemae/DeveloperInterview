@@ -105,6 +105,9 @@
         <action
             android:id="@+id/action_profile_fragment_to_settings_fragment"
             app:destination="@id/settings_fragment" />
+        <action
+            android:id="@+id/action_profile_fragment_to_progressFragment"
+            app:destination="@id/progressFragment" />
     </fragment>
     <fragment
         android:id="@+id/inDevelopingFragment"
@@ -155,4 +158,8 @@
             app:argType="string"
             app:nullable="false"/>
     </fragment>
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.itis.devinterview.ui.fragment.ProgressFragment"
+        android:label="ProgressFragment" />
 </navigation>
