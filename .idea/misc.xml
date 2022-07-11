@@ -2,7 +2,9 @@
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
-      <map>
+      <map>        
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_progress.xml" value="0.2" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ad_theme.xml" value="0.1" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/bg_dialog.xml" value="0.1" />

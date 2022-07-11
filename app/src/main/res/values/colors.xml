@@ -39,6 +39,6 @@
     <color name="dialog_list_item">#FFF</color>
     <color name="dialog_reject_button">#FFF</color>
     <color name="dialog_button">#77FFFFFF</color>
-    <color name="dark_blue">#4C7FAC</color>
+    <color name="dark_blue">#4C7FAC</color> 
     <color name="ripple_color">#303030</color>
 </resources>
