@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/blue">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <TextView
         android:id="@+id/tv_name"
@@ -13,7 +12,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="90dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/ubuntu_bold"
         android:text="EDUCATION"
         android:textAlignment="center"
         android:textSize="28sp"
@@ -38,6 +36,5 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name"
         tools:itemCount="6"
         tools:listitem="@layout/item_bottom_of_education" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
