@@ -269,4 +269,3 @@
             app:destination="@id/profile_fragment" />
     </fragment>
 </navigation>
-</navigation>
