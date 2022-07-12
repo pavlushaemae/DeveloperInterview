@@ -27,6 +27,7 @@
         android:layout_marginBottom="9dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Объектно-ориентированное программирование:"
+        android:textAlignment="center"
         android:textColor="#4F515C"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
