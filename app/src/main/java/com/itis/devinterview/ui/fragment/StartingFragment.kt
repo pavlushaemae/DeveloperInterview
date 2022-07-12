@@ -27,7 +27,7 @@ class StartingFragment : Fragment(com.itis.devinterview.R.layout.fragment_starti
                 }
             }
         }
-        if (service.getFirstLaunch() == false) {
+        if (!service.getFirstLaunch()) {
              findNavController().navigate(R.id.action_startingFragment_to_profile_fragment)
             println(false)
         }

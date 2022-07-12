@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/profile_fragment">
+    app:startDestination="@id/startingFragment">
 
     <fragment
         android:id="@+id/testing"
@@ -249,4 +249,23 @@
         android:id="@+id/progressFragment"
         android:name="com.itis.devinterview.ui.fragment.ProgressFragment"
         android:label="ProgressFragment" />
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.itis.devinterview.ui.fragment.HelloFragment"
+        android:label="HelloFragment" >
+        <action
+            android:id="@+id/action_helloFragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startingFragment"
+        android:name="com.itis.devinterview.ui.fragment.StartingFragment"
+        android:label="StartingFragment" >
+        <action
+            android:id="@+id/action_startingFragment_to_helloFragment"
+            app:destination="@id/helloFragment" />
+        <action
+            android:id="@+id/action_startingFragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
 </navigation>
