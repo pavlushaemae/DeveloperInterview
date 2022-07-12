@@ -13,6 +13,7 @@ import com.itis.devinterview.ui.rv.LanguageAdapter
 import com.itis.devinterview.ui.rv.LanguageRepository
 
 private const val KEY_LAN = "ID"
+
 class EducationFragment : Fragment(R.layout.fragment_education) {
 
     private var _binding: FragmentEducationBinding? = null
@@ -27,37 +28,28 @@ class EducationFragment : Fragment(R.layout.fragment_education) {
     private fun initAdapter() {
         languageAdapter = LanguageAdapter(
             LanguageRepository.languages
-        ){
+        ) {
             navigate(it.id)
         }
-        _binding?.let{
+        _binding?.let {
             it.recyclerView.adapter = languageAdapter
         }
-
 
 
     }
 
     private fun navigate(id: Int) {
 
-        when (id){
+        when (id) {
             0 -> findNavController().navigate(R.id.action_educationFragment_to_pythonFragment)
-            1 -> findNavController().navigate(R.id.action_educationFragment_to_cplusFragment)
+            1 -> findNavController().navigate(R.id.action_educationFragment_to_in_developing_fragment)
             2 -> findNavController().navigate(R.id.action_educationFragment_to_javaFragment)
-            3 -> findNavController().navigate(R.id.action_educationFragment_to_kotlinFragment)
-            4 -> findNavController().navigate(R.id.action_educationFragment_to_phpFragment)
-
-
+            3 -> findNavController().navigate(R.id.action_educationFragment_to_in_developing_fragment)
+            4 -> findNavController().navigate(R.id.action_educationFragment_to_in_developing_fragment)
         }
 
 
-
-
-
-
     }
-
-
 
 
 }
