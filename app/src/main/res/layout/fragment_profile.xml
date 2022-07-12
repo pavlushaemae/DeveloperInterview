@@ -8,8 +8,8 @@
     <ImageView
         android:id="@+id/iv_profile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_profile"
+        android:layout_height="350dp"
+        android:src="@drawable/newpngtoprofile"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
