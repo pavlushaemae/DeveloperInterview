@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentOnExamBinding
 import com.itis.devinterview.model.Question
+import com.itis.devinterview.preferences.AccessToRepository
 import com.itis.devinterview.service.impl.QuestionServiceImpl
 
 class OnTicketFragment : Fragment(R.layout.fragment_on_ticket) {
@@ -146,14 +147,25 @@ class OnTicketFragment : Fragment(R.layout.fragment_on_ticket) {
         if (currentQuestionPosition < listOfQuestions.size) {
             selectedOptionByUser = ""
             with(binding) {
-                acbOptionFirst.setBackgroundResource(R.drawable.round_back_white_stroke)
-                acbOptionFirst.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionSecond.setBackgroundResource(R.drawable.round_back_white_stroke)
-                acbOptionSecond.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionThird.setBackgroundResource(R.drawable.round_back_white_stroke)
-                acbOptionThird.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionFourth.setBackgroundResource(R.drawable.round_back_white_stroke)
-                acbOptionFourth.setTextColor(Color.parseColor("#FF000000"))
+                if (AccessToRepository.isNightThemeEnabled() == false) {
+                    acbOptionFirst.setBackgroundResource(R.drawable.round_back_white_stroke)
+                    acbOptionSecond.setBackgroundResource(R.drawable.round_back_white_stroke)
+                    acbOptionThird.setBackgroundResource(R.drawable.round_back_white_stroke)
+                    acbOptionFourth.setBackgroundResource(R.drawable.round_back_white_stroke)
+                    acbOptionFirst.setTextColor(Color.parseColor("#FF000000"))
+                    acbOptionSecond.setTextColor(Color.parseColor("#FF000000"))
+                    acbOptionThird.setTextColor(Color.parseColor("#FF000000"))
+                    acbOptionFourth.setTextColor(Color.parseColor("#FF000000"))
+                } else {
+                    acbOptionFirst.setBackgroundResource(R.drawable.round_back_black_stroke)
+                    acbOptionSecond.setBackgroundResource(R.drawable.round_back_black_stroke)
+                    acbOptionThird.setBackgroundResource(R.drawable.round_back_black_stroke)
+                    acbOptionFourth.setBackgroundResource(R.drawable.round_back_black_stroke)
+                    acbOptionFirst.setTextColor(Color.parseColor("#FFFFFF"))
+                    acbOptionSecond.setTextColor(Color.parseColor("#FFFFFF"))
+                    acbOptionThird.setTextColor(Color.parseColor("#FFFFFF"))
+                    acbOptionFourth.setTextColor(Color.parseColor("#FFFFFF"))
+                }
                 tvQuestions.text = "${currentQuestionPosition + 1}/${listOfQuestions.size}"
                 tvQuestion.text = listOfQuestions[currentQuestionPosition].question
                 acbOptionFirst.text = listOfQuestions[currentQuestionPosition].first
