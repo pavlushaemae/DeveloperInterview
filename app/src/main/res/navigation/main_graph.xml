@@ -161,14 +161,6 @@
         android:id="@+id/pythonFragment"
         android:name="com.itis.devinterview.ui.fragment.PythonFragment"
         android:label="PythonFragment">
-        <action
-            android:id="@+id/action_profile_fragment_to_settings_fragment"
-            app:destination="@id/settings_fragment" />
-        <action
-            android:id="@+id/action_profile_fragment_to_progressFragment"
-            app:destination="@id/progressFragment" />
-            android:id="@+id/action_pythonFragment_to_educationFragment"
-            app:destination="@id/educationFragment" />
     </fragment>
     <fragment
         android:id="@+id/inDevelopingFragment"
@@ -239,6 +231,9 @@
             app:destination="@id/settings_fragment"
             app:popUpTo="@id/profile_fragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profile_fragment_to_progressFragment"
+            app:destination="@id/progressFragment" />
     </fragment>
     <fragment
         android:id="@+id/progressFragment"

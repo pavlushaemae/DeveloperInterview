@@ -2,58 +2,28 @@
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
-      <map>        
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+      <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_profile.xml" value="0.2085" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_configure_notifications.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_education.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_feedback.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_in_developing.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_java.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_kotlin.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_on_exam.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_on_ticket.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_progress.xml" value="0.2" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ad_theme.xml" value="0.1" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/bg_dialog.xml" value="0.1" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/bg_dialog_dark.xml" value="0.1" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/btn_active.xml" value="0.17" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/button.xml" value="0.1865" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_baseline_arrow_back.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_baseline_timer.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_education.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_exam.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_profile.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ic_round_settings_24.xml" value="0.17" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/light_theme.xml" value="0.1895" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/round_back_black_10.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/round_back_black_stroke.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/round_back_dark_blue_10.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/round_back_green_10.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/round_back_red_10.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/round_back_white_10.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/round_back_white_stroke.xml" value="0.2075" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/tv_button.xml" value="0.17" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/custom_toast.xml" value="0.264" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_configure_notifications.xml" value="0.4" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_cplus.xml" value="0.15670289855072464" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_dialog_reset_statistics.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_education.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_exam.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_feedback.xml" value="0.264" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_in_developing.xml" value="0.11197916666666667" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_on_exam.xml" value="0.264" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_on_ticket.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_profile.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_progress.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_result.xml" value="0.15670289855072464" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_scrolling.xml" value="0.264" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_secondary_exam.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_secondary_on_ticket.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_selection_language.xml" value="0.264" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_settings.xml" value="0.4" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml" value="0.264" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml" value="0.1" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement.xml" value="0.176" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement_unvailable.xml" value="0.11197916666666667" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/item_bottom_of_education.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/item_ticket.xml" value="0.2078804347826087" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/toast_with_custom.xml" value="0.1" />
-        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_python.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_result.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_selection_language.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_settings.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_testing.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_tickets.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_user_agreement.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/item_bottom_of_education.xml" value="0.275" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/item_ticket.xml" value="0.275" />
       </map>
     </option>
   </component>

@@ -23,4 +23,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile){
             }
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }
