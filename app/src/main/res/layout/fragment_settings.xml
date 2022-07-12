@@ -11,6 +11,7 @@
         style="@style/UbuntuTextViewStyle"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:paddingTop="15dp"
         android:text="@string/settings"
         android:textAlignment="center"
