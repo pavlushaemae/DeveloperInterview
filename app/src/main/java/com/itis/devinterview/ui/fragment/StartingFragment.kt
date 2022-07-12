@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.itis.devinterview.R
 import com.itis.devinterview.databinding.FragmentStartingBinding
 import com.itis.devinterview.service.impl.QuestionServiceImpl
 
@@ -17,12 +18,10 @@ class StartingFragment : Fragment(com.itis.devinterview.R.layout.fragment_starti
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentStartingBinding.bind(view)
 
-        if (service.getFirstLaunch()) {
-            findNavController().navigate(com.itis.devinterview.R.id.action_startingFragment_to_profile_fragment)
-        }
-            if (!service.getFirstLaunch()) {
-                service.addFirstLaunch()
-            }
+
+        if (service.getFirstLaunch() ) {
+            println(true)
+            service.addFirstLaunch()
             with(binding) {
                 btnStarting.setOnClickListener {
                     findNavController().navigate(com.itis.devinterview.R.id.action_startingFragment_to_helloFragment)
@@ -30,9 +29,21 @@ class StartingFragment : Fragment(com.itis.devinterview.R.layout.fragment_starti
             }
         }
 
-        override fun onDestroyView() {
-            _binding = null
-            super.onDestroyView()
+        if (!service.getFirstLaunch()) {
+             findNavController().navigate(R.id.action_startingFragment_to_profile_fragment)
+            println(false)
         }
-
+        with(binding) {
+            btnStarting.setOnClickListener {
+                findNavController().navigate(com.itis.devinterview.R.id.action_startingFragment_to_helloFragment)
+            }
+        }
     }
+
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
+
+}
+
