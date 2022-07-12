@@ -58,23 +58,13 @@
             app:popUpTo="@id/educationFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_educationFragment_to_kotlinFragment"
-            app:destination="@id/kotlinFragment"
+            android:id="@+id/action_educationFragment_to_in_developing_fragment"
+            app:destination="@id/inDevelopingFragment"
             app:popUpTo="@id/educationFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_educationFragment_to_pythonFragment"
             app:destination="@id/pythonFragment"
-            app:popUpTo="@id/educationFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_educationFragment_to_cplusFragment"
-            app:destination="@id/cplusFragment"
-            app:popUpTo="@id/educationFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_educationFragment_to_phpFragment"
-            app:destination="@id/phpFragment"
             app:popUpTo="@id/educationFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -250,7 +240,7 @@
     <fragment
         android:id="@+id/helloFragment"
         android:name="com.itis.devinterview.ui.fragment.HelloFragment"
-        android:label="HelloFragment" >
+        android:label="HelloFragment">
         <action
             android:id="@+id/action_helloFragment_to_profile_fragment"
             app:destination="@id/profile_fragment" />
