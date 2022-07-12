@@ -2,7 +2,9 @@
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
-      <map>
+      <map>        
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_progress.xml" value="0.2" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/ad_theme.xml" value="0.1" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/drawable/bg_dialog.xml" value="0.1" />
@@ -28,6 +30,7 @@
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/custom_toast.xml" value="0.264" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_configure_notifications.xml" value="0.4" />
+        <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_cplus.xml" value="0.15670289855072464" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_dialog_reset_statistics.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_education.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/danil/AndroidStudioProjects/DeveloperInterview/app/src/main/res/layout/fragment_exam.xml" value="0.2078804347826087" />

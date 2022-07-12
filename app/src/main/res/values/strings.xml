@@ -31,7 +31,7 @@
     <string name="first_java_lesson"><a href="https://stepik.org/course/187/promo">Особенности Java</a></string>
     <string name="second_java_lesson"><a href="https://javarush.ru/">Краткое изложение</a></string>
     <string name="third_java_lesson"><a href="https://metanit.com/java/tutorial/1.1.php">Курс для начинающих</a></string>
-    <string name="first_python_oop"><a href="https://proglib.io/p/python-oop">Приципы ООП</a></string>
+    <string name="first_python_oop"><a href="https://proglib.io/p/python-oop">Принципы ООП</a></string>
     <string name="second_python_oop"><a href="https://habr.com/ru/post/444338/">Инкапсуляция</a></string>
     <string name="third_python_oop"><a href="https://ru.hexlet.io/courses/python-oop-basics/lessons/inheritance/theory_unit">Наследование</a></string>
     <string name="fourth_python_oop"><a href="https://habr.com/ru/post/552922/">Полиморфизм</a></string>
@@ -180,6 +180,18 @@
 "13.2. Если иное прямо не указано в положениях настоящего Соглашения или прямо не вытекает из норм действующего"" законодательства, к условиям настоящего Договора применяется материальное право Российской Федерации."
 "13.3. Неотъемлемой частью настоящего Соглашение является Политика конфиденциальности приложения."
     </string>
+    <string-array name="levels">
+        <item>Неизвестно</item>
+        <item>Новичок</item>
+        <item>Активный</item>
+        <item>Продвинутый</item>
+        <item>Выпускник</item>
+        <item>Стажируюсь</item>
+        <item>Прошел стажировку</item>
+        <item>Напиал резюме</item>
+        <item>Ищу работу</item>
+        <item>Работаю</item>
+    </string-array>
     <string name="everyday_notifications">Ежедневные уведомления</string>
     <string name="_00_59">00:59</string>
     <string name="_1_10">1/10</string>
