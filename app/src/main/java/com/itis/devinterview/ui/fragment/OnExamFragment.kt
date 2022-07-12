@@ -1,8 +1,8 @@
 package com.itis.devinterview.ui.fragment
 
 import android.annotation.SuppressLint
-import android.content.res.Resources
-import android.content.res.Resources.Theme
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -16,6 +16,7 @@ import androidx.navigation.fragment.navArgs
 import com.itis.devinterview.R.*
 import com.itis.devinterview.databinding.FragmentOnExamBinding
 import com.itis.devinterview.model.Question
+import com.itis.devinterview.preferences.AccessToRepository
 import com.itis.devinterview.service.impl.QuestionServiceImpl
 
 
@@ -51,8 +52,13 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++
                     }
-                    acbOptionFirst.setBackgroundResource(drawable.round_back_dark_blue_10)
-                    acbOptionFirst.setTextColor(Color.WHITE)
+                    if (AccessToRepository.isNightThemeEnabled() == false) {
+                        acbOptionFirst.setBackgroundResource(drawable.round_back_dark_blue_10)
+                        acbOptionFirst.setTextColor(Color.WHITE)
+                    } else {
+                        acbOptionFirst.setBackgroundResource(drawable.round_back_black_10)
+                        acbOptionFirst.setTextColor(Color.WHITE)
+                    }
                 }
             }
             acbOptionSecond.setOnClickListener {
@@ -61,8 +67,13 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++
                     }
-                    acbOptionSecond.setBackgroundResource(drawable.round_back_dark_blue_10)
-                    acbOptionSecond.setTextColor(Color.WHITE)
+                    if (AccessToRepository.isNightThemeEnabled() == false) {
+                        acbOptionSecond.setBackgroundResource(drawable.round_back_dark_blue_10)
+                        acbOptionSecond.setTextColor(Color.WHITE)
+                    } else {
+                        acbOptionSecond.setBackgroundResource(drawable.round_back_black_10)
+                        acbOptionSecond.setTextColor(Color.WHITE)
+                    }
                 }
             }
             acbOptionThird.setOnClickListener {
@@ -71,8 +82,13 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++
                     }
-                    acbOptionThird.setBackgroundResource(drawable.round_back_dark_blue_10)
-                    acbOptionThird.setTextColor(Color.WHITE)
+                    if (AccessToRepository.isNightThemeEnabled() == false) {
+                        acbOptionThird.setBackgroundResource(drawable.round_back_dark_blue_10)
+                        acbOptionThird.setTextColor(Color.WHITE)
+                    } else {
+                        acbOptionThird.setBackgroundResource(drawable.round_back_black_10)
+                        acbOptionThird.setTextColor(Color.WHITE)
+                    }
                 }
             }
             acbOptionFourth.setOnClickListener {
@@ -81,8 +97,13 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
                     if (selectedOptionByUser == listOfQuestions[currentQuestionPosition].correct) {
                         correctAnswers++
                     }
-                    acbOptionFourth.setBackgroundResource(drawable.round_back_dark_blue_10)
-                    acbOptionFourth.setTextColor(Color.WHITE)
+                    if (AccessToRepository.isNightThemeEnabled() == false) {
+                        acbOptionFourth.setBackgroundResource(drawable.round_back_dark_blue_10)
+                        acbOptionFourth.setTextColor(Color.WHITE)
+                    } else {
+                        acbOptionFourth.setBackgroundResource(drawable.round_back_black_10)
+                        acbOptionFourth.setTextColor(Color.WHITE)
+                    }
                 }
             }
             btnNext.setOnClickListener {
@@ -127,14 +148,25 @@ class OnExamFragment : Fragment(layout.fragment_on_exam) {
         if (currentQuestionPosition < listOfQuestions.size) {
             selectedOptionByUser = ""
             with(binding) {
-                acbOptionFirst.setBackgroundResource(drawable.round_back_white_stroke)
-                acbOptionFirst.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionSecond.setBackgroundResource(drawable.round_back_white_stroke)
-                acbOptionSecond.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionThird.setBackgroundResource(drawable.round_back_white_stroke)
-                acbOptionThird.setTextColor(Color.parseColor("#FF000000"))
-                acbOptionFourth.setBackgroundResource(drawable.round_back_white_stroke)
-                acbOptionFourth.setTextColor(Color.parseColor("#FF000000"))
+                if (AccessToRepository.isNightThemeEnabled() == false) {
+                    acbOptionFirst.setBackgroundResource(drawable.round_back_white_stroke)
+                    acbOptionSecond.setBackgroundResource(drawable.round_back_white_stroke)
+                    acbOptionThird.setBackgroundResource(drawable.round_back_white_stroke)
+                    acbOptionFourth.setBackgroundResource(drawable.round_back_white_stroke)
+                    acbOptionFirst.setTextColor(Color.parseColor("#FF000000"))
+                    acbOptionSecond.setTextColor(Color.parseColor("#FF000000"))
+                    acbOptionThird.setTextColor(Color.parseColor("#FF000000"))
+                    acbOptionFourth.setTextColor(Color.parseColor("#FF000000"))
+                } else {
+                    acbOptionFirst.setBackgroundResource(drawable.round_back_black_stroke)
+                    acbOptionSecond.setBackgroundResource(drawable.round_back_black_stroke)
+                    acbOptionThird.setBackgroundResource(drawable.round_back_black_stroke)
+                    acbOptionFourth.setBackgroundResource(drawable.round_back_black_stroke)
+                    acbOptionFirst.setTextColor(Color.parseColor("#FFFFFF"))
+                    acbOptionSecond.setTextColor(Color.parseColor("#FFFFFF"))
+                    acbOptionThird.setTextColor(Color.parseColor("#FFFFFF"))
+                    acbOptionFourth.setTextColor(Color.parseColor("#FFFFFF"))
+                }
                 tvQuestions.text = "${currentQuestionPosition + 1}/${listOfQuestions.size}"
                 tvQuestion.text = listOfQuestions[currentQuestionPosition].question
                 acbOptionFirst.text = listOfQuestions[currentQuestionPosition].first

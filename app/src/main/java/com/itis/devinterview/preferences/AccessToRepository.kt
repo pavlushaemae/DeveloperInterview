@@ -10,9 +10,10 @@ object AccessToRepository {
     private var newQuestionId: Int = 0
     private var sharedPreferences: SharedPreferences? = null
     private const val QUESTIONS_LIST = "questions_list"
+    private const val THEME = "THEME"
     private const val JAVA = "Java"
     private const val PYTHON = "Python"
-    private var FIRST_LAUNCH = false
+    private var FIRST_LAUNCH = "FIRST_LAUNCH"
     private var ADDED_OR_NOT = false
     fun getSP(sharedPreferences: SharedPreferences) {
         AccessToRepository.sharedPreferences = sharedPreferences
@@ -47,6 +48,21 @@ object AccessToRepository {
             apply()
         }
     }
+    fun addNightThemeEnabled() {
+        sharedPreferences?.edit()?.apply {
+            putBoolean(THEME, true)
+            apply()
+        }
+    }
+    fun addLightThemeEnabled() {
+        sharedPreferences?.edit()?.apply {
+            putBoolean(THEME, false)
+            apply()
+        }
+    }
+    fun isNightThemeEnabled(): Boolean? {
+        return sharedPreferences?.getBoolean(THEME,false)
+    }
 
     fun getCountOfTestedTickets(language: String): Int? {
         return sharedPreferences?.getInt(language.uppercase(), 0)
@@ -72,10 +88,13 @@ object AccessToRepository {
     }
 
     fun getFirstLaunch(): Boolean {
-        return FIRST_LAUNCH
+        return sharedPreferences?.getBoolean(THEME,true) == null
     }
 
     fun addFirstLaunch() {
-        FIRST_LAUNCH = true
+        sharedPreferences?.edit()?.apply {
+            putBoolean(FIRST_LAUNCH, false)
+            apply()
+        }
     }
 }

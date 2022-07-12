@@ -41,4 +41,5 @@
     <color name="dialog_button">#77FFFFFF</color>
     <color name="dark_blue">#4C7FAC</color> 
     <color name="ripple_color">#303030</color>
+    <color name="dark_blue_b">#374381</color>
 </resources>
