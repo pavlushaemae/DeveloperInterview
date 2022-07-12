@@ -102,9 +102,9 @@ class ConfigureNotificationsFragment :
                 pendingIntent
             )
             Toast.makeText(context, "Уведомления успешно назначены", Toast.LENGTH_SHORT).show()
-            if (calendar == null) {
-                Toast.makeText(context, "Выберите время", Toast.LENGTH_SHORT).show()
-            }
+        }
+        if (calendar == null) {
+            Toast.makeText(context, "Выберите время", Toast.LENGTH_SHORT).show()
         }
     }
 
