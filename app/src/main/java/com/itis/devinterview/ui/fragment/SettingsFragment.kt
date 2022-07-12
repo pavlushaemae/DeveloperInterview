@@ -2,9 +2,11 @@ package com.itis.devinterview.ui.fragment
 
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import android.graphics.Color.BLACK
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.ThemeUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.databinding.FragmentSettingsBinding
@@ -16,6 +18,7 @@ class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settin
     private lateinit var sharedPreferences: SharedPreferences
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
+    public var editor: SharedPreferences? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -23,23 +26,30 @@ class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settin
         with(binding) {
             sharedPreferences = requireActivity().getSharedPreferences("save", MODE_PRIVATE)
             switchThemes.isChecked = sharedPreferences.getBoolean("value", true)
+            if(sharedPreferences.getInt("theme", 0) == 1){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
             switchThemes.setOnCheckedChangeListener { _, checkedId ->
                 when (checkedId) {
                     true -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                         AccessToRepository.addNightThemeEnabled()
-                        val editor: SharedPreferences.Editor =
+                        var editor: SharedPreferences.Editor =
                             requireActivity().getSharedPreferences("save", MODE_PRIVATE).edit()
                         editor.putBoolean("value", true)
+                        editor.putInt("theme", 1)
                         editor.apply()
                         switchThemes.isChecked = true
                     }
                     false -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                         AccessToRepository.addLightThemeEnabled()
-                        val editor: SharedPreferences.Editor =
+                        var editor: SharedPreferences.Editor =
                             requireActivity().getSharedPreferences("save", MODE_PRIVATE).edit()
                         editor.putBoolean("value", false)
+                        editor.putInt("theme", 0)
                         editor.apply()
                         switchThemes.isChecked = false
                         

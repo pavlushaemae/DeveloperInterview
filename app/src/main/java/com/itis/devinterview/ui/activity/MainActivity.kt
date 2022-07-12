@@ -1,7 +1,9 @@
 package com.itis.devinterview.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -14,6 +16,12 @@ class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var sharedPreferences : SharedPreferences = getSharedPreferences("save", MODE_PRIVATE)
+        if(sharedPreferences.getInt("theme", 0) == 1){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
         AccessToRepository.addLightThemeEnabled()
         val bottomView = findViewById<BottomNavigationView>(R.id.bottom_view)

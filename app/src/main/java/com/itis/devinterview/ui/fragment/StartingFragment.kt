@@ -18,6 +18,7 @@ class StartingFragment : Fragment(com.itis.devinterview.R.layout.fragment_starti
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentStartingBinding.bind(view)
 
+
         if (service.getFirstLaunch() ) {
             println(true)
             service.addFirstLaunch()
@@ -27,6 +28,7 @@ class StartingFragment : Fragment(com.itis.devinterview.R.layout.fragment_starti
                 }
             }
         }
+
         if (!service.getFirstLaunch()) {
              findNavController().navigate(R.id.action_startingFragment_to_profile_fragment)
             println(false)
@@ -44,3 +46,4 @@ class StartingFragment : Fragment(com.itis.devinterview.R.layout.fragment_starti
     }
 
 }
+
