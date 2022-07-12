@@ -17,6 +17,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/ubuntu_bold</item>
         <item name="alertDialogTheme">@style/YDialog</item>
+        <item name="attributeName">light</item>
     </style>
 
     <style name="round_back">

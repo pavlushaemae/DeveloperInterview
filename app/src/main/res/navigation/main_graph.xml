@@ -164,6 +164,9 @@
         <action
             android:id="@+id/action_pythonFragment_to_educationFragment"
             app:destination="@id/educationFragment" />
+        <action
+            android:id="@+id/action_profile_fragment_to_in_developing_fragment"
+            app:destination="@id/inDevelopingFragment" />
     </fragment>
     <fragment
         android:id="@+id/inDevelopingFragment"
@@ -234,6 +237,11 @@
             app:destination="@id/settings_fragment"
             app:popUpTo="@id/profile_fragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profile_fragment_to_in_developing_fragment"
+            app:destination="@id/inDevelopingFragment"
+            app:popUpTo="@id/profile_fragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/startingFragment"
@@ -260,4 +268,5 @@
             android:id="@+id/action_helloFragment_to_profile_fragment"
             app:destination="@id/profile_fragment" />
     </fragment>
+</navigation>
 </navigation>

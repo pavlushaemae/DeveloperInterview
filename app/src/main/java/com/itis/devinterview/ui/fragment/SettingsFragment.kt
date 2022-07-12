@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.itis.devinterview.databinding.FragmentSettingsBinding
+import com.itis.devinterview.preferences.AccessToRepository
 
 
 class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settings) {
@@ -19,7 +20,6 @@ class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settin
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentSettingsBinding.bind(view)
-
         with(binding) {
             sharedPreferences = requireActivity().getSharedPreferences("save", MODE_PRIVATE)
             switchThemes.isChecked = sharedPreferences.getBoolean("value", true)
@@ -27,20 +27,22 @@ class SettingsFragment : Fragment(com.itis.devinterview.R.layout.fragment_settin
                 when (checkedId) {
                     true -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                        AccessToRepository.addNightThemeEnabled()
                         val editor: SharedPreferences.Editor =
                             requireActivity().getSharedPreferences("save", MODE_PRIVATE).edit()
                         editor.putBoolean("value", true)
                         editor.apply()
                         switchThemes.isChecked = true
                     }
-
                     false -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                        AccessToRepository.addLightThemeEnabled()
                         val editor: SharedPreferences.Editor =
                             requireActivity().getSharedPreferences("save", MODE_PRIVATE).edit()
                         editor.putBoolean("value", false)
                         editor.apply()
                         switchThemes.isChecked = false
+                        
                     }
                 }
             }
