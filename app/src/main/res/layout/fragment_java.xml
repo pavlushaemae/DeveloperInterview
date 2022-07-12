@@ -21,13 +21,15 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/UbuntuTextViewStyle"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:paddingTop="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="9dp"
         android:fontFamily="@font/ubuntu_bold"
-        android:text="Объектно-ориентированное программирование:"
-        android:textColor="#4F515C"
+        android:text="ООП"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,13 +102,15 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/UbuntuTextViewStyle"
+        android:layout_width="175dp"
+        android:layout_height="30dp"
+        android:paddingTop="5dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
+        android:textAlignment="center"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Структуры данных:"
-        android:textColor="#4F515C"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView16"
         app:layout_constraintEnd_toEndOf="parent"
@@ -179,20 +183,21 @@
 
     <TextView
         android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="30dp"
+        android:paddingTop="5dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Общая информация:"
-        android:textColor="#4F515C"
+        style="@style/UbuntuTextViewStyle"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView27"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
-
 
     <TextView
         android:id="@+id/textView27"
