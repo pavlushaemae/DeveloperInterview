@@ -88,7 +88,7 @@ object AccessToRepository {
     }
 
     fun getFirstLaunch(): Boolean {
-        return sharedPreferences?.getBoolean(THEME,true) == null
+        return sharedPreferences?.getBoolean(FIRST_LAUNCH,true) == null
     }
 
     fun addFirstLaunch() {
