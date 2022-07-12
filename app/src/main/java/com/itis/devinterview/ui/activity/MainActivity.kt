@@ -19,11 +19,12 @@ class MainActivity: AppCompatActivity() {
         var sharedPreferences : SharedPreferences = getSharedPreferences("save", MODE_PRIVATE)
         if(sharedPreferences.getInt("theme", 0) == 1){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            AccessToRepository.addNightThemeEnabled()
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            AccessToRepository.addLightThemeEnabled()
         }
         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
-        AccessToRepository.addLightThemeEnabled()
         val bottomView = findViewById<BottomNavigationView>(R.id.bottom_view)
         bottomView.setupWithNavController(controller)
     }
